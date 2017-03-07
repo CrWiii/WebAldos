@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('El-Mundo-de-Aldo','AldosWorldController@show');
 
 Auth::routes();
 

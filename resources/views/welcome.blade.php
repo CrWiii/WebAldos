@@ -20,9 +20,13 @@
 <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 </head>
 <style type="text/css">
-@media (min-width: 1025px) {
+@media (max-width: 1024px) {
   .navbar-right {
-    margin-right: 0px;
+    margin-right: 15px;
+  }
+  .imagesty{
+    padding-right: 10%;
+    padding-top: 25%;
   }
 }
 
@@ -35,7 +39,7 @@
 
 figure.effect-chico:hover img {
   opacity: 0.5;
-  -webkit-transform: scale(1);
+             -webkit-transform: scale(1);
   transform: scale(1);
 }
 
@@ -87,40 +91,99 @@ figure.effect-chico:hover p {
     margin: 10px auto;
     width: 100%;
   }
+}
 
 
+
+.titu1{margin: 0px !important;font-size: 1em !important;color: #917c56;}
+.subtit1{margin: 0px !important;font-size: 0.8em !important;color: #a49273;}
+.hovcont{
+  background: #ded5cc;
+  text-align: center;
+  margin: 0px !important;
+  } 
+.hovcontp{
+  color: white;
+  font-family: 'Trajan Pro';
+  padding-top: 10%;
+  font-size: 3em;
+}
+.hovcontps{
+  font-family: 'AppleGaramondLight';
+  font-size: 1.3em;
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-bottom: 0px;
+}
+.hovconth{
+  font-family: 'GreatVibes';
+  padding-bottom: 5%;
+  color: #ccbba2;
+}
+.hovcontpl{
+  padding-bottom: 5.5%;
+  font-family: 'AppleGaramondLight';
+}
+.p1{
+  padding: 38.8%;
+}
+@media (max-width:768px){
+  .p1{padding: 70% !important;}
+  .hovcontp{
+
+  }
+}
+@media (max-width: 1300px){
+  .p1{padding: 45%}
+}
+@media (max-width: 1024px) {
+  .titu1{font-size: 0.8em !important}
+  .subtit1{font-size: 0.6em !important}
+  .p1{padding: 50.8%;}
+}
+@media (max-width: 460px){
+    .titu1{font-size: 0.7em !important;}
+  .subtit1{font-size: 0.5em !important;}
+}
+
+@media (min-height: 1280px){
+  .nav > li > a {
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+  }
+}
+
+
+.marcas a {
+  display: inline-block;
+  vertical-align: middle;
+  outline: none;
+  border: none;
+  margin: 5px;
+  text-decoration: none;
+  box-sizing: border-box;
+  color: -webkit-link;
+  text-decoration: underline;
+  cursor: auto;
+}
+.marcas ul li {
+  width:15%;
+  float:left;
+  list-style-type: none;
+}
+
+  .list-inline li img:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    -webkit-transition: opacity 250ms ease-in-out;
+    -moz-transition: opacity 250ms ease-in-out;
+    transition: opacity 250ms ease-in-out;
+  }
 </style>
 
 <body class="video-loaded">
 
-<nav class="navbar navbar-fixed-top">
-      <div class="container">
-         <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Menu</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            <a class="navbar-brand" href="{{url('/')}}">
-                <img class="svg imagesty" src="{{url('img/logo_aldo.png')}}" alt="Phuket Luxury Wedding Planner">
-            </a>
-        </div>
-          <div id="navbar" class="navbar-collapse collapse" style="font-family: 'TrajanProBold' !important;font-size: 12px;">
-              <ul class="nav navbar-nav navbar-left">
-                <li><a href="ElMundoAldoCo.html">EL MUNDO DE ALDO</a></li>
-                <li><a href="novios.html">NOVIOS</a></li>
-                <li><a href="joyeria.html">JOYERIA</a></li>
-
-              </ul>
-              <ul class="nav navbar-nav navbar-right" >
-                <li><a href="PatekPhilippe.html">PATEK PHILIPPE</a></li>
-                <li><a href="Eventos.html">EVENTOS</a></li>
-                <li><a href="Contactenos.html">CONTÁCTENOS</a></li>
-              </ul>
-            </div>
-     </div>
-</nav>
+@include('Menu')
 
 <div id="loaderHolder" style="display: none;">
     <div class="loader"></div>
@@ -187,17 +250,16 @@ figure.effect-chico:hover p {
    <div class="container-fluid" style="padding: 0px !important; margin: 0px !important;">
       <div class="row" style="background: #ded5cc !important">
          <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-            <div class="hovercontainer" style="background: #ded5cc;text-align: center;margin: 0px !important;">
-              <p style="color: white;font-family: 'Trajan Pro';padding-top: 10%;font-size: 300%">NOVIOS</p>
-              
-              <p style="font-family: 'AppleGaramondLight';font-size: 140%;padding-left: 15%;padding-right: 15%;margin-bottom: 0px;">Cuenta el mito que del dedo anular sale una vena que va hasta el corazón, vena amoris o vena del amor es la conexión entre aquellos que se prometen amor y respeto </p>
-              <h1 style="font-family: 'GreatVibes';padding-bottom: 5%;color: #ccbba2">Prometo amarte</h1>
-              <p style="padding-bottom: 5.5%;font-family: 'AppleGaramondLight';">Ver la colección completa</p>
+            <div class="hovercontainer hovcont"> 
+              <p class="hovcontp">NOVIOS</p>
+              <p class="hovcontps">Cuenta el mito que del dedo anular sale una vena que va hasta el corazón, vena amoris o vena del amor es la conexión entre aquellos que se prometen amor y respeto </p>
+              <h1 class="hovconth">Prometo amarte</h1>
+              <p class="hovcontpl">Ver la colección completa</p>
            </div>
           </div>
          <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
             <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-              <p style="padding: 36.8%;">IMAGEN</p>
+              <p class="p1"></p>
               <!--<img src="file/">-->
            </div>
           </div>
@@ -245,128 +307,20 @@ figure.effect-chico:hover p {
 <section id="raveContent" class="padded-content-sm os-animation animated fadeInUpBig" data-os-animation="fadeInUpBig" data-os-animation-delay="100ms" style="animation-delay: 100ms; background: #d6c6bb !important;padding: 0px !important;">
     <div class="container text-center">
       <div class="os-animation col-xs-12 col-sm-12 col-md-12 col-lg-12 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;">
-            
             <div class="hovercontainer">
               <figure class="responsive img-responsive" data-media240="{{url('img/video-home.jpg')}}" data-media961="{{url('img/video-home.jpg')}}" alt=""><img src="{{url('img/video-home.jpg')}}"></figure>
                 <div class="action-container">
                   <img class="vidloader" src="{{url('video/ring.svg')}}" alt="Video Loading">
                     <button class="action action--hidden action--play">
-            <span class="action__label icon-controller-play"></span>
-          </button>
+                      <span class="action__label icon-controller-play"></span>
+                    </button>
                </div>
            </div>
          </div>
     <!--<p style="margin: 200px;">VIDEO</p>-->
     </div>
 </section>
-
-<style type="text/css">
-  .list-inline li img:hover {
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-    -webkit-transition: opacity 250ms ease-in-out;
-    -moz-transition: opacity 250ms ease-in-out;
-    transition: opacity 250ms ease-in-out;
-  }
-
-</style>
-
-<section id="featureBadges" class="whitebg padded-content-xs text-center" style="padding-top: 10%;background: #ded5cc;">
-  <ul class="list-inline">
-        <li><a target="_blank" href="http://www.mikimotoamerica.com/"><img width="180" height="40" src="{{url('img/mikimoto-01.png')}}" alt="Mikimoto"></a></li>
-        <li><a target="_blank" href="http://www.patek.com/"><img width="160" height="80"  src="{{url('img/Logo-Patek.png')}}" alt="Patek Philippe"></a></li>
-        <li><a target="_blank" href="http://www.mimimilano.com/"><img width="120" height="50"  src="{{url('img/Logo-Mimi.png')}}" alt="Mimí"></a><br></li>
-    </ul>
-    <ul class="list-inline">
-        <li><a target="_blank" href="http://www.dior.com/"><img width="90" height="40" src="{{url('img/Logo-Dior.png')}}"  alt="Dior"></a></li>
-        <li><a target="_blank" href="http://www.franckmuller.com/"><img width="150" height="50" src="{{url('img/Logo-Franck-Muller.png')}}"  alt="Franck Muller"></a></li>
-        <li><a target="_blank" href="http://www.cuervoysobrinos.com/"><img width="150" height="60" src="{{url('img/Logo-cuervos-y-sobrinos.png')}}"  alt="Cuervo y Sobrinos"></a></li>
-
-    </ul>
-</section>
-
-
-<section id="bookWeddingPlanner" class="whitebg padded-content-sm" style="background: #ded5cc;">
-    <div class="container">
-    <div class="row">
-      <div class="os-animation col-xs-12 col-sm-12 col-md-12 col-lg-12 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="200ms" style="animation-delay: 200ms;">
-              <div class="text-center">
-              <style type="text/css">
-                .marcas a {
-                    display: inline-block;
-                    vertical-align: middle;
-                    outline: none;
-                    border: none;
-                    margin: 5px;
-                    text-decoration: none;
-                    box-sizing: border-box;
-                    color: -webkit-link;
-                    text-decoration: underline;
-                    cursor: auto;
-                }
-                .marcas ul li {
-                    width:15%;
-                    float:left;
-                    list-style-type: none;
-                }
-              </style>
-           
-              </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="os-animation col-xs-12 col-sm-12 col-md-2 col-lg-2 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;">
-            </div>
-            <div class="os-animation col-xs-12 col-sm-12 col-md-8 col-lg-8 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="200ms" style="animation-delay: 200ms;">
-            <style type="text/css">
-              .titu1{margin: 0px !important;font-size: 0.8em;color: #917c56;}
-              .subtit1{margin: 0px !important;font-size: 0.6em;color: #a49273;}
-            </style>
-                <div class="text-center" style="font-family: 'TrajanProBold';">
-                    <p class="titu1">Tienda Primavera</p>
-                    <p class="subtit1"><a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">Av. Primavera 785, Chacarilla del Estanque T. (511) 372 6060</a></p>
-                    <p class="titu1">Tienda San Isidro</p>
-                    <p class="subtit1"><a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">Av. Daniel Hernández (ex. Av. El Bosque) 208, San Isidro T. (511) 421 2145</a></p>
-                    <p class="titu1">Tienda C.C. Jockey Plaza</p>
-                    <p class="subtit1"><a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">Nave Central - 1er Piso T. (511) 434 3954</a></p>
-                    <p class="titu1">Cusco</p>
-                    <p class="subtit1"><a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">Portal de Panes 101, Plaza de Armas - Cusco T. (084) 239 044</a></p>
-                    <p class="subtit1"><a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">Palacio del Inca, a Luxury Collection Hotel, Cusco</a></p>
-                    <p class="subtit1"><a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">Calle San Agustín 400, Puerta de los 4 Bustos T. (084) 231 961</p>
-                    <p class="titu1">Puno</a></p>
-                    <p class="subtit1"><a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">Hotel libertador Puno, Isla Esteves Lago Titicaca T. (051) 367 780</a></p>
-                    <p class="titu1">Saga Falabella</p>
-                    <p class="subtit1">
-                      <a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">Jockey Plaza</a> - 
-                      <a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">San Isidro</a> - 
-                      a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">Miraflores</a>
-                    </p>
-                    <p class="subtit1">
-                      <a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">Salaverry</a> - 
-                      <a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">San Miguel</a> - 
-                      <a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">Mega Plaza</a> - 
-                      <a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">Mall del Sur</a>
-                    </p>
-                    <p style="margin-top: 50px;">
-                    <a target="_blank" href="https://www.facebook.com/joyeriaaldo/?fref=ts&__mref=message_bubble"><i class="icon-facebook">  </i> ALDO & Co. </a> | 
-                    <a target="_blank" href="https://www.instagram.com/joyeriaaldoyco/"> <i class="icon-instagram"></i> JOYERIAALDOYCO  </a></p>
-
-                </div>
-            </div>
-            <div class="os-animation col-xs-12 col-sm-12 col-md-2 col-lg-2 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="300ms" style="animation-delay: 300ms;">
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer id="siteFooter" class="whitebg text-center" style="padding-bottom: 0px;">
-    <div style="background-color: #a38e7a;color: black">
-        <ul id="footerCredits" class="list-unstyled" style="margin-bottom: 0px;">
-            <li><small style="font-family: 'AppleGaramondLight';font-size: 1.1em;">© 2016 Aldo & Co derechos reservados</small></li>
-        </ul>
-    </div>
-</footer>
+@include('footer')
 <div class="video-wrap">
    <div class="video-inner">
        <video class="video-player" controls="controls" preload="auto" poster="" title="The Bridal Planner">

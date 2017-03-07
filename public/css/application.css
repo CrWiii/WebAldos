@@ -21,12 +21,15 @@
     font-family: TrajanProBold;
     src: url('../fonts/TrajanPro-Bold.ttf') format("opentype");
   }
+
+
+
   @media screen and (max-width: 1024px) {
     .navbar-nav > li > a {
       font-size: 9px;
     }
     .tit1{
-      font-size: 3.3em !important;
+      font-size: 3em !important;
     }
   }
   @media screen and (max-width: 320px) {
@@ -44,10 +47,8 @@
     }
   }
   
-.imagesty{padding-top: 22%;padding-left: 10%;padding-right: 10%;}
+.imagesty{padding-top: 22%;padding-left: 10%;}
 .fote{font-family: 'TrajanProBold' !important;}
-.titu1{margin: 0px !important;font-size: 1em !important;color: #917c56;}
-.subtit1{margin: 0px !important;font-size: 0.8em !important;color: #a49273;}
 .list-inline a img {opacity: 0.35;}
 
 .carousel-caption .caption-content, .text-container .textcontent .verticalalign, .headerbg .headerbg-caption .headerbg-caption-content, .action--play {
