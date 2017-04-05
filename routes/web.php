@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('El-Mundo-de-Aldo','AldosWorldController@show');
+Route::get('events','HomeController@events');
+Route::get('event','HomeController@event');
 
 Auth::routes();
 
