@@ -20,4 +20,7 @@ class HomeController extends Controller{
     public function event(){
         return view('event');
     }
+    public function ElMundoDeAldo(){
+        return view('ElMundoDeAldo');
+    }
 }

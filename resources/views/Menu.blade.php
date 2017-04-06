@@ -1,4 +1,13 @@
-<nav class="navbar navbar-fixed-top">
+<style type="text/css">
+  .dropdown-toggle{
+    padding-bottom: 0px !important;
+  }
+  .navbar-nav > li > a {
+    padding-bottom: 0px !important;
+  }
+
+</style>
+<nav class="navbar navbar-fixed-top" style="padding-bottom: 0px !important">
       <div class="container">
          <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -12,13 +21,13 @@
             </a>
         </div>
           <div id="navbar" class="navbar-collapse collapse" style="font-family: 'TrajanProBold' !important;font-size: 12px;">
-              <ul class="nav navbar-nav navbar-left">
-                <li><a href="">EL MUNDO DE ALDO</a></li>
-                <li class="dropdown mega-dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">JOYERIA <span class="caret"></span></a>
+              <ul class="nav navbar-nav navbar-left" style="margin-top: 0px !important">
+                <li><a href="{{url('ElMundoDeAldo')}}">EL MUNDO DE ALDO</a></li>
+                <li class="dropdown mega-dropdown"><a href="{{url('Joyeria')}}" class="dropdown-toggle" data-toggle="dropdown">JOYERIA <span class="caret"></span></a>
                   <ul class="dropdown-menu mega-dropdown-menu" style="background-color: #e7e5d0">
                     <li class="col-sm-2">
                       <ul>
-                        <li class="dropdown-header">
+                        <li>
                           
                         </li>
                       </ul>
@@ -64,7 +73,7 @@
                     </li>
                   </ul>
                 </li>
-                <li class="dropdown mega-dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">NOVIOS <span class="caret"></span></a>
+                <li class="dropdown mega-dropdown"><a href="{{url('Novios')}}" class="dropdown-toggle" data-toggle="dropdown">NOVIOS <span class="caret"></span></a>
                   <ul class="dropdown-menu mega-dropdown-menu" style="background-color: #e7e5d0">
                     <div class="col-sm-10">
                       <div class="col-sm-12">
@@ -138,9 +147,9 @@
 
               </ul>
               <ul class="nav navbar-nav navbar-right" >
-                <li><a href="">PATEK PHILIPPE</a></li>
-                <li><a href="{{url('events')}}">EVENTOS</a></li>
-                <li><a href="">CONTÁCTENOS</a></li>
+                <li><a href="{url('PatekPhilppe'}}">PATEK PHILIPPE</a></li>
+                <li><a href="{{url('eventos')}}">EVENTOS</a></li>
+                <li><a href="{{url('Contactanos')}}">CONTÁCTENOS</a></li>
               </ul>
             </div>
      </div>

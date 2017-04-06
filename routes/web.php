@@ -14,9 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('El-Mundo-de-Aldo','AldosWorldController@show');
-Route::get('events','HomeController@events');
-Route::get('event','HomeController@event');
+
+Route::get('eventos','HomeController@events');
+Route::get('evento','HomeController@event');
+Route::get('ElMundoDeAldo','HomeController@ElMundoDeAldo');
+Route::get('PatekPhilppe','HomeController@PatekPhilppe');
+Route::get('Contactanos','HomeController@Contactanos');
+Route::get('Joyeria','HomeController@Joyeria');
+Route::get('Novios','HomeController@Novios');
+// Route::get('','HomeController@');
+// Route::get('','HomeController@');
+// Route::get('','HomeController@');
+
 
 Auth::routes();
 
