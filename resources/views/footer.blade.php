@@ -45,6 +45,10 @@
                     <a target="_blank" href="https://www.facebook.com/joyeriaaldo/?fref=ts&__mref=message_bubble"><i class="icon-facebook">  </i> ALDO & Co. </a> | 
                     <a target="_blank" href="https://www.instagram.com/joyeriaaldoyco/"> <i class="icon-instagram"></i> JOYERIAALDOYCO  </a></p>
 
+                    <p style="margin-top: 10px;">
+                    <a target="_blank" href="#">Ingles</a> | 
+                    <a target="_blank" href="#">Español</a></p>
+
                 </div>
             </div>
             <div class="os-animation col-xs-12 col-sm-12 col-md-2 col-lg-2 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="300ms" style="animation-delay: 300ms;">

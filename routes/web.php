@@ -18,10 +18,13 @@ Route::get('/', function () {
 Route::get('eventos','HomeController@events');
 Route::get('evento','HomeController@event');
 Route::get('ElMundoDeAldo','HomeController@ElMundoDeAldo');
-Route::get('PatekPhilppe','HomeController@PatekPhilppe');
-Route::get('Contactanos','HomeController@Contactanos');
+Route::get('PatekPhilippe','HomeController@PatekPhilippe');
+Route::get('Contactenos','HomeController@Contactenos');
 Route::get('Joyeria','HomeController@Joyeria');
 Route::get('Novios','HomeController@Novios');
+Route::get('JoyeriaSub','HomeController@JoyeriaSub');
+Route::get('Producto','HomeController@Producto');
+Route::get('NoviosSub','HomeController@NoviosSub');
 // Route::get('','HomeController@');
 // Route::get('','HomeController@');
 // Route::get('','HomeController@');

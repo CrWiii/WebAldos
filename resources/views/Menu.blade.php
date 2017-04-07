@@ -23,7 +23,7 @@
           <div id="navbar" class="navbar-collapse collapse" style="font-family: 'TrajanProBold' !important;font-size: 12px;">
               <ul class="nav navbar-nav navbar-left" style="margin-top: 0px !important">
                 <li><a href="{{url('ElMundoDeAldo')}}">EL MUNDO DE ALDO</a></li>
-                <li class="dropdown mega-dropdown"><a href="{{url('Joyeria')}}" class="dropdown-toggle" data-toggle="dropdown">JOYERIA <span class="caret"></span></a>
+                <li class="dropdown mega-dropdown"><a href="{{url('Novios')}}" class="dropdown-toggle" data-toggle="dropdown">NOVIOS  <span class="caret"></span></a>
                   <ul class="dropdown-menu mega-dropdown-menu" style="background-color: #e7e5d0">
                     <li class="col-sm-2">
                       <ul>
@@ -73,7 +73,7 @@
                     </li>
                   </ul>
                 </li>
-                <li class="dropdown mega-dropdown"><a href="{{url('Novios')}}" class="dropdown-toggle" data-toggle="dropdown">NOVIOS <span class="caret"></span></a>
+                <li class="dropdown mega-dropdown"><a href="{{url('Joyeria')}}" class="dropdown-toggle" data-toggle="dropdown">JOYERIA <span class="caret"></span></a>
                   <ul class="dropdown-menu mega-dropdown-menu" style="background-color: #e7e5d0">
                     <div class="col-sm-10">
                       <div class="col-sm-12">
@@ -147,9 +147,9 @@
 
               </ul>
               <ul class="nav navbar-nav navbar-right" >
-                <li><a href="{url('PatekPhilppe'}}">PATEK PHILIPPE</a></li>
+                <li><a href="{{url('PatekPhilippe')}}">PATEK PHILIPPE</a></li>
                 <li><a href="{{url('eventos')}}">EVENTOS</a></li>
-                <li><a href="{{url('Contactanos')}}">CONTÁCTENOS</a></li>
+                <li><a href="{{url('Contactenos')}}">CONTÁCTENOS</a></li>
               </ul>
             </div>
      </div>

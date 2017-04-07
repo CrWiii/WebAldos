@@ -23,4 +23,25 @@ class HomeController extends Controller{
     public function ElMundoDeAldo(){
         return view('ElMundoDeAldo');
     }
+    public function PatekPhilippe(){
+        return view('PatekPhilippe');
+    }
+    public function Contactenos(){
+        return view('Contactenos');
+    }
+    public function Joyeria(){
+        return view('Joyeria');
+    }
+    public function Novios(){
+        return view('Novios');
+    }
+    public function JoyeriaSub(){
+        return view('JoyeriaSub');
+    }
+    public function NoviosSub(){
+        return view('NoviosSub');
+    }
+    public function Producto(){
+        return view('Producto');
+    }
 }
