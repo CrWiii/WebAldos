@@ -25,6 +25,7 @@ Route::get('Novios','HomeController@Novios');
 Route::get('JoyeriaSub','HomeController@JoyeriaSub');
 Route::get('Producto','HomeController@Producto');
 Route::get('NoviosSub','HomeController@NoviosSub');
+Route::get('ElMundoDeAldoSub','HomeController@ElMundoDeAldoSub');
 // Route::get('','HomeController@');
 // Route::get('','HomeController@');
 // Route::get('','HomeController@');

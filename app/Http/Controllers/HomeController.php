@@ -44,4 +44,7 @@ class HomeController extends Controller{
     public function Producto(){
         return view('Producto');
     }
+    public function ElMundoDeAldoSub(){
+        return view('ElMundoDeAldoSub');
+    }
 }

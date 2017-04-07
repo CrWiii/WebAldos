@@ -33,84 +33,191 @@
   <div class="container">
         <div class="row">
             <ul class="nav asf"> <!--class="active"-->
-                <li><a class="active" href="">Anillos</a></li>
-                <li><a href="">Aretes</a></li>
-                <li><a href="">Collares</a></li>
-                <li><a href="">Dijes</a></li>
-                <li><a href="">Gemelos</a></li>
-                <li><a href="">Pedientes</a></li>
-                <li><a href="">Pulseras</a></li>
+                <li><a id="Anillos" class="active" href="">Anillos</a></li>
+                <li><a id="Aretes" href="">Aretes</a></li>
+                <li><a id="Collares" href="">Collares</a></li>
+                <li><a id="Dijes" href="">Dijes</a></li>
+                <li><a id="Gemelos" href="">Gemelos</a></li>
+                <li><a id="Pedientes" href="">Pedientes</a></li>
+                <li><a id="Pulseras" href="">Pulseras</a></li>
             </ul>
         </div>
   </div>
 </section>
 
-<!-- <section id="gridContent" class="grid whitebg" style="text-align: center;background: #ded5cc;padding-top: 15%">
-  <div class="container">
-        <div class="row">
-          <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;">
-            <div class="hovercontainer">
-              <a href="http://thebridalplanner.co/portfolio/post/krystle-coby"><figure class="responsive img-responsive" data-media240="/images/uploads/other/_small/KC_phuket-thailand-wedding-photographer_0084.jpg" data-media961="/images/uploads/other/_large/KC_phuket-thailand-wedding-photographer_0084.jpg" alt="Krystle &amp; Coby"><img src="/images/uploads/other/_large/KC_phuket-thailand-wedding-photographer_0084.jpg"></figure></a>
-                <a href="http://thebridalplanner.co/portfolio/post/krystle-coby" class="hovercontent">
-              <h3>Krystle &amp; Coby</h3>
-                    <h6>View their perfect day</h6>
-                </a>
-           </div>
-         </div>
 
-            <ul class="nav">
-                Anillos
-                COLLARES
-                DIJES
-                GEMELOS
-                PENDIENTES
-                PULSERAS
-            </ul>
-        </div>
-  </div>
-</section> -->
-
-<section id="gridContent" class="grid whitebg" style="background: #ded5cc;">
-   <div class="container-fluid">
+<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="Anillos">
+  <div class="container-fluid">
       <div class="row">
-      
-    <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
-      <div class="hovercontainer">
-         <a href=""><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
-         <p style="text-align: center">Producto</p>
-           <!--<a href="" class="hovercontent">
-         <h3>Krystle &amp; Coby</h3>
-               <h6>View their perfect day</h6>
-           </a>-->
-      </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+            <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+            <p style="text-align: center">Producto</p>
+          </div>
+        </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <p style="text-align: center">Producto</p>
+           </div>
+        </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <p style="text-align: center">Producto</p>
+          </div>
+        </div> 
     </div>
-    <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
-      <div class="hovercontainer">
-         <a href=""><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
-         <p style="text-align: center">Producto</p>
-           <!--<a href="" class="hovercontent">
-         <h3>Krystle &amp; Coby</h3>
-               <h6>View their perfect day</h6>
-           </a>-->
-      </div>
-    </div>
-    <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
-      <div class="hovercontainer">
-         <a href=""><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
-         <p style="text-align: center">Producto</p>
-           <!--<a href="" class="hovercontent">
-         <h3>Krystle &amp; Coby</h3>
-               <h6>View their perfect day</h6>
-           </a>-->
-      </div>
-    </div>
-         
-
-          
-    </div><!-- /.row -->
-    </div><!-- /.container -->
+  </div>
 </section>
 
+<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="Aretes">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+            <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+            <p style="text-align: center">Producto</p>
+          </div>
+        </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <p style="text-align: center">Producto</p>
+           </div>
+        </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <p style="text-align: center">Producto</p>
+          </div>
+        </div> 
+    </div>
+  </div>
+</section>
 
+<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="Collares">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+            <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+            <p style="text-align: center">Producto</p>
+          </div>
+        </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <p style="text-align: center">Producto</p>
+           </div>
+        </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <p style="text-align: center">Producto</p>
+          </div>
+        </div> 
+    </div>
+  </div>
+</section>
 
+<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="Dijes">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+            <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+            <p style="text-align: center">Producto</p>
+          </div>
+        </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <p style="text-align: center">Producto</p>
+           </div>
+        </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <p style="text-align: center">Producto</p>
+          </div>
+        </div> 
+    </div>
+  </div>
+</section>
+
+<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="Gemelos">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+            <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+            <p style="text-align: center">Producto</p>
+          </div>
+        </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <p style="text-align: center">Producto</p>
+           </div>
+        </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <p style="text-align: center">Producto</p>
+          </div>
+        </div> 
+    </div>
+  </div>
+</section>
+
+<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="Pendientes">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+            <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+            <p style="text-align: center">Producto</p>
+          </div>
+        </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <p style="text-align: center">Producto</p>
+           </div>
+        </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <p style="text-align: center">Producto</p>
+          </div>
+        </div> 
+    </div>
+  </div>
+</section>
+
+<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="Pulseras">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+            <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+            <p style="text-align: center">Producto</p>
+          </div>
+        </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <p style="text-align: center">Producto</p>
+           </div>
+        </div>
+        <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
+          <div class="hovercontainer">
+             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <p style="text-align: center">Producto</p>
+          </div>
+        </div> 
+    </div>
+  </div>
+</section>
 @endsection

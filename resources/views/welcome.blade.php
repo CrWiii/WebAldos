@@ -58,7 +58,6 @@
             <a class="left carousel-control" href="#mainCarousel" role="button" data-slide="prev"><span class="icon-chevron-thin-left"></span></a>
             <a class="right carousel-control" href="#mainCarousel" role="button" data-slide="next"><span class="icon-chevron-thin-right"></span></a>
       </div>
-
 </section>
 <section id="gridContent" class="grid whitebg">
    <div class="container-fluid" style="padding: 0px !important; margin: 0px !important;">

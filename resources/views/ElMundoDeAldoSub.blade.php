@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <style type="text/css">
   .asf > li > a {color: #676767 !important;font-size: 1em;line-height: 50px;}
   
@@ -22,7 +23,7 @@
         <div class="row">
            <div class="os-animation col-xs-12 col-sm-12 col-md-12 col-lg-12 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
               <div class="hovercontainer" style="padding-top: 7%;background: #ded5cc;text-align: center;margin: 0px !important;">
-                <h1 style="font-family: 'GreatVibes';padding-top: 10%;font-size: 5.5em;padding-bottom: 50px;">Novios</h1>
+                <h1 style="font-family: 'GreatVibes';padding-top: 10%;font-size: 5.5em;padding-bottom: 50px;">El mundo de Aldo</h1>
              </div>
             </div>
           </div>
@@ -33,28 +34,29 @@
   <div class="container">
         <div class="row">
             <ul class="nav asf">
-                <li><a id="ANILLOSDECOMPROMISO" class="active" href="">ANILLOS DE COMPROMISO</a></li>
-                <li><a id="AROSDEMATRIMONIO" href="">AROS DE MATRIMONIO</a></li>
-                <li><a id="MASALLADELAS4CS" href="">MÁS ALLÁ DE LAS 4CS</a></li>
-                <li><a id="COLECTIVODENOVIOS" href="">COLECTIVO DE NOVIOS</a></li>
+                <li><a id="Historia" class="active" href="">Historia</a></li>
+                <li><a id="Nosotros" href="">Nosotros</a></li>
+                <li><a id="CreandoMagia" href="">Creando Magia</a></li>
+                <li><a id="ResponsabilidadSocial" href="">Responsabilidad Social</a></li>
             </ul>
         </div>
   </div>
 </section>
 
 
-<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="ANILLOSDECOMPROMISO">
+<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="Historia">
   <div class="container-fluid">
       <div class="row">
+
         <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
           <div class="hovercontainer">
-            <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
-            <p style="text-align: center">Producto</p>
+            <!--<a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+            <p style="text-align: center">Producto</p>-->
           </div>
         </div>
         <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
           <div class="hovercontainer">
-             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
+             <!--<a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
              <p style="text-align: center">Producto</p>
            </div>
         </div>
@@ -64,13 +66,14 @@
              <p style="text-align: center">Producto</p>
           </div>
         </div> 
+
     </div>
   </div>
 </section>
 
-<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="AROSDEMATRIMONIO">
+<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="Nosotros">
   <div class="container-fluid">
-      <div class="row">
+      <!--<div class="row">
         <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
           <div class="hovercontainer">
             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
@@ -89,13 +92,13 @@
              <p style="text-align: center">Producto</p>
           </div>
         </div> 
-    </div>
+    </div>-->
   </div>
 </section>
 
-<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="MASALLADELAS4CS">
+<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="CreandoMagia">
   <div class="container-fluid">
-      <div class="row">
+      <!--<div class="row">
         <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
           <div class="hovercontainer">
             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
@@ -114,13 +117,13 @@
              <p style="text-align: center">Producto</p>
           </div>
         </div> 
-    </div>
+    </div>-->
   </div>
 </section>
 
-<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="COLECTIVODENOVIOS">
+<section id="gridContent" class="grid whitebg" style="background: #ded5cc;" data-id="ResponsabilidadSocial">
   <div class="container-fluid">
-      <div class="row">
+      <!--<div class="row">
         <div class="os-animation col-xs-12 col-sm-4 col-md-4 col-lg-4" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
           <div class="hovercontainer">
             <a href="{{url('producto')}}"><figure class="responsive img-responsive" data-media240="/img/anillo01.png" data-media961="/img/anillo01.png" alt="Krystle &amp; Coby"></figure></a>
@@ -139,7 +142,7 @@
              <p style="text-align: center">Producto</p>
           </div>
         </div> 
-    </div>
+    </div>-->
   </div>
 </section>
 @endsection
