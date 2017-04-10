@@ -17,7 +17,7 @@
                 <span class="icon-bar"></span>
               </button>
             <a class="navbar-brand" href="{{url('/')}}">
-                <img class="svg imagesty" src="{{url('img/logo_aldo.png')}}" alt="Phuket Luxury Wedding Planner">
+                <img class="svg imagesty" src="{{url('img/logo_aldo.png')}}" alt="">
             </a>
         </div>
           <div id="navbar" class="navbar-collapse collapse" style="font-family: 'TrajanProBold' !important;font-size: 12px;">

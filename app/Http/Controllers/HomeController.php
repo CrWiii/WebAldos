@@ -29,9 +29,7 @@ class HomeController extends Controller{
     public function Contactenos(){
         return view('Contactenos');
     }
-    public function Joyeria(){
-        return view('Joyeria');
-    }
+    
     public function Novios(){
         return view('Novios');
     }

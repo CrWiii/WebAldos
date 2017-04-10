@@ -31,8 +31,16 @@ Route::get('ElMundoDeAldoSub','HomeController@ElMundoDeAldoSub');
 // Route::get('','HomeController@');
 
 Route::group(['middleware' => 'web'], function () {
-	Route::auth();
+	// Route::auth();
+	Route::get('Inicio', 'AdminController@Inicio');
 	Route::get('/admin', 'AdminController@index');
+	Route::get('JoyasAdm', 'AdminController@Joyas');
+	Route::get('NoviosAdm', 'AdminController@Novios');
+	Route::get('MundoAldoAdm', 'AdminController@MundoAldoAdm');
+	Route::get('Eventos', 'AdminController@Eventos');
+	Route::get('NuevoProducto','ProductController@create');
+	Route::get('EditarProducto', 'ProductController@Edit');
+
 });
 
 // Auth::routes();
