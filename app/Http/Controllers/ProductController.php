@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 
 class ProductController extends Controller{
 
@@ -19,6 +20,10 @@ class ProductController extends Controller{
     	return view('admin.product.edit');
     }
     public function create(){
-        return view('admin.product.create');
+    	$Category = Category::all()->where('state',true);//->get()->pluck('id','description')
+        return view('admin.product.create', compact('Category'));
+    }
+    public function register(){
+    	return view('admin.JoyasAdm');
     }
 }

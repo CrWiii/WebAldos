@@ -20,6 +20,6 @@ class CreateEventImagesTable extends Migration{
     }
 
     public function down(){
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('event_images');
     }
 }
