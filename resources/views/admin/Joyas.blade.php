@@ -55,8 +55,8 @@
                                             <td class="txt-oflo"><span class="text-success">{{$PJ->type_id}}</span></td>
                                             <td>{{  date('d/m/Y', strtotime($PJ->created_at)) }}</td>
                                             <td class="text-nowrap">
-                                                <a href="#" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-                                                <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+                                                <a href="#" data-toggle="tooltip" data-original-title="Edit" data-id="{{$PJ->id}}"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                                <a href="#" data-toggle="tooltip" data-original-title="Close" data-id="{{$PJ->id}}"> <i class="fa fa-close text-danger"></i> </a>
                                             </td>
                                         </tr>
                                     @endforeach
