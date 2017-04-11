@@ -41,13 +41,26 @@
                                             <th>#</th>
                                             <th>DESCRIPCIÓN</th>
                                             <th>ESTADO</th>
-                                            <th>CATEGORIA</th>
+                                            <th>TIPO</th>
                                             <th>FECHA CREACIÓN</th>
                                             <th>ACCIÓN</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                    @foreach($ProductJoyas as $PJ)
+                                    <tr>
+                                            <td>{{$PJ->id}}</td>
+                                            <td class="txt-oflo">{{$PJ->description}}</td>
+                                            <td><span class="label label-success label-rouded">@if($PJ->state==1)ACTIVO @else INACTIVO @endif</span> </td>
+                                            <td class="txt-oflo"><span class="text-success">{{$PJ->type_id}}</span></td>
+                                            <td>{{  date('d/m/Y', strtotime($PJ->created_at)) }}</td>
+                                            <td class="text-nowrap">
+                                                <a href="#" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                                <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                        <!-- <tr>
                                             <td>1</td>
                                             <td class="txt-oflo">Elite admin</td>
                                             <td><span class="label label-success label-rouded">Activo</span> </td>
@@ -123,7 +136,7 @@
                                                 <a href="#" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
                                                 <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>

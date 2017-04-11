@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class AdminController extends Controller{
 
-	// public function __construct(){
- //        $this->middleware('auth');
- //    }
+	public function __construct(){
+        $this->middleware('auth');
+    }
 
     public function index(){
         return view('admin.index');
@@ -17,7 +18,8 @@ class AdminController extends Controller{
     	return view('admin.Inicio');
     }
     public function Joyas(){
-    	return view('admin.joyas');
+    	$ProductJoyas = Product::where('category_id',1)->get();
+    	return view('admin.joyas', compact('ProductJoyas'));
     }
     public function Novios(){
     	return view('admin.novios');

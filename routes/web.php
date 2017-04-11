@@ -39,6 +39,7 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('MundoAldoAdm', 'AdminController@MundoAldoAdm');
 	Route::get('Eventos', 'AdminController@Eventos');
 	Route::get('NuevoProducto','ProductController@create');
+	Route::post('storeProducto','ProductController@store');
 	Route::get('EditarProducto', 'ProductController@Edit');
 
 });
