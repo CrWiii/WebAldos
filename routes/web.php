@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	$Types = App\Type::where('category_id',1)->get();
+    return view('welcome',compact('Types'));
 });
 
 Route::get('eventos','HomeController@events');

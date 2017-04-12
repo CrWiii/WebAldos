@@ -85,7 +85,7 @@
                       @foreach($Types as $Type)
                         
                         <?php $f++;?>
-                        @if($i<5)
+                        @if($f<6)
 
 
                         <li class="col-sm-2">

@@ -12,29 +12,37 @@ class HomeController extends Controller{
     // }
 
     public function index(){
-        return view('home');
+    	$Types = Type::where('category_id',1)->get();
+        return view('home',compact('Types'));
     }
     public function events(){
-        return view('events');
+    	$Types = Type::where('category_id',1)->get();
+        return view('events',compact('Types'));
     }
     public function event(){
-        return view('event');
+    	$Types = Type::where('category_id',1)->get();
+        return view('event',compact('Types'));
     }
     public function ElMundoDeAldo(){
-        return view('ElMundoDeAldo');
+    	$Types = Type::where('category_id',1)->get();
+        return view('ElMundoDeAldo',compact('Types'));
     }
     public function PatekPhilippe(){
-        return view('PatekPhilippe');
+    	$Types = Type::where('category_id',1)->get();
+        return view('PatekPhilippe',compact('Types'));
     }
     public function Contactenos(){
-        return view('Contactenos');
+    	$Types = Type::where('category_id',1)->get();
+        return view('Contactenos',compact('Types'));
     }
     public function Joyeria(){
-        return view('Joyeria');
+    	$Types = Type::where('category_id',1)->get();
+        return view('Joyeria',compact('Types'));
     }
     
     public function Novios(){
-        return view('Novios');
+    	$Types = Type::where('category_id',1)->get();
+        return view('Novios',compact('Types'));
     }
     public function JoyeriaSub($Type){
     	$Types = Type::where('category_id',1)->get();
@@ -44,13 +52,16 @@ class HomeController extends Controller{
         return view('JoyeriaSub',compact('Products','Types','Type_selected'));
     }
     public function NoviosSub($Type){
-        return view('NoviosSub');
+    	$Types = Type::where('category_id',1)->get();
+        return view('NoviosSub',compact('Types'));
     }
     public function Producto($id){
+    	$Types = Type::where('category_id',1)->get();
     	$product = Product::find($id);
         return view('Producto',compact('product'));
     }
     public function ElMundoDeAldoSub(){
-        return view('ElMundoDeAldoSub');
+    	$Types = Type::where('category_id',1)->get();
+        return view('ElMundoDeAldoSub',compact('Types'));
     }
 }
