@@ -22,7 +22,7 @@ class ProductController extends Controller{
     }
     public function create($category_id){
     	$Category = Category::all()->where('id',$category_id)->where('state',true);
-        $Type = Type::all()->where('category_id',$category_id)->where('state',true);
+        $Type = Type::all()->where('category_id',$category_id)->where('state',true)->where('frame',false);
         return view('admin.product.create', compact('Category','Type'));
     }
     public function store(Request $request){

@@ -33,7 +33,7 @@
   <div class="container">
         <div class="row">
             <ul class="nav asf"> <!--class="active"-->
-              @foreach($Types as $Type)
+              @foreach($TypesJoyas as $Type)
                 <li><a id="{{$Type->id}}" href="{{url('Joyeria',array('Type'=>$Type->description))}}" @if($Type_selected==$Type->id)class="active" @endif>{{$Type->description}}</a></li>
               @endforeach
             </ul>
@@ -56,4 +56,7 @@
     </div>
   </div>
 </section>
+<div class="" style="background-color: #ded5cc;text-align: center">
+{!! $Products->links() !!}    
+</div>
 @endsection

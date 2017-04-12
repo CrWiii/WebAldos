@@ -14,10 +14,15 @@ class CreateTypeTable extends Migration{
             $table->boolean('state')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
+            $table->integer('images_id_frame')->unsigned()->index();
+            $table->boolean('frame')->nulleable();
+            $table->string('slug')->nulleable();
+            
             $table->timestamps();
 
             $table->foreign('images_id')->references('id')->on('images')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');
+            $table->foreign('images_id_frame')->references('id')->on('images')->onDelete('cascade');
         });
     }
     public function down(){
