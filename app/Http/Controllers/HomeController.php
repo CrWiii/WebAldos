@@ -11,10 +11,10 @@ class HomeController extends Controller{
     //     $this->middleware('auth');
     // }
 
-    public function index(){
+    public function home(){
     	$TypesJoyas = Type::where('category_id',1)->get();
         $TypesNovios = Type::where('category_id',2)->get();
-        return view('home',compact('TypesJoyas','TypesNovios'));
+        return view('welcome',compact('TypesJoyas','TypesNovios'));
     }
     public function events(){
     	$TypesJoyas = Type::where('category_id',1)->get();

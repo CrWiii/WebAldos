@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-	$Types = App\Type::where('category_id',1)->get();
-    return view('welcome',compact('Types'));
-});
+// Route::get('/', function () {
+// 	$Types = App\Type::where('category_id',1)->get();
+//     return view('welcome',compact('Types'));
+// });
 
+Route::get('/','HomeController@home');
 Route::get('eventos','HomeController@events');
 Route::get('evento','HomeController@event');
 Route::get('ElMundoDeAldo','HomeController@ElMundoDeAldo');
