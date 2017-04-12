@@ -58,7 +58,7 @@ class HomeController extends Controller{
     public function Producto($id){
     	$Types = Type::where('category_id',1)->get();
     	$product = Product::find($id);
-        return view('Producto',compact('product'));
+        return view('Producto',compact('product','Types'));
     }
     public function ElMundoDeAldoSub(){
     	$Types = Type::where('category_id',1)->get();
