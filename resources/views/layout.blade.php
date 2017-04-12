@@ -57,6 +57,7 @@
 <script src="{{url('js/plugins-min.js')}}"></script>
 <script src="{{url('js/classie.js')}}"></script>
 <script src="{{url('js/video.js')}}"></script>
+@yield('script')
 <script>
 
 $(document).ready(function(){
