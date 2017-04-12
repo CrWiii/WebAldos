@@ -64,13 +64,13 @@ class CategoryTableSeeder extends Seeder{
 		DB::table('images')->insert(['description'=>'','route'=>'','state'=>true,'created_by'=>2,'created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
 
 
-		DB::table('type')->insert(['slug'=>'Anillos','images_id_frame'=>1,'description'=>'Anillos','images_id'=>1,'category_id'=>1,'state'=>true,'frame'=>false,'created_by'=> 'SYSTEM','created_at'=> Carbon::now()]);
-		DB::table('type')->insert(['slug'=>'Aretes','images_id_frame'=>1,'description'=>'Aretes','images_id'=>1,'category_id'=>1,'state'=>true,'frame'=>false,'created_by'=> 'SYSTEM','created_at'=> Carbon::now()]);
-		DB::table('type')->insert(['slug'=>'Collares','images_id_frame'=>1,'description'=>'Collares','images_id'=>1,'category_id'=>1,'state'=>true,'frame'=>false,'created_by'=> 'SYSTEM','created_at'=> Carbon::now()]);
-		DB::table('type')->insert(['slug'=>'Dijes','images_id_frame'=>1,'description'=>'Dijes','images_id'=>1,'category_id'=>1,'state'=>true,'frame'=>false,'created_by'=> 'SYSTEM','created_at'=> Carbon::now()]);
-		DB::table('type')->insert(['slug'=>'Gemelos','images_id_frame'=>1,'description'=>'Gemelos','images_id'=>1,'category_id'=>1,'state'=>true,'frame'=>false,'created_by'=> 'SYSTEM','created_at'=> Carbon::now()]);
-		DB::table('type')->insert(['slug'=>'Pendiente','images_id_frame'=>1,'description'=>'Pendientes','images_id'=>1,'category_id'=>1,'state'=>true,'frame'=>false,'created_by'=> 'SYSTEM','created_at'=> Carbon::now()]);
-		DB::table('type')->insert(['slug'=>'Pulseras','images_id_frame'=>1,'description'=>'Pulseras','images_id'=>1,'category_id'=>1,'state'=>true,'frame'=>false,'created_by'=> 'SYSTEM','created_at'=> Carbon::now()]);
+		DB::table('type')->insert(['slug'=>'anillos','images_id_frame'=>1,'description'=>'Anillos','images_id'=>1,'category_id'=>1,'state'=>true,'frame'=>false,'created_by'=> 'SYSTEM','created_at'=> Carbon::now()]);
+		DB::table('type')->insert(['slug'=>'aretes','images_id_frame'=>1,'description'=>'Aretes','images_id'=>1,'category_id'=>1,'state'=>true,'frame'=>false,'created_by'=> 'SYSTEM','created_at'=> Carbon::now()]);
+		DB::table('type')->insert(['slug'=>'collares','images_id_frame'=>1,'description'=>'Collares','images_id'=>1,'category_id'=>1,'state'=>true,'frame'=>false,'created_by'=> 'SYSTEM','created_at'=> Carbon::now()]);
+		DB::table('type')->insert(['slug'=>'dijes','images_id_frame'=>1,'description'=>'Dijes','images_id'=>1,'category_id'=>1,'state'=>true,'frame'=>false,'created_by'=> 'SYSTEM','created_at'=> Carbon::now()]);
+		DB::table('type')->insert(['slug'=>'gemelos','images_id_frame'=>1,'description'=>'Gemelos','images_id'=>1,'category_id'=>1,'state'=>true,'frame'=>false,'created_by'=> 'SYSTEM','created_at'=> Carbon::now()]);
+		DB::table('type')->insert(['slug'=>'pendientes','images_id_frame'=>1,'description'=>'Pendientes','images_id'=>1,'category_id'=>1,'state'=>true,'frame'=>false,'created_by'=> 'SYSTEM','created_at'=> Carbon::now()]);
+		DB::table('type')->insert(['slug'=>'pulseras','images_id_frame'=>1,'description'=>'Pulseras','images_id'=>1,'category_id'=>1,'state'=>true,'frame'=>false,'created_by'=> 'SYSTEM','created_at'=> Carbon::now()]);
 
 		DB::table('type')->insert([
 			'images_id_frame'=>1,
