@@ -18,11 +18,12 @@ class AdminController extends Controller{
     	return view('admin.Inicio');
     }
     public function Joyas(){
-    	$ProductJoyas = Product::where('category_id',1)->get();
+    	$ProductJoyas = Product::where('category_id',1)->orderBy('created_at','DESC')->get();
     	return view('admin.joyas', compact('ProductJoyas'));
     }
     public function Novios(){
-    	return view('admin.novios');
+        $ProductNovios = Product::where('category_id',2)->orderBy('created_at','DESC')->get();
+    	return view('admin.novios',compact('ProductNovios'));
     }
     public function MundoAldoAdm(){
     	return view('admin.MundoAldoAdm');

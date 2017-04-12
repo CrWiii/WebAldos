@@ -25,13 +25,12 @@
                                         <div class="form-group">
                                             <label class="col-md-2 control-label input-sm">Nombre:</label>
                                             <div class="col-md-10">
-                                                <input type="text" id="nombre" name="nombre" class="form-control input-sm" placeholder=""></div>
+                                                <input type="text" id="name" name="name" class="form-control input-sm" placeholder=""></div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label input-sm">Categoria:</label>
                                             <div class="col-sm-10">
                                                 <select class="form-control input-sm" id="category_id" name="category_id">
-                                                    <option>Seleccione una Categoria</option>
                                                     @foreach($Category as $C)
                                                     <option value="{{$C->id}}">{{$C->description}}</option>
                                                     @endforeach
@@ -67,7 +66,8 @@
                                             <label class="col-sm-2 control-label input-sm"></label>
                                             <div class="col-sm-10">
                                                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Crear</button>
-                                                <a href="{{url('JoyasAdm')}}" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
+                                                @if($C->id==1)<a href="{{url('JoyasAdm')}}" class="btn btn-inverse waves-effect waves-light">Cancelar</a>@endif
+                                                @if($C->id==2)<a href="{{url('NoviosAdm')}}" class="btn btn-inverse waves-effect waves-light">Cancelar</a>@endif  
                                             </div>
                                         </div>
                                     </form>

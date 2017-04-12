@@ -31,12 +31,14 @@
       
     <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
       <div class="hovercontainer">
-         <a href=""><figure class="responsive img-responsive" data-media240="/img/unnamed.png" data-media961="/img/unnamed.png" alt="Krystle &amp; Coby"></figure></a>
+         <figure class="responsive img-responsive" data-media240="{{$product->Images->route}}" data-media961="{{$product->Images->route}}" alt="Krystle &amp; Coby"></figure>
       </div>
     </div>
     <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6" data-os-animation="fadeInUp" data-os-animation-delay="100ms">
       <div class="hovercontainer">
-         <div style="padding: 30% 10%;text-align: center"><a href=""><h1 style="color: white;font-family: 'Trajan Pro';font-size: 3em;">NOMBRE Y DESCRIPCIÓN</h1></a>
+         <div style="padding: 20% 10%;text-align: center">
+            <h1 style="color: white;font-family: 'Trajan Pro';font-size: 3em;">{{$product->name}}</h1>
+            <p>{{$product->description}}</p>
          <a class="btn btn-primary" href="#" style="color: #676767;">Solicitar Cotización</a>
          </div>
       </div>

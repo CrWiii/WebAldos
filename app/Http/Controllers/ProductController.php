@@ -8,6 +8,7 @@ use App\Category;
 use App\Type;
 use App\Images;
 use Validator;
+use Auth;
 
 class ProductController extends Controller{
 
@@ -19,18 +20,19 @@ class ProductController extends Controller{
 		$Joyas = Product::all()->where('Category_id','2');
         return view('Joyeria');
     }
-    public function create(){
-    	$Category = Category::all()->where('state',true);//->get()->pluck('id','description')
-        $Type = Type::all()->where('state',true);
+    public function create($category_id){
+    	$Category = Category::all()->where('id',$category_id)->where('state',true);
+        $Type = Type::all()->where('category_id',$category_id)->where('state',true);
         return view('admin.product.create', compact('Category','Type'));
     }
     public function store(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'nombre'        => 'required',
+            'name'        => 'required',
             'category_id'   => 'required',
             'type_id'       => 'required',
             'description'   => 'required',
+            'image'         => 'required|max:2048|mimes:jpeg,jpg,png',
             ]);
 
         if ($validator->passes()) {
@@ -39,68 +41,105 @@ class ProductController extends Controller{
             if(!empty($request->image)){
                 $input['image'] = $request->image->getClientOriginalName();
                 $request->image->move(public_path('images'), $input['image']);
-                $imgfu = '/images/'.time().'.'.$request->image->getClientOriginalExtension();
+                $imgfu = '/images/'.$request->image->getClientOriginalName();
 
                 $Images = new Images;
                 $Images->description = $input['image'];
                 $Images->route = $imgfu;
                 $Images->state = 1;
-                $Images->created_by = \Auth::user()->id;
+                $Images->created_by = Auth::user()->id;
                 $Images->save();
             }
 
             $Product = new Product;
+            $Product->name = $request->name;
             $Product->description = $request->description;
             $Product->type_id = $request->type_id;
             $Product->category_id = $request->category_id;
-            $Product->images_id = 1;
+            $Product->images_id = $Images->id;
             $Product->state = 1;
-            $Product->created_by = $request->created_by;
-            $Product->updated_by = $request->updated_by;
+            $Product->created_by = Auth::user()->id;
             $Product->save();
 
-        return redirect('JoyasAdm');
+            if($request->category_id==1){
+                return redirect('JoyasAdm');
+            }
+            if($request->category_id==2){
+                return redirect('NoviosAdm');
+            }
         }
+        // return response()->json(['error'=>$validator->errors()->all()]);
     }
-
 
     public function delete($id){
-        if (\Auth::guest()){
-        }else{
-            $product = Product::destroy($id);
-        }
+        $product = Product::destroy($id);
+            return redirect('JoyasAdm');
+    }
+    public function desactive($id){
+        $Product = Product::findOrFail($id);
+        $Product->state = 0;
+        $Product->update();
+        return redirect('JoyasAdm');
+    }
+    public function active($id){
+        $Product = Product::findOrFail($id);
+        $Product->state = 1;
+        $Product->update();
+        return redirect('JoyasAdm');
     }
     public function edit($id){
-        $Product = News::findOrFail($id);
-        return view('admin.product.edit',compact('Product'));
+        $Product = Product::findOrFail($id);
+        $category_id = $Product->category_id;
+        $type_selected = $Product->type_id;
+        $Category = Category::all()->where('id',$category_id)->where('state',true);
+        $Type = Type::all()->where('category_id',$category_id)->where('state',true);
+        return view('admin.product.edit',compact('Product','Category','Type','type_selected'));
     }
-    public function update(Request $request){
+    public function update($id,Request $request){
         $validator = Validator::make($request->all(), [
-            'title' => 'required',
-            'description' => 'required',
-            //'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
-          ]);
+            'name'        => 'required',
+            'category_id'   => 'required',
+            'type_id'       => 'required',
+            'description'   => 'required',
+            'image'         => 'max:2048|mimes:jpeg,jpg,png',
+        ]);
+
         $imgfu = '';
-        $New = News::findOrFail($request->id);
+        $Product = Product::findOrFail($request->id);
         if ($validator->passes()) {
             $input = $request->all();
             if(!empty($request->image)){
-                $input['image'] = time().'.'.$request->image->getClientOriginalExtension();
-                $request->image->move(public_path('images/blog'), $input['image']);
-                $imgfu = '/images/blog/'.time().'.'.$request->image->getClientOriginalExtension();
-            }else{
-                $imgfu = $New->img;
-            }
-                $Product->title = $request->title;
-                $Product->description = $request->description;
-                $Product->img = $imgfu;
-                $Product->state = 1;
-                $Product->created_by = \Auth::user()->id;
-                $Product->update();
+                $input['image'] = $request->image->getClientOriginalName();
+                $request->image->move(public_path('images'), $input['image']);
+                $imgfu = '/images/'.$request->image->getClientOriginalName();
 
-            //return response()->json(['success'=>'done']);
-            return Redirect('');
+                $Images = new Images;
+                $Images->description = $input['image'];
+                $Images->route = $imgfu;
+                $Images->state = 1;
+                $Images->created_by = Auth::user()->id;
+                $Images->save();
+                $ImgId = $Images->id;
+            }else{
+                $ImgId = $Product->images_id;
+            }
+
+            $Product->name = $request->name;
+            $Product->description = $request->description;
+            $Product->type_id = $request->type_id;
+            $Product->category_id = $request->category_id;
+            $Product->images_id = $ImgId;
+            $Product->state = 1;
+            $Product->created_by = Auth::user()->id;
+            $Product->update();
+
+            if($request->category_id==1){
+                return redirect('JoyasAdm');
+            }
+            if($request->category_id==2){
+                return redirect('NoviosAdm');
+            }
         }
-        //return response()->json(['error'=>$validator->errors()->all()]);
+        // return response()->json(['error'=>$validator->errors()->all()]);
     }
 }

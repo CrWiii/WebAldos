@@ -21,7 +21,7 @@ class CategoryTableSeeder extends Seeder{
 		DB::table('type')->insert(['description'=>'Collares','images_id'=>1,'category_id'=>1,'state'=>true,'created_by'=> 'SYSTEM','updated_by'=> Carbon::now()]);
 		DB::table('type')->insert(['description'=>'Dijes','images_id'=>1,'category_id'=>1,'state'=>true,'created_by'=> 'SYSTEM','updated_by'=> Carbon::now()]);
 		DB::table('type')->insert(['description'=>'Gemelos','images_id'=>1,'category_id'=>1,'state'=>true,'created_by'=> 'SYSTEM','updated_by'=> Carbon::now()]);
-		DB::table('type')->insert(['description'=>'Pedientes','images_id'=>1,'category_id'=>1,'state'=>true,'created_by'=> 'SYSTEM','updated_by'=> Carbon::now()]);
+		DB::table('type')->insert(['description'=>'Pendientes','images_id'=>1,'category_id'=>1,'state'=>true,'created_by'=> 'SYSTEM','updated_by'=> Carbon::now()]);
 		DB::table('type')->insert(['description'=>'Pulseras','images_id'=>1,'category_id'=>1,'state'=>true,'created_by'=> 'SYSTEM','updated_by'=> Carbon::now()]);
 
 		
@@ -29,7 +29,7 @@ class CategoryTableSeeder extends Seeder{
 
 		DB::table('type')->insert(['description'=>'Anillos de compromiso','images_id'=>1,'category_id'=>2,'state'=>true,'created_by'=> 'SYSTEM','updated_by'=> Carbon::now()]);
 		DB::table('type')->insert(['description'=>'Aros de matrimonio','images_id'=>1,'category_id'=>2,'state'=>true,'created_by'=> 'SYSTEM','updated_by'=> Carbon::now()]);
-		DB::table('type')->insert(['description'=>'Más allá de las 4CS','images_id'=>1,'category_id'=>2,'state'=>true,'created_by'=> 'SYSTEM','updated_by'=> Carbon::now()]);
-		DB::table('type')->insert(['description'=>'Colectivo de Novios','images_id'=>1,'category_id'=>2,'state'=>true,'created_by'=> 'SYSTEM','updated_by'=> Carbon::now()]);
+		// DB::table('type')->insert(['description'=>'Más allá de las 4CS','images_id'=>1,'category_id'=>2,'state'=>true,'created_by'=> 'SYSTEM','updated_by'=> Carbon::now()]);
+		// DB::table('type')->insert(['description'=>'Colectivo de Novios','images_id'=>1,'category_id'=>2,'state'=>true,'created_by'=> 'SYSTEM','updated_by'=> Carbon::now()]);
     }
 }

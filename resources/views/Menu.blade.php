@@ -25,6 +25,8 @@
                 <li><a href="{{url('ElMundoDeAldo')}}">EL MUNDO DE ALDO</a></li>
                 <li class="dropdown mega-dropdown"><a href="{{url('Novios')}}" class="dropdown-toggle" data-toggle="dropdown">NOVIOS  <span class="caret"></span></a>
                   <ul class="dropdown-menu mega-dropdown-menu" style="background-color: #e7e5d0">
+                  <div class="col-sm-10">
+                    <div class="col-sm-12">
                     <li class="col-sm-2">
                       <ul>
                         <li>
@@ -35,32 +37,32 @@
                     <li class="col-sm-2">
                       <ul>
                         <li class="dropdown-header">
-                          <span><img src="img/anillo.png" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
-                          <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1.2em;"><a href="">Anillos de Compromiso</a></h5>
+                          <span><img src="{{url('img/anillo.png')}}" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
+                          <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1em;"><a href="">Anillos de Compromiso</a></h5>
                         </li>
                       </ul>
                     </li>
                     <li class="col-sm-2">
                       <ul>
                         <li class="dropdown-header">
-                          <span><img src="img/anillo.png" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
-                          <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1.2em;"><a href=""></a>Aros de Matrimonio</h5>
+                          <span><img src="{{url('img/anillo.png')}}" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
+                          <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1em;"><a href=""></a>Aros de Matrimonio</h5>
                         </li>
                       </ul>
                     </li>
                     <li class="col-sm-2">
                       <ul>
                         <li class="dropdown-header">
-                          <span><img src="img/anillo.png" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
-                          <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1.2em;">Colectivo de novios</h5>
+                          <span><img src="{{url('img/anillo.png')}}" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
+                          <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1em;">Colectivo de novios</h5>
                         </li>
                       </ul>
                     </li>
                     <li class="col-sm-2">
                       <ul>
                         <li class="dropdown-header">
-                          <span><img src="img/anillo.png" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
-                          <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1.2em;">Mas allá de las 4C s</h5>
+                          <span><img src="{{url('img/anillo.png')}}" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
+                          <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1em;">Mas allá de las 4C s</h5>
                         </li>
                       </ul>
                     </li>
@@ -71,24 +73,36 @@
                         </li>
                       </ul>
                     </li>
+                    </div>
+                    </div>
                   </ul>
                 </li>
                 <li class="dropdown mega-dropdown"><a href="{{url('Joyeria')}}" class="dropdown-toggle" data-toggle="dropdown">JOYERIA <span class="caret"></span></a>
                   <ul class="dropdown-menu mega-dropdown-menu" style="background-color: #e7e5d0">
                     <div class="col-sm-10">
                       <div class="col-sm-12">
+                      <?php $f=0;?>
+                      @foreach($Types as $Type)
+                        
+                        <?php $f++;?>
+                        @if($i<5)
+
+
                         <li class="col-sm-2">
                           <ul>
                             <li class="dropdown-header">
-                              <span><img src="img/anillo.png" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
-                              <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1.2em;"><a href="">Anillos</a></h5>
+                              <a href="{{url('Joyeria',array('Type'=>$Type->description))}}"><span><img src="{{url('img/anillo.png')}}" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
+                              <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1.2em;">{{$Type->description}}</h5></a>
                             </li>
                           </ul>
                         </li>
-                        <li class="col-sm-2">
+                        @endif
+                      
+                      @endforeach
+                        <!-- <li class="col-sm-2">
                           <ul>
                             <li class="dropdown-header">
-                              <span><img src="img/anillo.png" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
+                              <span><img src="{{url('img/anillo.png')}}" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
                               <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1.2em;"><a href="">Aretes</a></h5>
                             </li>
                           </ul>
@@ -96,7 +110,7 @@
                         <li class="col-sm-2">
                           <ul>
                             <li class="dropdown-header">
-                              <span><img src="img/anillo.png" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
+                              <span><img src="{{url('img/anillo.png')}}" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
                               <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1.2em;"><a href="">Collares</a></h5>
                             </li>
                           </ul>
@@ -104,7 +118,7 @@
                         <li class="col-sm-2">
                           <ul>
                             <li class="dropdown-header">
-                              <span><img src="img/anillo.png" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
+                              <span><img src="{{url('img/anillo.png')}}" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
                               <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1.2em;"><a href="">Dijes</a></h5>
                             </li>
                           </ul>
@@ -112,7 +126,7 @@
                          <li class="col-sm-2">
                           <ul>
                             <li class="dropdown-header">
-                              <span><img src="img/anillo.png" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
+                              <span><img src="{{url('img/anillo.png')}}" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
                               <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1.2em;"><a href="">Gemelos</a></h5>
                             </li>
                           </ul>
@@ -120,26 +134,26 @@
                          <li class="col-sm-2">
                           <ul>
                             <li class="dropdown-header">
-                              <span><img src="img/anillo.png" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
+                              <span><img src="{{url('img/anillo.png')}}" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
                               <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1.2em;"><a href="">Pendientes</a></h5>
                             </li>
                           </ul>
-                        </li>
+                        </li> -->
                       </div>
                       
                     </div>
-                    <div class="col-sm-2">
+                   <!--  <div class="col-sm-2">
                       <div class="col-sm-12">
                         <li class="col-sm-10">
                           <ul>
                             <li class="dropdown-header">
-                              <span><img src="img/anillo.png" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
+                              <span><img src="{{url('img/anillo.png')}}" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
                               <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 1.2em;"><a href="">Pulseras</a></h5>
                             </li>
                           </ul>
                         </li>
                       </div>
-                    </div>
+                    </div> -->
                     
                     
                   </ul>

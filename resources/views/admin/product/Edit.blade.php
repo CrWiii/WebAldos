@@ -19,44 +19,58 @@
 <!--                             <h3 class="box-title m-b-0">PRODUCT NAME</h3>
                             <p class="text-muted m-b-30 font-13"></p> -->
                             <div class="row">
-                                <div class="col-sm-6 col-xs-12">
-                                    <form class="form-horizontal" role="form">
+                                <div class="col-sm-12 col-xs-12">
+                                    <form class="form-horizontal" role="form" method="POST" action="/ActualizarProducto/{{$Product->id}}" enctype="multipart/form-data">
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="id" value="{{$Product->id}}">
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="state-success">Success</label>
-                                            <div class="col-md-6">
-                                                <input type="text" id="state-success" name="state-success" class="form-control" placeholder="..."> </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-sm-6 col-xs-12">
-                                    <form role="form" class="form-horizontal">
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label" for="example-input-small">Small</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" id="example-input-small" name="example-input-small" class="form-control input-sm" placeholder=".input-sm"> </div>
+                                            <label class="col-md-2 control-label input-sm">Nombre:</label>
+                                            <div class="col-md-10">
+                                                <input type="text" id="name" name="name" class="form-control input-sm" placeholder="" value="{{$Product['name']}}"></div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-3 control-label" for="example-input-normal">Normal</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" id="example-input-normal" name="example-input-normal" class="form-control" placeholder="Normal"> </div>
+                                            <label class="col-sm-2 control-label input-sm">Categoria:</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control input-sm" id="category_id" name="category_id">
+                                                    @foreach($Category as $C)
+                                                    <option value="{{$C->id}}">{{$C->description}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-3 control-label" for="example-input-large">Large</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" id="example-input-large" name="example-input-large" class="form-control input-lg" placeholder=".input-lg"> </div>
+                                            <label class="col-sm-2 control-label input-sm">Tipo:</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control input-sm" id="type_id" name="type_id">
+                                                    <option>Seleccione un Tipo</option>
+                                                    @foreach($Type as $T)
+                                                    <option value="{{$T->id}}" @if($type_selected== $T->id) selected @endif>{{$T->description}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-3 control-label">Grid Sizes</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" placeholder=".col-sm-4"> </div>
+                                            <label class="col-md-2 control-label input-sm">Descrición:</label>
+                                            <div class="col-md-10">
+                                                <textarea class="form-control input-sm" rows="5" id="description" name="description">{{$Product['description']}}</textarea>
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-sm-5 col-sm-offset-3">
-                                                <input type="text" class="form-control" placeholder=".col-sm-5"> </div>
+                                            <label class="col-sm-2 control-label input-sm">Imagen:</label>
+                                            <div class="col-sm-10">
+                                                <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                                    <div class="form-control input-sm" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename">{{$Product->Images->description}}</span></div> <span class="input-group-addon btn btn-default btn-file"> <span class="fileinput-new">Seleccionar Archivo</span> <span class="fileinput-exists">Cambiar</span>
+                                                    <input type="file" name="image" id="image"> </span> <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Quitar</a> </div>
+                                                <center><img src="{{ asset($Product->Images->route) }}" alt="" height="200"></center>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <div class="col-sm-6 col-sm-offset-3">
-                                                <input type="text" class="form-control" placeholder=".col-sm-6"> </div>
+                                         <div class="form-group">
+                                            <label class="col-sm-2 control-label input-sm"></label>
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Guardar</button>
+                                                @if($C->id==1)<a href="{{url('JoyasAdm')}}" class="btn btn-inverse waves-effect waves-light">Cancelar</a>@endif
+                                                @if($C->id==2)<a href="{{url('NoviosAdm')}}" class="btn btn-inverse waves-effect waves-light">Cancelar</a>@endif                                        
+                                            </div>
                                         </div>
                                     </form>
                                 </div>

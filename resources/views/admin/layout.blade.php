@@ -9,16 +9,16 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
     <title>Aldos</title>
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
-    <link href="../plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
-    <link href="../plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
-    <link href="../plugins/bower_components/chartist-js/dist/chartist.min.css" rel="stylesheet">
-    <link href="../plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{url('bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url('/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet">
+    <link href=".{{url('plugins/bower_components/toast-master/css/jquery.toast.css')}}" rel="stylesheet">
+    <link href="{{url('plugins/bower_components/morrisjs/morris.css')}}" rel="stylesheet">
+    <link href="{{url('plugins/bower_components/chartist-js/dist/chartist.min.css')}}" rel="stylesheet">
+    <link href="{{url('plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')}}" rel="stylesheet">
+    <link href="{{url('css/animate.css')}}" rel="stylesheet">
+    <link href="{{url('css/style.css')}}" rel="stylesheet">
 
-    <link href="css/colors/default.css" id="theme" rel="stylesheet">
+    <link href="{{url('css/colors/default.css')}}" id="theme" rel="stylesheet">
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -37,7 +37,7 @@
                 <div class="top-left-part">
                     <a class="logo" href="{{url('admin')}}">
                         <b>
-                        <img src="../plugins/images/admin-logo.png" alt="home" class="dark-logo" /><img src="../plugins/images/admin-logo-dark.png" alt="home" class="light-logo" />
+                        <img src="{{url('plugins/images/admin-logo.png')}}" alt="home" class="dark-logo" /><img src="{{url('plugins/images/admin-logo-dark.png')}}" alt="home" class="light-logo" />
                      </b>
                         <span class="hidden-xs">
                         <!-- <img src="../plugins/images/admin-text.png" alt="home" class="dark-logo" /><img src="../plugins/images/admin-text-dark.png" alt="home" class="light-logo" /> -->
@@ -131,22 +131,23 @@
         </div>
 
     </div>
-    <script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
-    <script src="js/jquery.slimscroll.js"></script>
-    <script src="js/waves.js"></script>
-    <script src="../plugins/bower_components/waypoints/lib/jquery.waypoints.js"></script>
-    <script src="../plugins/bower_components/counterup/jquery.counterup.min.js"></script>
-    <script src="../plugins/bower_components/chartist-js/dist/chartist.min.js"></script>
-    <script src="../plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="../plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
-    <script src="js/custom.min.js"></script>
-    <script src="js/dashboard1.js"></script>
-    <script src="../plugins/bower_components/toast-master/js/jquery.toast.js"></script>
-    <script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
-    <script src="js/custom.min.js"></script>
-    <script src="js/jasny-bootstrap.js"></script>
+    <script src="{{url('plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{url('bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{url('plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js')}}"></script>
+    <script src="{{url('js/jquery.slimscroll.js')}}"></script>
+    <script src="{{url('js/waves.js')}}"></script>
+    <script src="{{url('plugins/bower_components/waypoints/lib/jquery.waypoints.js')}}"></script>
+    <script src="{{url('plugins/bower_components/counterup/jquery.counterup.min.js')}}"></script>
+    <script src="{{url('plugins/bower_components/chartist-js/dist/chartist.min.js')}}"></script>
+    <script src="{{url('plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js')}}"></script>
+    <script src="{{url('plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
+    <script src="{{url('js/custom.min.js')}}"></script>
+    <script src="{{url('js/dashboard1.js')}}"></script>
+    <script src="{{url('plugins/bower_components/toast-master/js/jquery.toast.js')}}"></script>
+    <script src="{{url('plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
+    <script src="{{url('js/custom.min.js')}}"></script>
+    <script src="{{url('js/jasny-bootstrap.js')}}"></script>
+        @yield('script')
     
 </body>
 

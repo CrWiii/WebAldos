@@ -23,8 +23,9 @@ Route::get('Contactenos','HomeController@Contactenos');
 Route::get('Joyeria','HomeController@Joyeria');
 Route::get('Novios','HomeController@Novios');
 Route::get('JoyeriaSub','HomeController@JoyeriaSub');
-Route::get('Producto','HomeController@Producto');
-Route::get('NoviosSub','HomeController@NoviosSub');
+Route::get('Joyeria/{Type}','HomeController@JoyeriaSub');
+Route::get('Producto/{id}','HomeController@Producto');
+Route::get('Novios/{Type}','HomeController@NoviosSub');
 Route::get('ElMundoDeAldoSub','HomeController@ElMundoDeAldoSub');
 // Route::get('','HomeController@');
 // Route::get('','HomeController@');
@@ -38,9 +39,13 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('NoviosAdm', 'AdminController@Novios');
 	Route::get('MundoAldoAdm', 'AdminController@MundoAldoAdm');
 	Route::get('Eventos', 'AdminController@Eventos');
-	Route::get('NuevoProducto','ProductController@create');
+	Route::get('NuevoProducto/{category_id}','ProductController@create');
 	Route::post('storeProducto','ProductController@store');
-	Route::get('EditarProducto', 'ProductController@Edit');
+	Route::get('EditarProducto/{id}', 'ProductController@edit');
+	Route::post('ActualizarProducto/{id}', 'ProductController@update');
+	Route::get('EliminarProducto/{id}','ProductController@delete');
+	Route::get('DesactivarProducto/{id}','ProductController@desactive');
+	Route::get('ActivarProducto/{id}','ProductController@active');
 
 });
 
