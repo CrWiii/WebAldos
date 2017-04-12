@@ -19,11 +19,11 @@ class AdminController extends Controller{
     }
     public function Joyas(){
     	$ProductJoyas = Product::where('category_id',1)->orderBy('created_at','DESC')->get();
-    	return view('admin.joyas', compact('ProductJoyas'));
+    	return view('admin.Joyas', compact('ProductJoyas'));
     }
     public function Novios(){
         $ProductNovios = Product::where('category_id',2)->orderBy('created_at','DESC')->get();
-    	return view('admin.novios',compact('ProductNovios'));
+    	return view('admin.Novios',compact('ProductNovios'));
     }
     public function MundoAldoAdm(){
     	return view('admin.MundoAldoAdm');
