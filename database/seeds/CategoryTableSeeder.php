@@ -12,8 +12,8 @@ class CategoryTableSeeder extends Seeder{
             'created_at' => Carbon::now()
         ]);
 		
-		DB::table('Category')->insert(['description'=>'Joyas', 'state' => 1, 'created_by' => 'SYSTEM', 'created_by' => Carbon::now()]);		
-		DB::table('Category')->insert(['description'=>'Novios', 'state' => 1, 'created_by' => 'SYSTEM', 'created_by' => Carbon::now()]);
+		DB::table('category')->insert(['description'=>'Joyas', 'state' => 1, 'created_by' => 'SYSTEM', 'created_by' => Carbon::now()]);		
+		DB::table('category')->insert(['description'=>'Novios', 'state' => 1, 'created_by' => 'SYSTEM', 'created_by' => Carbon::now()]);
 		DB::table('images')->insert(['description'=>'test']);
 
 		DB::table('type')->insert(['description'=>'Anillos','images_id'=>1,'category_id'=>1,'state'=>true,'created_by'=> 'SYSTEM','updated_by'=> Carbon::now()]);
