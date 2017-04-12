@@ -41,7 +41,7 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('NoviosAdm', 'AdminController@Novios');
 	Route::get('MundoAldoAdm', 'AdminController@MundoAldoAdm');
 	Route::get('Eventos', 'AdminController@Eventos');
-	
+
 	Route::get('NuevoProducto/{category_id}','ProductController@create');
 	Route::post('storeProducto','ProductController@store');
 	Route::get('EditarProducto/{id}', 'ProductController@edit');
@@ -50,6 +50,13 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('DesactivarProducto/{id}','ProductController@desactive');
 	Route::get('ActivarProducto/{id}','ProductController@active');
 
+	// Route::get('NuevoProducto/{category_id}','ProductController@create');
+	// Route::post('storeProducto','ProductController@store');
+	// Route::get('EditarProducto/{id}', 'ProductController@edit');
+	// Route::post('ActualizarProducto/{id}', 'ProductController@update');
+	// Route::get('EliminarProducto/{id}','ProductController@delete');
+	// Route::get('DesactivarProducto/{id}','ProductController@desactive');
+	// Route::get('ActivarProducto/{id}','ProductController@active'); 
 });
 
 // Auth::routes();

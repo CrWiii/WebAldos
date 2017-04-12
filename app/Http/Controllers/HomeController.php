@@ -58,7 +58,7 @@ class HomeController extends Controller{
 
     	$Type_selected = Type::where('slug',$Type)->pluck('id');
     	$Type_selected = (int)$Type_selected[0];
-    	$Products = Product::where('category_id',1)->where('type_id',$Type_selected)->paginate(15);
+    	$Products = Product::where('category_id',1)->where('type_id',$Type_selected)->where('state',true)->paginate(15);
         return view('JoyeriaSub',compact('Products','TypesJoyas','TypesNovios','Type_selected'));
     }
     public function NoviosSub($Type){
@@ -66,7 +66,7 @@ class HomeController extends Controller{
         $TypesNovios = Type::where('category_id',2)->get();
         $Type_selected = Type::where('slug',$Type)->pluck('id');
         $Type_selected = (int)$Type_selected[0];
-        $Products = Product::where('category_id',2)->where('type_id',$Type_selected)->paginate(15);
+        $Products = Product::where('category_id',2)->where('type_id',$Type_selected)->where('state',true)->paginate(15);
         return view('NoviosSub',compact('Products','TypesJoyas','TypesNovios','Type_selected'));
     }
     public function Producto($id){
