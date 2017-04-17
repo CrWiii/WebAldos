@@ -3,7 +3,7 @@
 @section('content')
 
 <style type="text/css">
-  .asf > li > a {color: #676767 !important;font-size: 1em;line-height: 50px;}
+  .asf > li > a {color: #676767 !important;font-size: 0.8em;line-height: 50px;}
   
   .nav > li > a.active {margin-bottom:-3px;border-bottom: 2px solid #ded5cc !important;}
   .asf{border-bottom: 1px solid #a89797 !important;}
