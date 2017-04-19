@@ -20,7 +20,11 @@
 <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 </head>
 <!--https://codyhouse.co/gem/mega-dropdown/-->
-
+<style type="text/css">
+                      img{
+                        max-width: 100% !important;
+                      }
+                    </style>
 <body class="video-loaded">
 
 
@@ -45,20 +49,31 @@
 
   <section id="gridContent" class="grid whitebg">
    <div class="container-fluid" style="padding: 0px !important; margin: 0px !important;">
-      <!--<div class="row" style="background: #ded5cc !important">
-         <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-            <div class="hovercontainer hovcont"> 
-              <p class="hovcontp" style="padding: 31.5% 30%;"><a href="{{url('evento')}}" style="color: #f9f9f9 !important">EVENTO 1</a></p>
-           </div>
-          </div>
-         <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-            <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-              <a href="{{url('evento')}}"><p style="padding: 36.5% 35%;">IMAGEN</p></a>
+      <div class="row" style="background: #ded5cc !important">
+         <div class="os-animation col-xs-12 col-sm-12 col-md-12 col-lg-12 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
+            <div class="hovercontainer"> 
+              <!-- <p class="hovcontp" style="padding: 31.5% 30%;"><a href="{{url('evento')}}" style="color: #f9f9f9 !important"></a></p> -->
+              <div class="col-sm-12" style="padding: 5% 5%">
+                <div class="col-sm-6">
+                  <div class="col-sm-4"><img src="images/1491950582.png"></div>
+                  <div class="col-sm-2" style="padding-left: 5%">
+                    <p class="titu1" style="font-family: 'TrajanProBold';">SEDE 1</p>
+                    <a href=""><p style="font-family: 'TrajanProBold';">Address</p></a>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="col-sm-4"><img src="images/1491950582.png"></div>
+                  <div class="col-sm-2" style="padding-left: 5%">
+                    <p class="titu1" style="font-family: 'TrajanProBold';">SEDE 2</p>
+                    <a href=""><p style="font-family: 'TrajanProBold';">Address</p></a>
+                  </div>
+                </div>
+              </div>
            </div>
           </div>
         </div>
 
-        <div class="row" style="background: #ded5cc !important">
+<!--         <div class="row" style="background: #ded5cc !important">
           <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
             <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
               <a href="{{url('evento')}}"><p style="padding: 36.5% 35%;">IMAGEN</p></a>
@@ -69,8 +84,8 @@
               <p class="hovcontp" style="padding: 31.5% 30%;"><a href="{{url('evento')}}" style="color: #f9f9f9 !important">EVENTO 2</a></p>
            </div>
           </div>
-        </div>
-
+        </div> -->
+<!-- 
       <div class="row" style="background: #ded5cc !important">
          <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
             <div class="hovercontainer hovcont"> 
@@ -82,7 +97,7 @@
               <a href="{{url('evento')}}"><p style="padding: 36.5% 35%;">IMAGEN</p></a>
            </div>
           </div>
-      </div>-->
+      </div> -->
         
     </div>
 </section>

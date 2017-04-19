@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+
 <section id="weddingPlanner" class="main-content jumbotron">
        <div id="mainCarousel" class="carousel slide" data-ride="carousel" data-interval="8000">  
              <div class="carousel-inner">
@@ -55,10 +56,11 @@
                 <li data-target="#mainCarousel" data-slide-to="2" class=""></li>
                 <li data-target="#mainCarousel" data-slide-to="3" class="active"></li>
             </ol>
-            <a class="left carousel-control" href="#mainCarousel" role="button" data-slide="prev"><span class="icon-chevron-thin-left"></span></a>
+            <a class="left carousel-control" style="display: block !important" href="#mainCarousel" role="button" data-slide="prev"><span class="icon-chevron-thin-left"></span></a>
             <a class="right carousel-control" href="#mainCarousel" role="button" data-slide="next"><span class="icon-chevron-thin-right"></span></a>
       </div>
 </section>
+
 <section id="gridContent" class="grid whitebg">
    <div class="container-fluid" style="padding: 0px !important; margin: 0px !important;">
       <div class="row" style="background: #ded5cc !important">

@@ -66,7 +66,7 @@
             <h1 style="color: white;font-family: 'Trajan Pro';font-size: 3em;">{{$product->name}}</h1>
             <p>{{$product->description}}</p>
          <!-- <button class="btn btn-primary" id="CotizarBtn" style="color: #676767;">Solicitar Cotización</button> -->
-         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#CotizarModal">Solicitar Cotización</button>
+         <button type="button" class="btn btn-primary btn-lg" id="CotizarModal">Solicitar Cotización</button>
          </div>
       </div>
     </div>
@@ -78,9 +78,209 @@
     </div>
 </section>
 
-@include('footer')
 
-<div class="modal fade" id="CotizarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+@include('footer')
+<style type="text/css">
+  #form-main{
+  width:100%;
+  float:left;
+  padding-top:0px;
+}
+
+#form-div {
+  background-color:rgb(214, 198, 187);
+  padding-left:35px;
+  padding-right:35px;
+  padding-top:35px;
+  padding-bottom:50px;
+  width: 450px;
+  float: left;
+  left: 50%;
+  position: absolute;
+  margin-top:30px;
+  margin-left: -260px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  top: 250px;
+  border: 2px solid #342825;
+}
+
+.feedback-input {
+  color:#3c3c3c;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 0;
+  line-height: 22px;
+  background-color: #fbfbfb;
+  padding: 13px 13px 13px 54px;
+  margin-bottom: 10px;
+  width:100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 3px solid rgba(0,0,0,0);
+}
+
+.feedback-input:focus{
+  background: #fff;
+  box-shadow: 0;
+  border: 3px solid #342825;
+  color: #3498db;
+  outline: none;
+  padding: 13px 13px 13px 54px;
+}
+
+.focused{
+  color:#30aed6;
+  border:#30aed6 solid 3px;
+}
+
+/* Icons ---------------------------------- */
+#name{
+  background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+#name:focus{
+  background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+  background-size: 30px 30px;
+  background-position: 8px 5px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+#email{
+  background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+#celphone{
+  background-image: url(http://inspiredaustin.com/upload/1024x0-cell-phone-number-svg-icon-ee-710619.png);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+
+#email:focus{
+  background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+#comment{
+  background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+  background-color:white;
+}
+
+#button-blue{
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  float:left;
+  width: 100%;
+  border: #fbfbfb solid 4px;
+  cursor:pointer;
+  background-color: #342825;
+  color:white;
+  font-size:24px;
+/*  padding-top:22px;
+  padding-bottom:22px;*/
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+
+/*#button-blue:hover{
+  background-color: rgba(0,0,0,0);
+  color: #0493bd;
+}*/
+  
+/*.submit:hover {
+  color: #3498db;
+}*/
+  
+/*.ease {
+  width: 0px;
+  height: 74px;
+  background-color: #fbfbfb;
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  -o-transition: .3s ease;
+  -ms-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.submit:hover .ease{
+  width:100%;
+  background-color:white;
+}
+*/
+@media only screen and (max-width: 580px) {
+  #form-div{
+    left: 3%;
+    margin-right: 3%;
+    width: 88%;
+    margin-left: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+</style>
+<div id="form-main" style="display: none">
+  <div id="form-div">
+    <form class="form" id="form1">
+      
+      <p class="name">
+        <input name="first_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Nombre" id="name" />
+      </p>
+
+      <p class="name">
+        <input name="last_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Apellido" id="name" />
+      </p>
+      
+      <p class="email">
+        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Correo" />
+      </p>
+
+      <p class="celphone">
+        <input name="celphone" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Telefono" id="celphone" />
+      </p>
+      
+<!--       <p class="text">
+        <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
+      </p> -->
+      
+      
+      <div class="submit">
+        <input type="submit" value="SEND" id="button-blue"/>
+        <div class="ease"></div>
+      </div>
+    </form>
+  </div>
+
+<!-- <div class="modal fade" id="CotizarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -116,7 +316,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
@@ -132,36 +332,37 @@
 
 <script type="text/javascript">
 
-$(document).ready(function() {
-  $(".modal").on("hidden.bs.modal", function() {
-    $(".modal-body1").html("Where did he go?!?!?!");
-  });
-});
+// $(document).ready(function() {
+//   $(".modal").on("hidden.bs.modal", function() {
+//     $(".modal-body1").html("Where did he go?!?!?!");
+//   });
+// });
 
-    // $(document).on('click','#CotizarBtn',function(){
-    //     // var producto_id_selected = $(this).attr('data-id');
-    //     // var link = '{{url('EliminarProducto')}}' + '/' + producto_id_selected;
-    //     // $('#ElimiarBtn').attr('data-id', producto_id_selected);
-    //     // $('#ElimiarBtn').attr('href', link);
-    //     $('#CotizarModa2l').modal();
-    // });
+    $(document).on('click','#CotizarModal',function(){
+        // var producto_id_selected = $(this).attr('data-id');
+        // var link = '{{url('EliminarProducto')}}' + '/' + producto_id_selected;
+        // $('#ElimiarBtn').attr('data-id', producto_id_selected);
+        // $('#ElimiarBtn').attr('href', link);
+        // $('#CotizarModa2l').modal();
+        $('#form-main').show('slow');
+    });
 
 </script>
 
 <script>
 
-$(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
-            $(this).toggleClass('open');       
-        }
-    );
-});
+// $(document).ready(function(){
+//     $(".dropdown").hover(            
+//         function() {
+//             $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+//             $(this).toggleClass('open');        
+//         },
+//         function() {
+//             $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+//             $(this).toggleClass('open');       
+//         }
+//     );
+// });
 
 
 $(function(){

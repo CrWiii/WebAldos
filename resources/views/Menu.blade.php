@@ -1,12 +1,4 @@
-<style type="text/css">
-  .dropdown-toggle{
-    padding-bottom: 0px !important;
-  }
-  .navbar-nav > li > a {
-    padding-bottom: 0px !important;
-  }
 
-</style>
 <nav class="navbar navbar-fixed-top" style="padding-bottom: 0px !important">
       <div class="container">
          <div class="navbar-header">

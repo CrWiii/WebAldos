@@ -21,11 +21,13 @@
 </head>
 <!--https://codyhouse.co/gem/mega-dropdown/-->
 
+
+
 <body class="video-loaded">
-
-
 @include('Menu')
-
+<div id="loaderHolder" style="display: none;">
+  <div class="loader"></div>
+</div>
 
 @yield('content')
 
@@ -33,6 +35,7 @@
 
 
 @include('footer')
+</body>
 
 <div class="video-wrap">
    <div class="video-inner">
