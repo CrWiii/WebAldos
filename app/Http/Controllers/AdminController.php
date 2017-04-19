@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-use App\Event;
+use App\Eventt;
 
 class AdminController extends Controller{
 
@@ -30,7 +30,7 @@ class AdminController extends Controller{
     	return view('admin.MundoAldoAdm');
     }
     public function Eventos(){
-        $Events = Event::where('state',true)->orderBY('created_at','DESC')->get();
+        $Events = Eventt::where('state',true)->orderBY('created_at','DESC')->get();
     	return view('admin.Eventos',compact('Events'));
     }
 }

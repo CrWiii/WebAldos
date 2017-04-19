@@ -52,10 +52,8 @@
                                             <td>{{$Event->id}}</td>
                                             <td>{{$Event->description}}</td>
                                             <td class="txt-oflo">{{str_limit($Event->content,30)}}</td>
-                                            <td>{{$Event->Images->description}}</td>
-                                            <td> <img src="{{ asset($Event->Images->route) }}" alt="" height="50"></td>
+                                            
                                             <td>@if($Event->state==1)<span class="label label-success label-rouded">ACTIVO</span> @else <span class="label label-danger label-rouded">INACTIVO</span> @endif </td>
-                                            <td class="txt-oflo">@if($Event->state==1)<span class="text-success">{{$Event->Type->description}}</span> @else <span class="text-danger">{{$Event->Type->description}}</span>@endif</td>
                                             <td>{{  date('d/m/Y', strtotime($Event->created_at)) }}</td>
                                             <td class="text-nowrap">
                                                 <a href="{{URL::to('EditarEvento',array('id'=>$Event->id))}}" data-toggle="tooltip" data-original-title="Editar"> <i class="fa fa-pencil text-inverse m-r-10"></i></a>

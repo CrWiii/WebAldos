@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Eventt;
+use App\Images;
+use Validator;
+use Auth;
+use Redirect;
+use Session;
+use Carbon\Carbon;
 
 class EventController extends Controller{
 
@@ -13,46 +20,78 @@ class EventController extends Controller{
     	return view('admin.event.create');
     }
     public function store(Request $request){
-        dd($request);
+
+        
     	$validator = Validator::make($request->all(), [
             'description'   => 'required',
             'content'   	=> 'required',
-            'image'         => 'required|max:2048|mimes:jpeg,jpg,png',
+            // 'image'         => 'required|max:2048|mimes:jpeg,jpg,png',
             ]);
 
         if ($validator->passes()) {
-            $input = $request->all();
-            
-            if(!empty($request->image)){
-                $input['image'] = $request->image->getClientOriginalName();
-                $request->image->move(public_path('images'), $input['image']);
-                $imgfu = '/images/'.$request->image->getClientOriginalName();
+
+            $Eventt = new Eventt;
+            $Eventt->description = $request->description;
+            $Eventt->content = $request->content;
+            $Eventt->state = 1;
+            $Eventt->created_by = Auth::user()->id;
+            $Eventt->updated_by = Auth::user()->id;
+            $Eventt->save();
+
+            $event_id = $Eventt->id;
+        }
+        $files = $request->images;
+        $file_count = count($files);
+        $uploadcount = 0;
+        foreach($files as $file) {
+            $rules = array('file' => 'required|mimes:png,gif,jpeg'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
+            $validator = Validator::make(array('file'=> $file), $rules);
+            if($validator->passes()){
+                $destinationPath = 'images';
+                $filename = $file->getClientOriginalName();
+                $upload_success = $file->move($destinationPath, $filename);
+                $uploadcount ++;
+
+                // $input['image'] = $request->image->getClientOriginalName();
+                // $request->image->move(public_path('images'), $input['image']);
+                // $imgfu = '/images/'.$request->image->getClientOriginalName();
 
                 $Images = new Images;
-                $Images->description = $input['image'];
-                $Images->route = $imgfu;
+                $Images->description = $filename;
+                $Images->route = '/images/'.$filename;
                 $Images->state = 1;
                 $Images->created_by = Auth::user()->id;
                 $Images->save();
-            }
+                $img_id = $Images->id;
+                $Eventt = Eventt::find($event_id);
+                $Eventt->Images()->attach([$img_id => ['state'=>1, 'created_by'=>Auth::user()->id,'updated_by'=>Auth::user()->id,'created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]]);
+                // 
+                //create a new signature
+                // $signature = new Signature($values);
+                // //save the new signature and attach it to the user
+                // $user = User::find($id)->signatures()->save($signature);
+                // // The opposite is possible too:
 
-            $Product = new Product;
-            $Product->name = $request->name;
-            $Product->description = $request->description;
-            $Product->type_id = $request->type_id;
-            $Product->category_id = $request->category_id;
-            $Product->images_id = $Images->id;
-            $Product->state = 1;
-            $Product->created_by = Auth::user()->id;
-            $Product->save();
+                // $user = User::find($user_id);
+                // $signature = Signature::create($values)->users()->save($user);
+                // // Alternatively if you have an existing signature you should do:
 
-            if($request->category_id==1){
-                return redirect('JoyasAdm');
-            }
-            if($request->category_id==2){
-                return redirect('NoviosAdm');
+                // $user = User::find($id);
+                // $user->signature()->attach($signature->id);
             }
         }
+        if($uploadcount == $file_count){
+            // Session::flash('success', 'Upload successfully'); 
+            return Redirect::to('Eventos');
+        } 
+        else{
+            return Redirect()->back()->withInput()->withErrors($validator);
+        }
+    }
 
+    public function edit($id){
+        $Eventt = Eventt::findOrFail($id);
+        return view('cc',compact('Eventt'));
     }
 }
+
