@@ -203,7 +203,7 @@ input:focus, textarea:focus {
   background-color: #342825;
   color:white;
   font-size:24px;
-/*  padding-top:22px;
+/*  padding-top:22px;s
   padding-bottom:22px;*/
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
