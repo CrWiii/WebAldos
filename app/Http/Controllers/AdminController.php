@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Eventt;
 use App\Marcket;
+use App\Question;
 
 class AdminController extends Controller{
 
@@ -24,8 +25,9 @@ class AdminController extends Controller{
     	return view('admin.Joyas', compact('ProductJoyas'));
     }
     public function Novios(){
+        $Questions = Question::paginate(15);
         $ProductNovios = Product::where('category_id',2)->orderBy('created_at','DESC')->paginate(15);
-    	return view('admin.Novios',compact('ProductNovios'));
+    	return view('admin.Novios',compact('ProductNovios','Questions'));
     }
     public function MundoAldoAdm(){
     	return view('admin.MundoAldoAdm');

@@ -65,7 +65,7 @@
                                                                 <td class="txt-oflo">@if($PN->state==1)<span class="text-success">{{$PN->Type->description}}</span> @else <span class="text-danger">{{$PN->Type->description}}</span>@endif</td>
                                                                 <td>{{  date('d/m/Y', strtotime($PN->created_at)) }}</td>
                                                                 <td class="text-nowrap">
-                                                                    <a href="#" data-toggle="tooltip" data-original-title="Editar" data-id="{{$PN->id}}"> <i class="fa fa-pencil text-inverse m-r-10"></i></a>
+                                                                    <a href="{{URL::to('EditarProducto',array('id'=>$PN->id))}}" data-toggle="tooltip" data-original-title="Editar" data-id="{{$PN->id}}"> <i class="fa fa-pencil text-inverse m-r-10"></i></a>
                                                                     @if($PN->state==1) <a href="{{URL::to('DesactivarProducto',array('id'=>$PN->id))}}" data-toggle="tooltip" data-original-title="Desactivar"> <i class="fa fa-circle-o text-inverse m-r-10"></i></a>
                                                                     @else <a href="{{URL::to('ActivarProducto',array('id'=>$PN->id))}}" data-toggle="tooltip" data-original-title="Activar"> <i class="fa fa-circle text-inverse m-r-10"></i></a>
                                                                     @endif
@@ -87,7 +87,7 @@
                                                 <h3 class="box-title">Lista de Preguntas</h3>
                                                 <div class="row sales-report">
                                                     <div class="col-md-6 col-sm-6 col-xs-6">
-                                                        <a href="{{url('NuevoPregunta')}}" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
+                                                        <a href="{{url('NuevaPregunta')}}" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
 
                                                     </div>
                                                     <div class="col-md-6 col-sm-6 col-xs-6 ">
@@ -101,12 +101,27 @@
                                                                 <th>PREGUNTA</th>
                                                                 <th>RESPUESTA</th>
                                                                 <th>ESTADO</th>
-                                                                <th>TIPO</th>
                                                                 <th>FECHA CREACIÓN</th>
                                                                 <th>ACCIÓN</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            @foreach($Questions as $Question)
+                                                                <tr>
+                                                                    <td>{{$Question->id}}</td>
+                                                                    <td>{{$Question->question}}</td>
+                                                                    <td class="txt-oflo">{{str_limit($Question->answer,30)}}</td>
+                                                                    <td>@if($Question->state==1)<span class="label label-success label-rouded">ACTIVO</span> @else <span class="label label-danger label-rouded">INACTIVO</span> @endif </td>
+                                                                    <td>{{  date('d/m/Y', strtotime($Question->created_at)) }}</td>
+                                                                    <td class="text-nowrap">
+                                                                        <a href="{{URL::to('EditarPregunta',array('id'=>$Question->id))}}" data-toggle="tooltip" data-original-title="Editar" data-id="{{$Question->id}}"> <i class="fa fa-pencil text-inverse m-r-10"></i></a>
+                                                                        @if($Question->state==1) <a href="{{URL::to('DesactivarPregunta',array('id'=>$Question->id))}}" data-toggle="tooltip" data-original-title="Desactivar"> <i class="fa fa-circle-o text-inverse m-r-10"></i></a>
+                                                                        @else <a href="{{URL::to('ActivarPregunta',array('id'=>$Question->id))}}" data-toggle="tooltip" data-original-title="Activar"> <i class="fa fa-circle text-inverse m-r-10"></i></a>
+                                                                        @endif
+                                                                        <a data-toggle="tooltip" data-original-title="Eliminar" data-id="{{$Question->id}}" id="EliminarPregunta"> <i class="fa fa-close text-danger"></i> </a>
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -156,7 +171,23 @@
     </div>
 </div>
 
-            <!-- EliminarProducto -->
+<div class="modal fade" id="modalEliminarPregunta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+        <div class="modal-body">
+            <h4>¿Está seguro que desea Eliminar la pregunta?</h4>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Close</button>
+            <a class="btn btn-danger" id="ElimiarPreguntaBtn" data-id="" href="">Elimiar</a>
+        </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 
 @section('script')
@@ -169,8 +200,14 @@
         $('#ElimiarBtn').attr('href', link);
         $('#modalEliminarProducto').modal();
     });
+    $(document).on('click','#EliminarPregunta',function(){
+        var pregunta_id_selected = $(this).attr('data-id');
+        var link = '{{url('EliminarPregunta')}}' + '/' + pregunta_id_selected;
+        $('#ElimiarPreguntaBtn').attr('data-id', pregunta_id_selected);
+        $('#ElimiarPreguntaBtn').attr('href', link);
+        $('#modalEliminarPregunta').modal();
+    });
 
-DesactivarProducto
 </script>
 
 @endsection

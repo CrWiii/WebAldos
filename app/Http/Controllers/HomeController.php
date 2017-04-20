@@ -7,6 +7,7 @@ use App\Product;
 use App\Type;
 use App\Eventt;
 use App\Marcket;
+use App\Question;
 class HomeController extends Controller{
 
     // public function __construct(){
@@ -72,7 +73,8 @@ class HomeController extends Controller{
         $Type_selected = Type::where('slug',$Type)->pluck('id');
         $Type_selected = (int)$Type_selected[0];
         $Products = Product::where('category_id',2)->where('type_id',$Type_selected)->where('state',true)->paginate(15);
-        return view('NoviosSub',compact('Products','TypesJoyas','TypesNovios','Type_selected'));
+        $Questions = Question::where('state',true)->get();
+        return view('NoviosSub',compact('Products','TypesJoyas','TypesNovios','Type_selected','Questions'));
     }
     public function Producto($id){
     	$TypesJoyas = Type::where('category_id',1)->get();

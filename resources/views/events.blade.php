@@ -72,33 +72,6 @@
         @endif
       <?php $i++; ?>
       @endforeach
-
-<!--       <div class="row" style="background: #ded5cc !important">
-        <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-          <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-              <a href="{{url('evento')}}"><p style="padding: 36.5% 35%;">IMAGEN</p></a>
-           </div>
-          </div>
-         <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-            <div class="hovercontainer" style="background: #ded5cc;text-align: center;margin: 0px !important;">
-              <p class="hovcontp" style="padding: 31.5% 30%;"><a href="{{url('evento')}}" style="color: #f9f9f9 !important">EVENTO 2</a></p>
-            </div>
-        </div>
-      </div>
- -->
-<!--       <div class="row" style="background: #ded5cc !important">
-         <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-            <div class="hovercontainer hovcont"> 
-              <p class="hovcontp" style="padding: 31.5% 30%;"><a href="{{url('evento')}}" style="color: #f9f9f9 !important">EVENTO 3</a> </p>
-           </div>
-          </div>
-         <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-            <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-              <a href="{{url('evento')}}"><p style="padding: 36.5% 35%;">IMAGEN</p></a>
-           </div>
-          </div>
-      </div> -->
-        
     </div>
 </section>
 @endsection

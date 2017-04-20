@@ -67,4 +67,70 @@
 <div class="" style="background-color: #ded5cc;text-align: center">
 {!! $Products->links() !!}    
 </div>
+
+
+<style type="text/css">
+  .subhover{
+    color: white;
+    font-family: 'Trajan Pro';
+    font-size: 3em;margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .subhover2{
+    font-family: 'Trajan Pro';
+    font-size: 1em;margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+</style>
+<section id="gridContent" class="grid whitebg">
+   <div class="container-fluid" style="padding: 0px !important; margin: 0px !important;">
+    <?php $i=2;?>
+      @foreach($Questions as $Question)
+        @if($i%2==0)
+          <div class="row" style="background: #ded5cc !important">
+             <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
+                <div class="hovercontainer hovcont" style="height: 550px;"> 
+                  <div class="subhover">
+                    <p style="color: #f9f9f9 !important">{{$Question->question}}</p>
+                  </div>
+               </div>
+              </div>
+             <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
+                <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;height: 550px;">
+                  <div class="subhover2">
+                    <p>{{$Question->answer}}</p>
+                  </div>
+               </div>
+              </div>
+          </div>
+        @else
+          <div class="row" style="background: #ded5cc !important">
+            <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
+              <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;height: 550px;">
+                <div class="subhover2">
+                  <p>{{$Question->answer}}</p>
+                </div>
+               </div>
+              </div>
+             <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
+                <div class="hovercontainer hovcont" style="height: 550px;"> 
+                  <div class="subhover">
+                    <p style="color: #f9f9f9 !important">{{$Question->question}}</p>
+                  </div>
+               </div>
+              </div>
+            </div>
+          </div>
+        @endif
+      <?php $i++; ?>
+      @endforeach
+    </div>
+</section>
 @endsection
