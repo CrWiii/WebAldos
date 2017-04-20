@@ -17,7 +17,6 @@
                         <div class="white-box">
                             <!-- <h3 class="box-title m-b-0"></h3>
                             <p class="text-muted m-b-40"></p> -->
-                            <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class=""><a href="#PRODUCTOS" aria-controls="PRODUCTOS" role="tab" data-toggle="tab" aria-expanded="true"><span>LISTA DE PRODUCTOS > NOVIOS</span></a></li>
                                 <li role="presentation" class="active"><a href="#PREGUNTAS_FRECUENTES" aria-controls="PREGUNTAS_FRECUENTES" role="tab" data-toggle="tab" aria-expanded="false"><span>PREGUNTAS FRECUENTES</span> </a></li>

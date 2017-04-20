@@ -70,13 +70,21 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('DesactivarTienda/{id}','MarcketController@desactive');
 	Route::get('ActivarTienda/{id}','MarcketController@active'); 
 
+	Route::get('NuevaPregunta','QuestionController@create');
+	Route::post('storePregunta','QuestionController@store');
+	Route::get('EditarPregunta/{id}', 'QuestionController@edit');
+	Route::post('ActualizarPregunta/{id}', 'QuestionController@update');
+	Route::get('EliminarPregunta/{id}','QuestionController@delete');
+	Route::get('DesactivarPregunta/{id}','QuestionController@desactive');
+	Route::get('ActivarPregunta/{id}','QuestionController@active'); 
+
 	Route::get('NuevoFrame','FrameController@create');
-	// Route::post('storeTienda','MarcketController@store');
-	// Route::get('EditarTienda/{id}', 'MarcketController@edit');
-	// Route::post('ActualizarTienda/{id}', 'MarcketController@update');
-	// Route::get('EliminarTienda/{id}','MarcketController@delete');
-	// Route::get('DesactivarTienda/{id}','MarcketController@desactive');
-	// Route::get('ActivarTienda/{id}','MarcketController@active'); 
+	// Route::post('storeFrame','FrameController@store');
+	// Route::get('EditarFrame/{id}', 'FrameController@edit');
+	// Route::post('ActualizarFrame/{id}', 'FrameController@update');
+	// Route::get('EliminarFrame/{id}','FrameController@delete');
+	// Route::get('DesactivarFrame/{id}','FrameController@desactive');
+	// Route::get('ActivarFrame/{id}','FrameController@active'); 
 });
 
 // Auth::routes();
