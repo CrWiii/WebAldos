@@ -3,7 +3,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Marcket extends Model{   
-	protected $table = 'marckets';
+	protected $table = 'Marckets';
     protected $fillable = ['description','address','images_id','state','created_by','updated_by'];
 
     public function Images(){
