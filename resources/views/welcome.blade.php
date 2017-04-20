@@ -69,7 +69,7 @@
               <p class="hovcontp">NOVIOS</p>
               <p class="hovcontps">Cuenta el mito que del dedo anular sale una vena que va hasta el corazón, vena amoris o vena del amor es la conexión entre aquellos que se prometen amor y respeto </p>
               <h1 class="hovconth">Prometo amarte</h1>
-              <p class="hovcontpl">Ver la colección completa</p>
+              <p class="hovcontpl"><a href="{{url('NoviosSub')}} ">Ver la colección completa</a></p>
            </div>
           </div>
          <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
