@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Type;
+use App\Eventt;
+use App\Marcket;
 class HomeController extends Controller{
 
     // public function __construct(){
@@ -12,19 +14,21 @@ class HomeController extends Controller{
     // }
 
     public function home(){
-    	$TypesJoyas = Type::where('category_id',1)->get();
+    	$TypesJoyas = Type::where('category_id',1)->orderBy('updated_at','DESC')->take(3)->get();
         $TypesNovios = Type::where('category_id',2)->get();
         return view('welcome',compact('TypesJoyas','TypesNovios'));
     }
     public function events(){
+        $Eventts = Eventt::where('state',true)->get();
     	$TypesJoyas = Type::where('category_id',1)->get();
         $TypesNovios = Type::where('category_id',2)->get();
-        return view('events',compact('TypesJoyas','TypesNovios'));
+        return view('events',compact('TypesJoyas','TypesNovios','Eventts'));
     }
-    public function event(){
+    public function event($id){
+        $Eventt = Eventt::findOrFail($id);
     	$TypesJoyas = Type::where('category_id',1)->get();
         $TypesNovios = Type::where('category_id',2)->get();
-        return view('event',compact('TypesJoyas','TypesNovios'));
+        return view('event',compact('TypesJoyas','TypesNovios','Eventt'));
     }
     public function ElMundoDeAldo(){
     	$TypesJoyas = Type::where('category_id',1)->get();
@@ -37,9 +41,10 @@ class HomeController extends Controller{
         return view('PatekPhilippe',compact('TypesJoyas','TypesNovios'));
     }
     public function Contactenos(){
+        $Marckets = Marcket::where('state',true)->orderBy('created_at','DESC')->get();
     	$TypesJoyas = Type::where('category_id',1)->get();
         $TypesNovios = Type::where('category_id',2)->get();
-        return view('Contactenos',compact('TypesJoyas','TypesNovios'));
+        return view('Contactenos',compact('TypesJoyas','TypesNovios','Marckets'));
     }
     public function Joyeria(){
     	$TypesJoyas = Type::where('category_id',1)->get();

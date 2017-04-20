@@ -13,4 +13,7 @@ class Images extends Model{
     public function Events(){
 		return $this->belongsToMany(Event::class,'event_images','event_id','images_id');
 	}
+	public function Marcket(){
+		return $this->belongsTo(Marcket::class);
+	}
 }

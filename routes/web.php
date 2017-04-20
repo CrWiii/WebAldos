@@ -18,7 +18,7 @@
 
 Route::get('/','HomeController@home');
 Route::get('eventos','HomeController@events');
-Route::get('evento','HomeController@event');
+Route::get('evento/{id}','HomeController@event');
 Route::get('ElMundoDeAldo','HomeController@ElMundoDeAldo');
 Route::get('PatekPhilippe','HomeController@PatekPhilippe');
 Route::get('Contactenos','HomeController@Contactenos');
@@ -29,6 +29,7 @@ Route::get('Joyeria/{Type}','HomeController@JoyeriaSub');
 Route::get('Producto/{id}','HomeController@Producto');
 Route::get('Novios/{Type}','HomeController@NoviosSub');
 Route::get('ElMundoDeAldoSub','HomeController@ElMundoDeAldoSub');
+
 // Route::get('','HomeController@');
 // Route::get('','HomeController@');
 // Route::get('','HomeController@');
@@ -40,6 +41,8 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('JoyasAdm', 'AdminController@Joyas');
 	Route::get('NoviosAdm', 'AdminController@Novios');
 	Route::get('MundoAldoAdm', 'AdminController@MundoAldoAdm');
+	Route::get('Marcket','AdminController@Marcket');
+	Route::get('Eventos', 'AdminController@Eventos');
 	
 
 
@@ -50,18 +53,30 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('EliminarProducto/{id}','ProductController@delete');
 	Route::get('DesactivarProducto/{id}','ProductController@desactive');
 	Route::get('ActivarProducto/{id}','ProductController@active');
-
-	Route::get('Eventos', 'AdminController@Eventos');
 	
-	// Route::post('dropzone/store', ['as'=>'dropzone.store','uses'=>'HomeController@dropzoneStore']);
-
 	Route::get('NuevoEvento','EventController@create');
 	Route::post('storeEvento','EventController@store');
 	Route::get('EditarEvento/{id}', 'EventController@edit');
 	Route::post('ActualizarEvento/{id}', 'EventController@update');
 	Route::get('EliminarEvento/{id}','EventController@delete');
 	Route::get('DesactivarEvento/{id}','EventController@desactive');
-	Route::get('ActivarEvento/{id}','EventController@active'); 
+	Route::get('ActivarEvento/{id}','EventController@active');
+
+	Route::get('NuevaTienda','MarcketController@create');
+	Route::post('storeTienda','MarcketController@store');
+	Route::get('EditarTienda/{id}', 'MarcketController@edit');
+	Route::post('ActualizarTienda/{id}', 'MarcketController@update');
+	Route::get('EliminarTienda/{id}','MarcketController@delete');
+	Route::get('DesactivarTienda/{id}','MarcketController@desactive');
+	Route::get('ActivarTienda/{id}','MarcketController@active'); 
+
+	Route::get('NuevoFrame','FrameController@create');
+	Route::post('storeTienda','MarcketController@store');
+	Route::get('EditarTienda/{id}', 'MarcketController@edit');
+	Route::post('ActualizarTienda/{id}', 'MarcketController@update');
+	Route::get('EliminarTienda/{id}','MarcketController@delete');
+	Route::get('DesactivarTienda/{id}','MarcketController@desactive');
+	Route::get('ActivarTienda/{id}','MarcketController@active'); 
 });
 
 // Auth::routes();

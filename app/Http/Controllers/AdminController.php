@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Eventt;
+use App\Marcket;
 
 class AdminController extends Controller{
 
@@ -30,7 +31,11 @@ class AdminController extends Controller{
     	return view('admin.MundoAldoAdm');
     }
     public function Eventos(){
-        $Events = Eventt::where('state',true)->orderBY('created_at','DESC')->get();
+        $Events = Eventt::orderBY('created_at','DESC')->get();
     	return view('admin.Eventos',compact('Events'));
+    }
+    public function Marcket(){
+        $Marckets = Marcket::orderBY('created_at','DESC')->get();
+        return view('admin.Contactenos',compact('Marckets'));
     }
 }

@@ -93,5 +93,22 @@ class EventController extends Controller{
         $Eventt = Eventt::findOrFail($id);
         return view('cc',compact('Eventt'));
     }
+    
+    public function delete($id){
+        $Eventt = Eventt::destroy($id);
+            return redirect('Eventos');
+    }
+    public function desactive($id){
+        $Eventt = Eventt::findOrFail($id);
+        $Eventt->state = 0;
+        $Eventt->update();
+        return redirect('Eventos');
+    }
+    public function active($id){
+        $Eventt = Eventt::findOrFail($id);
+        $Eventt->state = 1;
+        $Eventt->update();
+        return redirect('Eventos');
+    }
 }
 

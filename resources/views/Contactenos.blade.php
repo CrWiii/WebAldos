@@ -54,20 +54,15 @@
             <div class="hovercontainer"> 
               <!-- <p class="hovcontp" style="padding: 31.5% 30%;"><a href="{{url('evento')}}" style="color: #f9f9f9 !important"></a></p> -->
               <div class="col-sm-12" style="padding: 5% 5%">
+                @foreach($Marckets as $Tienda)
                 <div class="col-sm-6">
-                  <div class="col-sm-4"><img src="images/1491950582.png"></div>
+                  <div class="col-sm-4"><img src="{{$Tienda->Images->route}}"></div>
                   <div class="col-sm-2" style="padding-left: 5%">
-                    <p class="titu1" style="font-family: 'TrajanProBold';">SEDE 1</p>
-                    <a href=""><p style="font-family: 'TrajanProBold';">Address</p></a>
+                    <p class="titu1" style="font-family: 'TrajanProBold';">{{$Tienda->description}}</p>
+                    <a href=""><p style="font-family: 'TrajanProBold';">{{$Tienda->address}}</p></a>
                   </div>
                 </div>
-                <div class="col-sm-6">
-                  <div class="col-sm-4"><img src="images/1491950582.png"></div>
-                  <div class="col-sm-2" style="padding-left: 5%">
-                    <p class="titu1" style="font-family: 'TrajanProBold';">SEDE 2</p>
-                    <a href=""><p style="font-family: 'TrajanProBold';">Address</p></a>
-                  </div>
-                </div>
+                @endforeach
               </div>
            </div>
           </div>

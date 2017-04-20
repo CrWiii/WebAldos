@@ -4,7 +4,7 @@
 <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Crear Evento</h4> </div>
+                        <h4 class="page-title">Editar Evento</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <!-- <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Upgrade to Pro</a>
                         <ol class="breadcrumb">
@@ -18,13 +18,9 @@
                         <div class="white-box">
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12">
-                                @if(Session::has('success'))
-                                    <div class="alert-box success">
-                                      <h2>{!! Session::get('success') !!}</h2>
-                                    </div>
-                                  @endif
-                                    <form class="form-horizontal" role="form" method="POST" action="/storeEvento" enctype="multipart/form-data" file="true">
+                                    <form class="form-horizontal" role="form" method="POST" action="/ActualizarEvento/{{$Eventt->id}}" enctype="multipart/form-data" file="true">
                                     {{csrf_field()}}
+                                    <input type="hidden" name="id" value="{{$Eventt->id}}">
                                     <div class="form-group">
                                         <label class="col-md-2 control-label input-sm">Titulo:</label>
                                         <div class="col-md-10">
@@ -33,7 +29,7 @@
                                     <div class="form-group">
                                         <label class="col-md-2 control-label input-sm">Descrición:</label>
                                         <div class="col-md-10">
-                                            <textarea class="form-control input-sm" rows="5" id="content" name="content"></textarea>
+                                            <textarea class="form-control input-sm" rows="5" id="content" name="content">{{$Eventt['description']}}</textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -42,10 +38,6 @@
                                             <div class="control-group">
                                               <div class="controls">
                                                 <input type="file" name="images[]" multiple>
-                                                <p class="errors">{!!$errors->first('images')!!}</p>
-                                                @if(Session::has('error'))
-                                                <p class="errors">{!! Session::get('error') !!}</p>
-                                                @endif
                                              </div>
                                         </div>
                                         </div>
