@@ -87,7 +87,7 @@
                                                 <h3 class="box-title">Lista de Preguntas</h3>
                                                 <div class="row sales-report">
                                                     <div class="col-md-6 col-sm-6 col-xs-6">
-                                                        <a href="{{url('NuevoProducto/2')}}" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
+                                                        <a href="{{url('NuevoPregunta')}}" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
 
                                                     </div>
                                                     <div class="col-md-6 col-sm-6 col-xs-6 ">
