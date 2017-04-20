@@ -48,7 +48,8 @@
               </div>
              <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
                 <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-                  <a href="{{url('evento',array('id'=>$Event->id))}}"><img class="responsive img-responsive" src="{{$Event->Images()->first()->route}}"></a>
+                  @if(!empty($Event->Images()->first()->route))
+                  <a href="{{url('evento',array('id'=>$Event->id))}}"><img class="responsive img-responsive" src="{{$Event->Images()->first()->route}}"></a>@endif
                </div>
               </div>
           </div>
@@ -56,7 +57,7 @@
           <div class="row" style="background: #ded5cc !important">
             <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
               <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-                  <a href="{{url('evento',array('id'=>$Event->id))}}"><img class="responsive img-responsive" src="{{$Event->Images()->first()->route}}"></a>
+                  @if(!empty($Event->Images()->first()->route))<a href="{{url('evento',array('id'=>$Event->id))}}"><img class="responsive img-responsive" src="{{$Event->Images()->first()->route}}"></a>@endif
                </div>
               </div>
              <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">

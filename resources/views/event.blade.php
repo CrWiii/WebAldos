@@ -1,6 +1,11 @@
 @extends('layout')
 
 @section('content')
+<style type="text/css">
+  #mainCarousel .carousel-indicators {
+    bottom: 0px !important; 
+}
+</style>
 <div id="loaderHolder" style="display: none;">
     <div class="loader"></div>
 </div>
@@ -37,7 +42,7 @@
                         @foreach($Eventt->Images as $Imagen)
                           @if($i==0)
                             <div class="item active">
-                              <figure class="responsive img-responsive" data-media240="{{$Imagen->route}}" data-media769="{{$Imagen->route}}" data-media1201="{{$Imagen->route}}" data-title="Bridal Planner Phuket">
+                              <figure class="responsive img-responsive" data-media240="{{url($Imagen->route)}}" data-media769="{{$Imagen->route}}" data-media1201="{{$Imagen->route}}" data-title="Bridal Planner Phuket">
                                   <img src="{{$Imagen->route}}"></figure>
                             </div>
                           @else
