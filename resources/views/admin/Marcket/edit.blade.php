@@ -14,7 +14,7 @@
                         <div class="white-box">
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12">
-                                    <form class="form-horizontal" role="form" method="POST" action="/storeTienda" enctype="multipart/form-data" file="true">
+                                    <form class="form-horizontal" role="form" method="POST" action="/ActualizarTienda/{{$Marcket->id}}" enctype="multipart/form-data" file="true">
                                     {{csrf_field()}}
                                     <div class="form-group">
                                         <label class="col-md-2 control-label input-sm">Nombre:</label>
