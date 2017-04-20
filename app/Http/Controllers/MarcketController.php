@@ -74,17 +74,14 @@ class MarcketController extends Controller{
     }
     public function update($id,Request $request){
         $validator = Validator::make($request->all(), [
-            'name'        => 'required',
-            'category_id'   => 'required',
-            'type_id'       => 'required',
             'description'   => 'required',
-            'image'         => 'max:2048|mimes:jpeg,jpg,png',
+            'address'       => 'required',
+            'image'         => 'mimes:jpeg,jpg,png',
         ]);
 
-        $imgfu = '';
-        $Marcket = Marcket::findOrFail($request->id);
         if ($validator->passes()) {
             $input = $request->all();
+            
             if(!empty($request->image)){
                 $input['image'] = $request->image->getClientOriginalName();
                 $request->image->move(public_path('images'), $input['image']);
@@ -101,21 +98,14 @@ class MarcketController extends Controller{
                 $ImgId = $Marcket->images_id;
             }
 
-            $Marcket->name = $request->name;
+            $Marcket = new Marcket;
             $Marcket->description = $request->description;
-            $Marcket->type_id = $request->type_id;
-            $Marcket->category_id = $request->category_id;
+            $Marcket->address = $request->address;
             $Marcket->images_id = $ImgId;
             $Marcket->state = 1;
             $Marcket->created_by = Auth::user()->id;
             $Marcket->update();
-
-            if($request->category_id==1){
-                return redirect('JoyasAdm');
-            }
-            if($request->category_id==2){
-                return redirect('NoviosAdm');
-            }
+        return redirect('Marcket');
         }
         // return response()->json(['error'=>$validator->errors()->all()]);
     }
