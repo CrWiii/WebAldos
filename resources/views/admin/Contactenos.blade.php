@@ -83,7 +83,7 @@
 <script type="text/javascript">
     $(document).on('click','#EliminarTienda',function(){
         var Marcket_id_selected = $(this).attr('data-id');
-        var link = '{{url('EliminarTienta')}}' + '/' + Marcket_id_selected;
+        var link = '{{url('EliminarTienda')}}' + '/' + Marcket_id_selected;
         $('#ElimiarBtn').attr('data-id', Marcket_id_selected);
         $('#ElimiarBtn').attr('href', link);
         $('#modalEliminarMarcketo').modal();

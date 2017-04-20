@@ -4,18 +4,15 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFramesTable extends Migration{
+class CreatePersonTable extends Migration{
     public function up(){
-        Schema::create('frames', function (Blueprint $table) {
+        Schema::create('person', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('subtitle')->nullable();
-            $table->string('frame_type');
-            $table->string('route');
+            $table->string('first_name');
+            $table->string('last_name')->nullable();
+            $table->string('email')->unique();
+            $table->boolean('celphone')->nullable();
             $table->integer('images_id')->nullable();
-            $table->boolean('isVideo')->nullable();
-            $table->string('video_route')->nullable();
-            $table->longText('content')->nullable();
             $table->boolean('state')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
@@ -25,6 +22,6 @@ class CreateFramesTable extends Migration{
     }
 
     public function down(){
-        Schema::dropIfExists('frames');
+        Schema::dropIfExists('person');
     }
 }

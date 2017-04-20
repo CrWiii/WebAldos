@@ -4,24 +4,21 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMarcketsTable extends Migration{
+class CreateQuestionsTable extends Migration{
     public function up(){
-        Schema::create('Marckets', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('description');
-            $table->string('address');
-            $table->string('route');
-            $table->integer('images_id')->unsigned()->index();
+            $table->string('question');
+            $table->longText('answer');
             $table->boolean('state')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();
 
-            $table->foreign('images_id')->references('id')->on('images')->onDelete('cascade');
         });
     }
 
     public function down(){
-        Schema::dropIfExists('Marckets');
+        Schema::dropIfExists('questions');
     }
 }

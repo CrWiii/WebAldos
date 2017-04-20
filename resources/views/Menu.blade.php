@@ -24,15 +24,16 @@
                       }
                     </style>
                     @foreach($TypesNovios as $TypeN)
-
-                    <li class="col-sm-3">
-                      <ul>
-                        <li class="dropdown-header">
-                          <a href="{{url('Novios',array('Type'=>$TypeN->slug))}}"><span class="asfa"><img src="{{url('img/anillo.png')}}" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
-                              <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 0.9em;">{{$TypeN->description}}</h5></a>
-                        </li>
-                      </ul>
-                    </li>
+                    @if($TypeN->slug!='colectivo_de_novios')
+                      <li class="col-sm-3">
+                        <ul>
+                          <li class="dropdown-header">
+                            <a href="{{url('Novios',array('Type'=>$TypeN->slug))}}"><span class="asfa"><img src="{{url('img/anillo.png')}}" class="img-responsive" alt="product 1" style="display: block;margin: auto;"></span>
+                                <h5 style="text-align: center;font-family: 'AppleGaramondLight';font-size: 0.9em;">{{$TypeN->description}}</h5></a>
+                          </li>
+                        </ul>
+                      </li>
+                    @endif
                     @endforeach
  
                     </div>

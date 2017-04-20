@@ -71,12 +71,12 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('ActivarTienda/{id}','MarcketController@active'); 
 
 	Route::get('NuevoFrame','FrameController@create');
-	Route::post('storeTienda','MarcketController@store');
-	Route::get('EditarTienda/{id}', 'MarcketController@edit');
-	Route::post('ActualizarTienda/{id}', 'MarcketController@update');
-	Route::get('EliminarTienda/{id}','MarcketController@delete');
-	Route::get('DesactivarTienda/{id}','MarcketController@desactive');
-	Route::get('ActivarTienda/{id}','MarcketController@active'); 
+	// Route::post('storeTienda','MarcketController@store');
+	// Route::get('EditarTienda/{id}', 'MarcketController@edit');
+	// Route::post('ActualizarTienda/{id}', 'MarcketController@update');
+	// Route::get('EliminarTienda/{id}','MarcketController@delete');
+	// Route::get('DesactivarTienda/{id}','MarcketController@desactive');
+	// Route::get('ActivarTienda/{id}','MarcketController@active'); 
 });
 
 // Auth::routes();
