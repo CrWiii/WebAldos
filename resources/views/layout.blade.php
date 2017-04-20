@@ -62,6 +62,12 @@
 <script src="{{url('js/video.js')}}"></script>
 @yield('script')
 <script>
+$(document).on('click','#closeModal-sub',function(){
+  $('#form-main-sub').hide('slow');
+});
+$(document).on('click','#SubcribirmeModal',function(){
+  $('#form-main-sub').show('slow');
+});
 
 $(document).ready(function(){
     $(".dropdown").hover(            

@@ -212,31 +212,6 @@ input:focus, textarea:focus {
   font-weight:700;
 }
 
-/*#button-blue:hover{
-  background-color: rgba(0,0,0,0);
-  color: #0493bd;
-}*/
-  
-/*.submit:hover {
-  color: #3498db;
-}*/
-  
-/*.ease {
-  width: 0px;
-  height: 74px;
-  background-color: #fbfbfb;
-  -webkit-transition: .3s ease;
-  -moz-transition: .3s ease;
-  -o-transition: .3s ease;
-  -ms-transition: .3s ease;
-  transition: .3s ease;
-}
-
-.submit:hover .ease{
-  width:100%;
-  background-color:white;
-}
-*/
 @media only screen and (max-width: 580px) {
   #form-div{
     left: 3%;
@@ -250,6 +225,7 @@ input:focus, textarea:focus {
 </style>
 <div id="form-main" style="display: none">
   <div id="form-div">
+    <i class="" style="float:right;position: relative; top:-25px; right: -15px color: #342825 !important"><a id="closeModal" style="cursor: pointer;">X</a></i>
     <form class="form" id="form1">
       
       <p class="name">
@@ -268,10 +244,6 @@ input:focus, textarea:focus {
         <input name="celphone" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Telefono" id="celphone" />
       </p>
       
-<!--       <p class="text">
-        <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
-      </p> -->
-      
       
       <div class="submit">
         <input type="submit" value="SEND" id="button-blue"/>
@@ -279,46 +251,7 @@ input:focus, textarea:focus {
       </div>
     </form>
   </div>
-
-<!-- <div class="modal fade" id="CotizarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-        <div class="modal-body">
-            <h4>||</h4>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Close</button>
-            <a class="btn btn-danger" id="ElimiarBtn" data-id="" href="">Enviar</a>
-        </div>
-        </div>
-    </div>
 </div>
-
-
-<div class="modal fade" id="CotizarModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-        </button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <div class='modal-body1'>
-          <h3>Close and open, I will be gone!</h3>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
 
 <script src="{{url('js/jquery.min.js')}}"></script>
 <script>window.jQuery || document.write("<script src='{{url('js/jquery-1.11.3.min.js')}}'><\/script>")</script>
@@ -337,6 +270,9 @@ input:focus, textarea:focus {
 //     $(".modal-body1").html("Where did he go?!?!?!");
 //   });
 // });
+    $(document).on('click','#closeModal',function(){
+      $('#form-main').hide('slow');
+    });
 
     $(document).on('click','#CotizarModal',function(){
         // var producto_id_selected = $(this).attr('data-id');

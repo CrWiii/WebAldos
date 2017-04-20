@@ -20,11 +20,11 @@ class AdminController extends Controller{
     	return view('admin.Inicio');
     }
     public function Joyas(){
-    	$ProductJoyas = Product::where('category_id',1)->orderBy('created_at','DESC')->get();
+    	$ProductJoyas = Product::where('category_id',1)->orderBy('created_at','DESC')->paginate(15);
     	return view('admin.Joyas', compact('ProductJoyas'));
     }
     public function Novios(){
-        $ProductNovios = Product::where('category_id',2)->orderBy('created_at','DESC')->get();
+        $ProductNovios = Product::where('category_id',2)->orderBy('created_at','DESC')->paginate(15);
     	return view('admin.Novios',compact('ProductNovios'));
     }
     public function MundoAldoAdm(){

@@ -78,7 +78,7 @@ class MarcketController extends Controller{
             'address'       => 'required',
             'image'         => 'mimes:jpeg,jpg,png',
         ]);
-
+        $Marcket = Marcket::findOrFail($request->id);
         if ($validator->passes()) {
             $input = $request->all();
             
@@ -98,7 +98,6 @@ class MarcketController extends Controller{
                 $ImgId = $Marcket->images_id;
             }
 
-            $Marcket = new Marcket;
             $Marcket->description = $request->description;
             $Marcket->address = $request->address;
             $Marcket->images_id = $ImgId;
