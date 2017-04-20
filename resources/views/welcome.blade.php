@@ -105,7 +105,7 @@
               <p style="font-family: 'AppleGaramondLight';font-size: 140%;padding-left: 15%;padding-right: 15%;margin-bottom: 0px;">Fieles a nuestra historia, Aldo&Co le da un lugar central a  la colección Amarilis. Inspirada en la poetiza peruana del siglo de Oro que le da nombre a la colección, y los misterios alrededor de su vida, los diseños Amarilis transmiten una visión romántica y respetuosa de las formas en el trabajo del oro.</p>
               <h1 style="font-family: 'GreatVibes';padding-bottom: 5%;color: #ccbba2">Oro soy</h1>
 
-              <p style="padding-bottom: 5.6%;font-family: 'AppleGaramondLight';">Ver la colección completa</p>
+              <p style="padding-bottom: 5.6%;font-family: 'AppleGaramondLight';"><a href="{{url('JoyeriaSub')}} ">Ver la colección completa</a></p>
            </div>
           </div>
          <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
