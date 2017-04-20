@@ -93,7 +93,7 @@
               
               <p style="font-family: 'AppleGaramondLight';font-size: 148%;padding-left: 20%;padding-right: 20%;margin-bottom: 0px;">Aldo & Co recibe la confianza para ser representante de las mejores marcas de alta relojería a nivel mundial. Las mismas que ponen la precisión y elegancia al alcanze de nuestros clientes.</p>
               <h1 style="font-family: 'GreatVibes';padding-bottom: 5%;color: #ccbba2">Más allá del tiempo</h1>
-              <p style="padding-bottom: 5.8%;font-family: 'AppleGaramondLight';">Ver la colección completa</p>
+              <p style="padding-bottom: 5.8%;font-family: 'AppleGaramondLight';"><a href="{{url('JoyrriaSub')}}>Ver la colección completa</a></p>
            </div>
           </div>
         </div>
