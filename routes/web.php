@@ -28,7 +28,7 @@ Route::get('JoyeriaSub','HomeController@JoyeriaSub');
 Route::get('Joyeria/{Type}','HomeController@JoyeriaSub');
 Route::get('Producto/{id}','HomeController@Producto');
 Route::get('Novios/{Type}','HomeController@NoviosSub');
-Route::get('ElMundoDeAldoSub','HomeController@ElMundoDeAldoSub');
+Route::get('ElMundoDeAldoSub/{slug}','HomeController@ElMundoDeAldoSub');
 
 // Route::get('','HomeController@');
 // Route::get('','HomeController@');
@@ -61,6 +61,7 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('EliminarEvento/{id}','EventController@delete');
 	Route::get('DesactivarEvento/{id}','EventController@desactive');
 	Route::get('ActivarEvento/{id}','EventController@active');
+	Route::get('EliminarImagen/{id}','EventController@deleteImg');
 
 	Route::get('NuevaTienda','MarcketController@create');
 	Route::post('storeTienda','MarcketController@store');

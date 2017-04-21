@@ -82,9 +82,13 @@ class HomeController extends Controller{
     	$product = Product::find($id);
         return view('Producto',compact('product','TypesJoyas','TypesNovios'));
     }
-    public function ElMundoDeAldoSub(){
+    public function ElMundoDeAldoSub($slug){
     	$TypesJoyas = Type::where('category_id',1)->get();
         $TypesNovios = Type::where('category_id',2)->get();
-        return view('ElMundoDeAldoSub',compact('TypesJoyas','TypesNovios'));
+        $subTit = collect([['slug'=>'Historia','description'=>'HISTORIA'],
+                          ['slug'=>'Nosotros','description'=>'NOSOTROS'],
+                          ['slug'=>'creando_magia','description'=>'CREANDO MAGIA'],
+                          ['slug'=>'responsabilidad_social','description'=>'RESPONSABILIDAD SOCIAL']]);
+        return view('ElMundoDeAldoSub',compact('TypesJoyas','TypesNovios','subTit','slug'));
     }
 }

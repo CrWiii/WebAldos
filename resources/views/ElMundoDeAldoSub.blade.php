@@ -34,11 +34,16 @@
   <div class="container">
         <div class="row">
             <ul class="nav asf">
-                <li><a id="Historia" class="active" href="">Historia</a></li>
+                <!-- <li><a id="Historia" class="active" href="">Historia</a></li>
                 <li><a id="Nosotros" href="">Nosotros</a></li>
                 <li><a id="CreandoMagia" href="">Creando Magia</a></li>
-                <li><a id="ResponsabilidadSocial" href="">Responsabilidad Social</a></li>
+                <li><a id="ResponsabilidadSocial" href="">Responsabilidad Social</a></li> -->
+                @foreach($subTit as $tit)
+                  <li><a href="{{url('ElMundoDeAldoSub',array('tit'=>$tit['slug']))}}" @if($slug==$tit['slug'])class="active" @endif>{{$tit['description']}}</a></li>
+                @endforeach
             </ul>
+
+           
         </div>
   </div>
 </section>

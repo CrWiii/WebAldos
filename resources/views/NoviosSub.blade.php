@@ -33,12 +33,7 @@
   <div class="container">
         <div class="row">
             <ul class="nav asf">
-                <!-- <li><a id="ANILLOSDECOMPROMISO" class="active" href="">ANILLOS DE COMPROMISO</a></li>
-                <li><a id="AROSDEMATRIMONIO" href="">AROS DE MATRIMONIO</a></li>
-                <li><a id="MASALLADELAS4CS" href="">MÁS ALLÁ DE LAS 4CS</a></li>
-                <li><a id="COLECTIVODENOVIOS" href="">COLECTIVO DE NOVIOS</a></li> -->
-                @foreach($TypesNovios as $Type)
-                
+                @foreach($TypesNovios as $Type)               
                 <li><a id="{{$Type->id}}" href="{{url('Novios',array('Type'=>$Type->slug))}}" @if($Type_selected==$Type->id)class="active" @endif>{{$Type->description}}</a></li>
                 
                 @endforeach

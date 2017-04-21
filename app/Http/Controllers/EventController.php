@@ -37,6 +37,7 @@ class EventController extends Controller{
         $files = $request->images;
         $file_count = count($files);
         $uploadcount = 0;
+        $on = 1;
         foreach($files as $file) {
             $rules = array('file' => 'required|max:4092|mimes:png,gif,jpeg'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
             $validator = Validator::make(array('file'=> $file), $rules);
@@ -50,6 +51,7 @@ class EventController extends Controller{
                 $Images->description = $filename;
                 $Images->route = '/images/'.$filename;
                 $Images->state = 1;
+                $Images->order_number = $on;
                 $Images->created_by = Auth::user()->id;
                 $Images->save();
                 $img_id = $Images->id;
@@ -68,6 +70,7 @@ class EventController extends Controller{
 
                 // $user = User::find($id);
                 // $user->signature()->attach($signature->id);
+                $on++;
             }
         }
         if($uploadcount == $file_count){
@@ -112,7 +115,7 @@ class EventController extends Controller{
                     $upload_success = $file->move($destinationPath, $filename);
                     $uploadcount ++;
 
-                    $Images = new Images;
+                    $Images = new Images; 
                     $Images->description = $filename;
                     $Images->route = '/images/'.$filename;
                     $Images->state = 1;
@@ -141,6 +144,11 @@ class EventController extends Controller{
             }
             return redirect()->back();
         }
+    }
+
+    public function deleteImg($id){
+        $Images = Images::destroy($id);
+        return redirect()->back();
     }
     
     public function delete($id){
