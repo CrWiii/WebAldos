@@ -16,4 +16,8 @@ class Images extends Model{
 	public function Marcket(){
 		return $this->belongsTo(Marcket::class);
 	}
+
+	public function Subframe(){
+    	return $this->belongsTo(Subframe::class);
+    }
 }
