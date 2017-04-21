@@ -21,7 +21,7 @@
          <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
             <div class="hovercontainer" style="background: #ded5cc;text-align: center;margin: 0px !important;">
             <div style="padding: 30% 25%">
-              <p style="color: white;font-family: 'Trajan Pro';font-size: 3.5em;"><a href="{{url('ElMundoDeAldoSub/Historia')}}">HISTORIA</a></p>
+              <a href="{{url('ElMundoDeAldoSub/Historia')}}"><p style="color: #f9f9f9 !important;font-family: 'Trajan Pro';font-size: 3.5em;">HISTORIA</p></a>
               <p style="font-family: 'AppleGaramondLight';font-size: 140%;"> Tres décadas, dos generaciones, una historia...</p>
             </div>
            </div>
@@ -44,7 +44,7 @@
          <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
             <div class="hovercontainer" style="background: #ded5cc;text-align: center;margin: 0px !important;">
               <div style="padding: 30% 25%">
-                <p style="color: white;font-family: 'Trajan Pro';font-size: 3.5em;"><a href="{{url('ElMundoDeAldoSub/Nosotros')}}">NOSOTROS</a></p>
+                <a href="{{url('ElMundoDeAldoSub/Nosotros')}}"><p style="color: #f9f9f9 !important;font-family: 'Trajan Pro';font-size: 3.5em;">NOSOTROS</p></a>
                 <p style="font-family: 'AppleGaramondLight';font-size: 140%;">Tres décadas, dos generaciones, una historia...</p>
               </div>
            </div>
@@ -54,7 +54,7 @@
          <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
             <div class="hovercontainer" style="background: #ded5cc;text-align: center;margin: 0px !important;">
             <div style="padding: 30% 25%">
-                <p style="color: white;font-family: 'Trajan Pro';font-size: 3.5em;"><a href="{{url('ElMundoDeAldoSub/creando_magia')}}">CREANDO MAGIA</a></p>
+                <a href="{{url('ElMundoDeAldoSub/creando_magia')}}"><p style="color: #f9f9f9 !important;font-family: 'Trajan Pro';font-size: 3.5em;">CREANDO MAGIA</p></a>
                 <p style="font-family: 'AppleGaramondLight';font-size: 140%;">El nacimiento de una joya...</p>
               </div>
            </div>
@@ -76,7 +76,7 @@
            <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
             <div class="hovercontainer" style="background: #ded5cc;text-align: center;margin: 0px !important;">
             <div style="padding: 30% 5%">
-                <p style="color: white;font-family: 'Trajan Pro';font-size: 3.5em;"><a href="{{url('ElMundoDeAldoSub/responsabilidad_social')}}">RESPONSABILIDAD SOCIAL</a></p>
+                <a href="{{url('ElMundoDeAldoSub/responsabilidad_social')}}"><p style="color: #f9f9f9 !important;font-family: 'Trajan Pro';font-size: 3.5em;">RESPONSABILIDAD SOCIAL</p></a>
                 <p style="font-family: 'AppleGaramondLight';font-size: 140%;">Detalles que ayudan...</p>
             </div>
            </div>

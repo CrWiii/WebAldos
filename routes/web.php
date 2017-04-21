@@ -80,12 +80,12 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('ActivarPregunta/{id}','QuestionController@active'); 
 
 	Route::get('NuevoFrame','FrameController@create');
-	// Route::post('storeFrame','FrameController@store');
-	// Route::get('EditarFrame/{id}', 'FrameController@edit');
-	// Route::post('ActualizarFrame/{id}', 'FrameController@update');
-	// Route::get('EliminarFrame/{id}','FrameController@delete');
-	// Route::get('DesactivarFrame/{id}','FrameController@desactive');
-	// Route::get('ActivarFrame/{id}','FrameController@active'); 
+	Route::post('storeFrame','FrameController@store');
+	Route::get('EditarFrame/{id}', 'FrameController@edit');
+	Route::post('ActualizarFrame/{id}', 'FrameController@update');
+	Route::get('EliminarFrame/{id}','FrameController@delete');
+	Route::get('DesactivarFrame/{id}','FrameController@desactive');
+	Route::get('ActivarFrame/{id}','FrameController@active'); 
 });
 
 // Auth::routes();

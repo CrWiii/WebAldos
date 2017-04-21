@@ -17,10 +17,7 @@ class FrameController extends Controller{
  //        $this->middleware('auth');
  //    }
 
-	public function Joyeria(){
-		$Joyas = Product::all()->where('Category_id','2');
-        return view('Joyeria');
-    }
+
     public function create(){
     	// $Category = Category::all()->where('id',$category_id)->where('state',true);
      //    $Type = Type::all()->where('category_id',$category_id)->where('state',true)->where('frame',false);
@@ -29,7 +26,7 @@ class FrameController extends Controller{
     public function store(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'name'        => 'required',
+            'name'          => 'required',
             'category_id'   => 'required',
             'type_id'       => 'required',
             'description'   => 'required',

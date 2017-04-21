@@ -139,6 +139,11 @@ input:focus, textarea:focus {
     padding-right: 3%;
   }
 }
+.btn-primary{
+    background-color: #342825;
+    border-color: #342825;
+    color: #ffffff !important;
+  }
 </style>
 <section id="featureBadges" class="whitebg padded-content-xs text-center" style="padding-top: 10%;background: #ded5cc;">
   <ul class="list-inline">
@@ -191,7 +196,7 @@ input:focus, textarea:focus {
                     <a target="_blank" href="#">Ingles</a> | 
                     <a target="_blank" href="#">Español</a></p>
                     <p style="margin-top: 20px;">
-                        <button type="button" class="btn btn-primary btn-lg" id="SubcribirmeModal">Subcribirme</button>
+                        <button type="button" class="btn btn-primary btn-lg" id="SubcribirmeModal"> Subscribirse<br/> al Newsletter</button>
                     </p>
 
                 </div>
