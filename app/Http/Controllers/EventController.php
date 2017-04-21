@@ -19,17 +19,12 @@ class EventController extends Controller{
     public function create(){
     	return view('admin.event.create');
     }
-    public function store(Request $request){
-
-        
+    public function store(Request $request){      
     	$validator = Validator::make($request->all(), [
             'description'   => 'required',
-            'content'   	=> 'required',
-            // 'image'         => 'required|max:2048|mimes:jpeg,jpg,png',
-            ]);
-
+            'content'   	=> 'required'
+        ]);
         if ($validator->passes()) {
-
             $Eventt = new Eventt;
             $Eventt->description = $request->description;
             $Eventt->content = $request->content;
@@ -37,24 +32,19 @@ class EventController extends Controller{
             $Eventt->created_by = Auth::user()->id;
             $Eventt->updated_by = Auth::user()->id;
             $Eventt->save();
-
             $event_id = $Eventt->id;
         }
         $files = $request->images;
         $file_count = count($files);
         $uploadcount = 0;
         foreach($files as $file) {
-            $rules = array('file' => 'required|mimes:png,gif,jpeg'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
+            $rules = array('file' => 'required|max:4092|mimes:png,gif,jpeg'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
             $validator = Validator::make(array('file'=> $file), $rules);
             if($validator->passes()){
                 $destinationPath = 'images';
                 $filename = $file->getClientOriginalName();
                 $upload_success = $file->move($destinationPath, $filename);
                 $uploadcount ++;
-
-                // $input['image'] = $request->image->getClientOriginalName();
-                // $request->image->move(public_path('images'), $input['image']);
-                // $imgfu = '/images/'.$request->image->getClientOriginalName();
 
                 $Images = new Images;
                 $Images->description = $filename;
@@ -91,7 +81,66 @@ class EventController extends Controller{
 
     public function edit($id){
         $Eventt = Eventt::findOrFail($id);
-        return view('cc',compact('Eventt'));
+        return view('admin.event.Edit',compact('Eventt'));
+    }
+    public function update($id, Request $request){
+        $validator = Validator::make($request->all(), [
+            'description'   => 'required',
+            'content'       => 'required'
+        ]);
+        if ($validator->passes()){
+            $Eventt = Eventt::findOrFail($id);
+            $Eventt->description = $request->description;
+            $Eventt->content = $request->content;
+            $Eventt->state = 1;
+            $Eventt->created_by = Auth::user()->id;
+            $Eventt->updated_by = Auth::user()->id;
+            $Eventt->save();
+            
+            $event_id = $Eventt->id;
+        }
+        $files = $request->images;
+        $file_count = count($files);
+        $uploadcount = 0;
+        if($files){
+            foreach($files as $file){
+                $rules = array('file' => 'required|max:4092|mimes:png,gif,jpeg'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
+                $validator = Validator::make(array('file'=> $file), $rules);
+                if($validator->passes()){
+                    $destinationPath = 'images';
+                    $filename = $file->getClientOriginalName();
+                    $upload_success = $file->move($destinationPath, $filename);
+                    $uploadcount ++;
+
+                    $Images = new Images;
+                    $Images->description = $filename;
+                    $Images->route = '/images/'.$filename;
+                    $Images->state = 1;
+                    $Images->created_by = Auth::user()->id;
+                    $Images->save();
+                    $img_id = $Images->id;
+                    $Eventt = Eventt::find($event_id);
+                    $Eventt->Images()->attach([$img_id => ['state'=>1, 'created_by'=>Auth::user()->id,'updated_by'=>Auth::user()->id,'created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]]);
+
+                
+                    //create a new signature
+                    // $signature = new Signature($values);
+                    // //save the new signature and attach it to the user
+                    // $user = User::find($id)->signatures()->save($signature);
+                    // // The opposite is possible too:
+
+                    // $user = User::find($user_id);
+                    // $signature = Signature::create($values)->users()->save($user);
+                    // // Alternatively if you have an existing signature you should do:
+
+                    // $user = User::find($id);
+                    // $user->signature()->attach($signature->id);
+                }else{
+                    return redirect()->back()->with('error');
+                }
+            }
+            return redirect()->back();
+        }
     }
     
     public function delete($id){

@@ -67,6 +67,9 @@ $(document).on('click','#closeModal-sub',function(){
 });
 $(document).on('click','#SubcribirmeModal',function(){
   $('#form-main-sub').show('slow');
+  $('html, body').animate({
+    scrollTop: "0px"
+}, 800);
 });
 
 $(document).ready(function(){

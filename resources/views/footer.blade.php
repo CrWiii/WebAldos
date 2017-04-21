@@ -19,7 +19,7 @@
   margin-left: -260px;
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
-  botom: -3800px;
+  bottom: 0px;
   border: 2px solid #342825;
 }
 
