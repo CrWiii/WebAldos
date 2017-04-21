@@ -16,6 +16,7 @@ class CreateImagesTable extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
             $table->string('description');
+            $table->longText('content')->nullable();
             $table->string('route')->nullable();
             $table->integer('order_number')->nullable();
             $table->boolean('state')->nullable();
