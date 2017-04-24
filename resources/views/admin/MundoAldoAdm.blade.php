@@ -14,7 +14,7 @@
                             <h3 class="box-title">Lista de Frames</h3>
                             <div class="row sales-report">
                                 <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <a href="{{url('NuevoFrame')}}" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
+                                    <a href="{{url('NuevoFrame/1')}}" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 ">
                                     <!-- <h1 class="text-right text-info m-t-20">$3,690</h1> --> </div>

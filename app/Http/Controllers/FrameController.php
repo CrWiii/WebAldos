@@ -13,18 +13,17 @@ use Auth;
 
 class FrameController extends Controller{
 
-	// public function __construct(){
- //        $this->middleware('auth');
- //    }
+// public function __construct(){
+//        $this->middleware('auth');
+//    }
 
 
-    public function create(){
-    	// $Category = Category::all()->where('id',$category_id)->where('state',true);
-     //    $Type = Type::all()->where('category_id',$category_id)->where('state',true)->where('frame',false);
-        return view('admin.Frame.create'/*, compact('Category','Type')*/);
+    public function create($category_id){
+    // $Category = Category::all()->where('id',$category_id)->where('state',true);
+    //    $Type = Type::all()->where('category_id',$category_id)->where('state',true)->where('frame',false);
+        return view('admin.Frame.create', compact('category_id'));
     }
     public function store(Request $request){
-
         $validator = Validator::make($request->all(), [
             'name'          => 'required',
             'category_id'   => 'required',

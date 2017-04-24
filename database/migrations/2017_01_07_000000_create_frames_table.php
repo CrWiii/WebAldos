@@ -12,7 +12,7 @@ class CreateFramesTable extends Migration{
             $table->string('subtitle')->nullable();
             $table->string('frame_type');
             $table->string('route');
-            $table->integer('images_id')->nullable();
+            $table->integer('images_id')->unsigned()->index();
             $table->boolean('isVideo')->nullable();
             $table->string('video_route')->nullable();
             $table->longText('content')->nullable();
@@ -20,6 +20,8 @@ class CreateFramesTable extends Migration{
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();
+
+            $table->foreign('images_id')->references('id')->on('images')->onDelete('cascade');
 
         });
     }

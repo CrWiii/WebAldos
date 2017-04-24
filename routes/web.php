@@ -79,7 +79,7 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('DesactivarPregunta/{id}','QuestionController@desactive');
 	Route::get('ActivarPregunta/{id}','QuestionController@active'); 
 
-	Route::get('NuevoFrame','FrameController@create');
+	Route::get('NuevoFrame/{category_id}','FrameController@create');
 	Route::post('storeFrame','FrameController@store');
 	Route::get('EditarFrame/{id}', 'FrameController@edit');
 	Route::post('ActualizarFrame/{id}', 'FrameController@update');
@@ -88,14 +88,7 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('ActivarFrame/{id}','FrameController@active'); 
 });
 
-// Auth::routes();
-
-// Route::get('/home', 'HomeController@index');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
