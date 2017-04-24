@@ -112,7 +112,7 @@ class FrameController extends Controller{
             'title'         => 'required',
             'route'         => 'required',
             'frame_type'    => 'required',
-            'image'         => 'required|max:2048|mimes:jpeg,jpg,png',
+            'image'         => 'max:2048|mimes:jpeg,jpg,png',
         ]);
 
         $imgfu = '';
@@ -139,7 +139,7 @@ class FrameController extends Controller{
             $Frame->subtitle = $request->subtitle;
             $Frame->frame_type = $request->frame_type;
             $Frame->route = $request->route;
-            $Frame->images_id = $Images->id;
+            $Frame->images_id = $ImgId;
             $Frame->state = 1;
             $Frame->content = $request->content;
             $Frame->updated_by = Auth::user()->id;
