@@ -3,32 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Product;
-// use App\Category;
-// use App\Type;
 use App\Frame;
+use App\Subframe;
 use App\Images;
 use Validator;
 use Auth;
+use Redirect;
 
-class FrameController extends Controller{
+class SubframeController extends Controller{
 
 // public function __construct(){
 //        $this->middleware('auth');
 //    }
-
-
-    public function create($category_id){
-    // $Category = Category::all()->where('id',$category_id)->where('state',true);
-    //    $Type = Type::all()->where('category_id',$category_id)->where('state',true)->where('frame',false);
-        return view('admin.Frame.create', compact('category_id'));
+    public function create($frame_id){
+        // $frame_type = Frame::where('id',$frame_id)->pluck('frame_type');
+        // $frame_type = (int)$frame_type[0];
+        $frame = Frame::find($frame_id);
+        return view('admin.Subframe.create', compact('frame'));
     }
     public function store(Request $request){
+        // dd($request);
         $validator = Validator::make($request->all(), [
             'title'         => 'required',
-            'route'         => 'required',
-            'frame_type'    => 'required',
-            'image'         => 'required|max:2048|mimes:jpeg,jpg,png',
+            // 'frame_id'      => 'required',
+            'image'         => 'required|max:4092|mimes:jpeg,jpg,png',
             ]);
 
         if ($validator->passes()) {
@@ -47,26 +45,20 @@ class FrameController extends Controller{
                 $Images->save();
             }
 
-            $Frame = new Frame; 
-            $Frame->title = $request->title;
-            $Frame->subtitle = $request->subtitle;
-            $Frame->frame_type = $request->frame_type;
-            $Frame->route = $request->route;
-            $Frame->images_id = $Images->id;
-            $Frame->state = 1;
-            $Frame->content = $request->content;
-            $Frame->created_by = Auth::user()->id;
-            $Frame->updated_by = Auth::user()->id;
-            $Frame->save();
-
-            if($request->frame_type==1){
-                return redirect('MundoAldoAdm');
-            }
-            if($request->frame_type==2){
-                return redirect('Inicio');
-            }
+            $Subframe = new Subframe; 
+            $Subframe->title = $request->title;
+            $Subframe->images_id = $Images->id;
+            $Subframe->content = $request->content;
+            $Subframe->frame_id = $request->frame_id;
+            $Subframe->state = 1;
+            $Subframe->created_by = Auth::user()->id;
+            $Subframe->updated_by = Auth::user()->id;
+            
+            $Subframe->save();
+            $frame_id = $request->frame_id;
+                return redirect('SubframeList/'.$frame_id);
         }
-        // return response()->json(['error'=>$validator->errors()->all()]);
+         return response()->json(['error'=>$validator->errors()->all()]);
     }
 
     public function delete($id){

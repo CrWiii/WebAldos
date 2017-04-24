@@ -34,12 +34,8 @@
   <div class="container">
         <div class="row">
             <ul class="nav asf">
-                <!-- <li><a id="Historia" class="active" href="">Historia</a></li>
-                <li><a id="Nosotros" href="">Nosotros</a></li>
-                <li><a id="CreandoMagia" href="">Creando Magia</a></li>
-                <li><a id="ResponsabilidadSocial" href="">Responsabilidad Social</a></li> -->
-                @foreach($subTit as $tit)
-                  <li><a href="{{url('ElMundoDeAldoSub',array('tit'=>$tit['slug']))}}" @if($slug==$tit['slug'])class="active" @endif>{{$tit['description']}}</a></li>
+                @foreach($frames as $tit)
+                  <li><a href="{{url('ElMundoDeAldo',array('tit'=>$tit->slug))}}" @if($slug==$tit->slug)class="active" @endif>{{$tit->title}}</a></li>
                 @endforeach
             </ul>
 
@@ -54,7 +50,7 @@
       <div class="os-animation col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
          <div class="os-animation col-xs-10 col-sm-10 col-md-10 col-lg-10 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
             <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-              <p style="padding: 2% 2%;">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself</p>
+              <p style="padding: 2% 2%;">{{$tit->content}}</p>
               
               
                 <div id="mainCarousel" class="carousel slide" data-ride="carousel" data-interval="8000">  

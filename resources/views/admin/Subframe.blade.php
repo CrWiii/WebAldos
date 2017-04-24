@@ -3,18 +3,17 @@
 @section('content')
 <div class="container-fluid">
                 <div class="row bg-title">
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">El Mundo de Aldo</h4> </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4 class="page-title">Frame  {{$frame->title}}</h4> </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title">Lista de Frames</h3>
+                            <h3 class="box-title">Lista de Subframes</h3>
                             <div class="row sales-report">
                                 <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <a href="{{url('NuevoFrame/1')}}" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
+                                    <a href="{{url('NuevoSubFrame',array($frame->id))}}" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 ">
                                     <!-- <h1 class="text-right text-info m-t-20">$3,690</h1> --> </div>
@@ -33,24 +32,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($frames as $frame)
+                                    @foreach($subframes as $subframe)
                                         <tr>
-                                            <td>{{$frame->id}}</td>
-                                            <td>{{$frame->title}}</td>
-                                            <td>{{$frame->content}}</td>
-                                            <td> <img src="{{ asset($frame->Images->route) }}" alt="" height="50"></td>
-                                            <td>@if($frame->state==1)<span class="label label-success label-rouded">ACTIVO</span> @else <span class="label label-danger label-rouded">INACTIVO</span> @endif </td>
-                                            <td>{{  date('d/m/Y', strtotime($frame->created_at)) }}</td>
+                                            <td>{{$subframe->id}}</td>
+                                            <td>{{$subframe->title}}</td>
+                                            <td>{{str_limit($subframe->content,20)}}</td>
+                                            <td> <img src="{{ asset($subframe->Images->route) }}" alt="" height="50"></td>
+                                            <td>@if($subframe->state==1)<span class="label label-success label-rouded">ACTIVO</span> @else <span class="label label-danger label-rouded">INACTIVO</span> @endif </td>
+                                            <td>{{  date('d/m/Y', strtotime($subframe->created_at)) }}</td>
                                             <td class="text-nowrap">
-                                                <a href="{{URL::to('EditarFrame',array('id'=>$frame->id))}}" data-toggle="tooltip" data-original-title="Editar"> <i class="fa fa-pencil text-inverse m-r-10"></i></a>
-                                                <a href="{{URL::to('SubframeList',array('id'=>$frame->id))}}" data-toggle="tooltip" data-original-title="SubFrame"><i class="fa fa-plus-square-o text-inverse m-r-10"></i></a>
-                                                @if($frame->state==1) <a href="{{URL::to('DesactivarFrame',array('id'=>$frame->id))}}" data-toggle="tooltip" data-original-title="Desactivar"> <i class="fa fa-circle-o text-inverse m-r-10"></i></a>
-                                                @else <a href="{{URL::to('ActivarFrame',array('id'=>$frame->id))}}" data-toggle="tooltip" data-original-title="Activar"> <i class="fa fa-circle text-inverse m-r-10"></i></a>
+                                                <a href="{{URL::to('EditarSubFrame',array('id'=>$subframe->id))}}" data-toggle="tooltip" data-original-title="Editar"> <i class="fa fa-pencil text-inverse m-r-10"></i></a>
+                                                @if($subframe->state==1) <a href="{{URL::to('DesactivarSubFrame',array('id'=>$subframe->id))}}" data-toggle="tooltip" data-original-title="Desactivar"> <i class="fa fa-circle-o text-inverse m-r-10"></i></a>
+                                                @else <a href="{{URL::to('ActivarSubFrame',array('id'=>$subframe->id))}}" data-toggle="tooltip" data-original-title="Activar"> <i class="fa fa-circle text-inverse m-r-10"></i></a>
                                                 @endif
-                                                <a style="cursor: pointer;" data-toggle="tooltip" data-original-title="Eliminar" data-id="{{$frame->id}}" id="EliminarFrame"> <i class="fa fa-close text-danger"></i> </a>
+                                                <a style="cursor: pointer;" data-toggle="tooltip" data-original-title="Eliminar" data-id="{{$subframe->id}}" id="EliminarSubFrame"> <i class="fa fa-close text-danger"></i> </a>
                                             </td>
                                         </tr>
                                     @endforeach
+                                    
                                     </tbody>
                                 </table>
                             </div>

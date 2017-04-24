@@ -28,11 +28,8 @@ Route::get('JoyeriaSub','HomeController@JoyeriaSub');
 Route::get('Joyeria/{Type}','HomeController@JoyeriaSub');
 Route::get('Producto/{id}','HomeController@Producto');
 Route::get('Novios/{Type}','HomeController@NoviosSub');
-Route::get('ElMundoDeAldoSub/{slug}','HomeController@ElMundoDeAldoSub');
+Route::get('ElMundoDeAldo/{slug}','HomeController@ElMundoDeAldoSub');
 
-// Route::get('','HomeController@');
-// Route::get('','HomeController@');
-// Route::get('','HomeController@');
 
 Route::group(['middleware' => 'web'], function () {
 	// Route::auth();
@@ -43,9 +40,8 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('MundoAldoAdm', 'AdminController@MundoAldoAdm');
 	Route::get('Marcket','AdminController@Marcket');
 	Route::get('Eventos', 'AdminController@Eventos');
+	Route::get('SubframeList/{frame_id}', 'AdminController@Subframe');
 	
-
-
 	Route::get('NuevoProducto/{category_id}','ProductController@create');
 	Route::post('storeProducto','ProductController@store');
 	Route::get('EditarProducto/{id}', 'ProductController@edit');
@@ -85,7 +81,16 @@ Route::group(['middleware' => 'web'], function () {
 	Route::post('ActualizarFrame/{id}', 'FrameController@update');
 	Route::get('EliminarFrame/{id}','FrameController@delete');
 	Route::get('DesactivarFrame/{id}','FrameController@desactive');
-	Route::get('ActivarFrame/{id}','FrameController@active'); 
+	Route::get('ActivarFrame/{id}','FrameController@active');
+
+	
+	Route::get('NuevoSubFrame/{frame_id}','SubframeController@create');
+	Route::post('storeSubFrame','SubframeController@store');
+	Route::get('EditarSubFrame/{id}', 'SubframeController@edit');
+	Route::post('ActualizarSubFrame/{id}', 'SubframeController@update');
+	Route::get('EliminarSubFrame/{id}','SubframeController@delete');
+	Route::get('DesactivarSubFrame/{id}','SubframeController@desactive');
+	Route::get('ActivarSubFrame/{id}','SubframeController@active'); 
 });
 
 Auth::routes();

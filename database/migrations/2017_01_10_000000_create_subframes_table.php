@@ -9,7 +9,7 @@ class CreateSubframesTable extends Migration{
         Schema::create('subframes', function (Blueprint $table){
             $table->increments('id');
             $table->string('title');
-            $table->longText('content');
+            $table->longText('content')->nullable();
             $table->integer('images_id')->unsigned()->index();
             $table->integer('frame_id')->unsigned()->index();
             $table->boolean('state')->nullable();

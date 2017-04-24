@@ -10,8 +10,9 @@ class CreateFramesTable extends Migration{
             $table->increments('id');
             $table->string('title');
             $table->string('subtitle')->nullable();
-            $table->string('frame_type');
+            $table->string('frame_type')->nullable();
             $table->string('route');
+            $table->longText('slug')->nullable();
             $table->integer('images_id')->unsigned()->index();
             $table->boolean('isVideo')->nullable();
             $table->string('video_route')->nullable();

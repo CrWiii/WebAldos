@@ -62,6 +62,14 @@ class CategoryTableSeeder extends Seeder{
 		DB::table('images')->insert(['description'=>'/images/anillo4.jpg','route'=>'/images/anillo4.jpg','state'=>true,'created_by'=>2,'created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
 		DB::table('images')->insert(['description'=>'/images/anillo5.jpg','route'=>'/images/anillo5.jpg','state'=>true,'created_by'=>2,'created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
 		DB::table('images')->insert(['description'=>'','route'=>'','state'=>true,'created_by'=>2,'created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
+		DB::table('images')->insert([
+			'description'=>'480.jpg',
+			'route'=>'/images/480.jpg',
+			'state'=>true,
+			'created_by'=>1,
+			'created_at'=>Carbon::now(),
+			'updated_at'=>Carbon::now()
+		]);
 
 
 		DB::table('type')->insert([
@@ -477,6 +485,118 @@ DB::table('products')->insert([
 'updated_by'	=>2,
 'created_at'	=>Carbon::now(),
 'updated_at'	=>Carbon::now(),]); 
+
+
+
+
+DB::Table('frames')->insert([
+	'title' 		=>'HISTORIA',
+	'subtitle' 		=>'Tres décadas, dos generaciones, una historia...',
+	'frame_type'	=>1,
+	'route'			=>'ElMundoDeAldo/Historia',
+	'slug'			=>'Historia',
+	'images_id'		=> 24,
+	// 'content'		=> '',
+	'state'			=> 1,
+	'created_by'	=> 1,
+	'updated_by'	=> 1,
+	'created_at'	=>Carbon::now(),
+	'updated_at'	=>Carbon::now(),
+]);
+
+DB::Table('frames')->insert([
+	'title' 		=>'NOSOTROS',
+	'subtitle' 		=>'Tres décadas, dos generaciones, una historia...',
+	'frame_type'	=>1,
+	'route'			=>'ElMundoDeAldo/Nosotros',
+	'slug'			=>'Nosotros',
+	'images_id'		=> 24,
+	// 'content'		=> '',
+	'state'			=> 1,
+	'created_by'	=> 1,
+	'updated_by'	=> 1,
+	'created_at'	=>Carbon::now(),
+	'updated_at'	=>Carbon::now(),
+]);
+
+DB::Table('frames')->insert([
+	'title' 		=>'CREANDO MAGIA',
+	'subtitle' 		=>'El nacimiento de una joya...',
+	'frame_type'	=>1,
+	'route'			=>'ElMundoDeAldo/creando_magia',
+	'slug'			=>'creando_magia',
+	'images_id'		=> 24,
+	// 'content'		=> '',
+	'state'			=> 1,
+	'created_by'	=> 1,
+	'updated_by'	=> 1,
+	'created_at'	=>Carbon::now(),
+	'updated_at'	=>Carbon::now(),
+]);
+
+DB::Table('frames')->insert([
+	'title' 		=>'RESPONSABILIDAD SOCIAL',
+	'subtitle' 		=>'Detalles que ayudan...',
+	'frame_type'	=>1,
+	'route'			=>'ElMundoDeAldo/responsabilidad_social',
+	'slug'			=>'responsabilidad_social',
+	'images_id'		=> 24,
+	// 'content'		=> '',
+	'state'			=> 1,
+	'created_by'	=> 1,
+	'updated_by'	=> 1,
+	'created_at'	=>Carbon::now(),
+	'updated_at'	=>Carbon::now(),
+]);
+
+
+DB::Table('frames')->insert([
+	'title' 		=> 'NOVIOS',
+	'subtitle' 		=> 'Prometo amarte',
+	'frame_type'	=> 2,
+	'route'			=> 'Novios',
+	// 'slug'			=> '',
+	'images_id'		=> 24,
+	'content'		=> 'Cuenta el mito que del dedo anular sale una vena que va hasta el corazón, vena amoris o vena del amor es la conexión entre aquellos que se prometen amor y respeto',
+	'state'			=> 1,
+	'created_by'	=> 1,
+	'updated_by'	=> 1,
+	'created_at'	=>Carbon::now(),
+	'updated_at'	=>Carbon::now(),
+]);
+
+DB::Table('frames')->insert([
+	'title' 		=> 'PATEK PHILIPPE',
+	'subtitle' 		=> 'Más allá del tiempo',
+	'frame_type'	=> 2,
+	'route'			=> 'PatekPhilippe',
+	// 'slug'			=> '',
+	'images_id'		=> 24,
+	'content'		=> 'Aldo & Co recibe la confianza para ser representante de las mejores marcas de alta relojería a nivel mundial. Las mismas que ponen la precisión y elegancia al alcanze de nuestros clientes.',
+	'state'			=> 1,
+	'created_by'	=> 1,
+	'updated_by'	=> 1,
+	'created_at'	=>Carbon::now(),
+	'updated_at'	=>Carbon::now(),
+]);
+
+DB::Table('frames')->insert([
+	'title' 		=> 'JOYERÍA',
+	'subtitle' 		=> 'Oro soy',
+	'frame_type'	=> 2,
+	'route'			=> 'Joyeria',
+	// 'slug'			=> '',
+	'images_id'		=> 24,
+	'content'		=> 'Fieles a nuestra historia, Aldo&Co le da un lugar central a la colección Amarilis. Inspirada en la poetiza peruana del siglo de Oro que le da nombre a la colección, y los misterios alrededor de su vida, los diseños Amarilis transmiten una visión romántica y respetuosa de las formas en el trabajo del oro.',
+	'state'			=> 1,
+	'created_by'	=> 1,
+	'updated_by'	=> 1,
+	'created_at'	=>Carbon::now(),
+	'updated_at'	=>Carbon::now(),
+]);
+
+
+
 
 // 33
 // Anillo 10

@@ -4,7 +4,7 @@
 <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Crear Frame</h4> </div>
+                        <h4 class="page-title">Editar Frame</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <!-- <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Upgrade to Pro</a>
                         <ol class="breadcrumb">
@@ -20,31 +20,31 @@
                             <p class="text-muted m-b-30 font-13"></p> -->
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12">
-                                    <form class="form-horizontal" role="form" method="POST" action="/storeFrame" enctype="multipart/form-data">
+                                    <form class="form-horizontal" role="form" method="POST" action="/ActualizarFrame/{{$frame->id}}" enctype="multipart/form-data">
                                         {{csrf_field()}}
 
                                         <div class="form-group">
                                             <label class="col-md-2 control-label input-sm">Titulo:</label>
                                             <div class="col-md-10">
-                                                <input type="text" id="title" name="title" class="form-control input-sm" placeholder=""></div>
+                                                <input type="text" id="title" name="title" class="form-control input-sm" placeholder="" value="{{$frame->title}}"></div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label input-sm">Subtitulo:</label>
                                             <div class="col-md-10">
-                                                <input type="text" id="subtitle" name="subtitle" class="form-control input-sm" placeholder=""></div>
+                                                <input type="text" id="subtitle" name="subtitle" class="form-control input-sm" placeholder="" value="{{$frame->subtitle}}"></div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label input-sm">Link:</label>
                                             <div class="col-md-10">
-                                                <input type="text" id="route" name="route" class="form-control input-sm" placeholder=""></div>
+                                                <input type="text" id="route" name="route" class="form-control input-sm" placeholder="" value="{{$frame->route}}"></div>
                                         </div>
                                         
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label input-sm">Tipo:</label>
                                             <div class="col-sm-10">
                                                 <select class="form-control input-sm" id="frame_type" name="frame_type">
-                                                    @if($category_id==1)<option value="1">El Mundo Aldo</option>
-                                                    @elseif($category_id==2)<option value="2">Inicio</option>
+                                                    @if($frame->frame_type==1)<option value="1">El Mundo Aldo</option>
+                                                    @elseif($frame->frame_type==2)<option value="2">Inicio</option>
                                                     @endif
                                                 </select>
                                             </div>
@@ -53,15 +53,16 @@
                                         <div class="form-group">
                                             <label class="col-md-2 control-label input-sm">Descrición:</label>
                                             <div class="col-md-10">
-                                                <textarea class="form-control input-sm" rows="5" id="content" name="content"></textarea>
+                                                <textarea class="form-control input-sm" rows="5" id="content" name="content">{{$frame->content}}</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label input-sm">Subir Foto:</label>
                                             <div class="col-sm-10">
                                                 <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-                                                    <div class="form-control input-sm" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div> <span class="input-group-addon btn btn-default btn-file"> <span class="fileinput-new">Seleccionar Archivo</span> <span class="fileinput-exists">Cambiar</span>
+                                                    <div class="form-control input-sm" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename">{{$frame->Images->description}}</span></div> <span class="input-group-addon btn btn-default btn-file"> <span class="fileinput-new">Seleccionar Archivo</span> <span class="fileinput-exists">Cambiar</span>
                                                     <input type="file" name="image" id="image"> </span> <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Quitar</a> </div>
+                                                <center><img src="{{ asset($frame->Images->route) }}" alt="" height="200"></center>
                                             </div>
                                         </div>
                                        <!--  <div class="form-group">
@@ -76,9 +77,9 @@
                                             <label class="col-sm-2 control-label input-sm"></label>
                                             <div class="col-sm-10">
                                                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Crear</button>
-                                                @if($category_id==1)
+                                                @if($frame->frame_type==1)
                                                 <a href="{{url('MundoAldoAdm')}}" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
-                                                @elseif($category_id==2)
+                                                @elseif($frame->frame_type==2)
                                                 <a href="{{url('Inicio')}}" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
                                                 @endif
                                                 

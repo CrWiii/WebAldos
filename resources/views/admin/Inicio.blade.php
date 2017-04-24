@@ -33,6 +33,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($frames as $frame)
+                                        <tr>
+                                            <td>{{$frame->id}}</td>
+                                            <td>{{$frame->title}}</td>
+                                            <td>{{$frame->content}}</td>
+                                            <td> <img src="{{ asset($frame->Images->route) }}" alt="" height="50"></td>
+                                            <td>@if($frame->state==1)<span class="label label-success label-rouded">ACTIVO</span> @else <span class="label label-danger label-rouded">INACTIVO</span> @endif </td>
+                                            <td>{{  date('d/m/Y', strtotime($frame->created_at)) }}</td>
+                                            <td class="text-nowrap">
+                                                <a href="{{URL::to('EditarFrame',array('id'=>$frame->id))}}" data-toggle="tooltip" data-original-title="Editar"> <i class="fa fa-pencil text-inverse m-r-10"></i></a>
+                                                <a href="{{URL::to('SubframeList',array('id'=>$frame->id))}}" data-toggle="tooltip" data-original-title="SubFrame"><i class="fa fa-plus-square-o text-inverse m-r-10"></i></a>
+                                                @if($frame->state==1) <a href="{{URL::to('DesactivarFrame',array('id'=>$frame->id))}}" data-toggle="tooltip" data-original-title="Desactivar"> <i class="fa fa-circle-o text-inverse m-r-10"></i></a>
+                                                @else <a href="{{URL::to('ActivarFrame',array('id'=>$frame->id))}}" data-toggle="tooltip" data-original-title="Activar"> <i class="fa fa-circle text-inverse m-r-10"></i></a>
+                                                @endif
+                                                <a style="cursor: pointer;" data-toggle="tooltip" data-original-title="Eliminar" data-id="{{$frame->id}}" id="EliminarFrame"> <i class="fa fa-close text-danger"></i> </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                
                                     
                                     </tbody>

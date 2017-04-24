@@ -20,4 +20,7 @@ class Images extends Model{
 	public function Subframe(){
     	return $this->belongsTo(Subframe::class);
     }
+    public function Frame(){
+    	return $this->belongsTo(Frame::class,'frame_id','id');
+    }
 }

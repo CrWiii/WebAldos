@@ -8,6 +8,8 @@ use App\Type;
 use App\Eventt;
 use App\Marcket;
 use App\Question;
+use App\Frame;
+use App\Subframe;
 class HomeController extends Controller{
 
     // public function __construct(){
@@ -32,9 +34,10 @@ class HomeController extends Controller{
         return view('event',compact('TypesJoyas','TypesNovios','Eventt'));
     }
     public function ElMundoDeAldo(){
+        $frames = Frame::where('frame_type',1)->orderBy('created_at','DESC')->get();
     	$TypesJoyas = Type::where('category_id',1)->get();
         $TypesNovios = Type::where('category_id',2)->get();
-        return view('ElMundoDeAldo',compact('TypesJoyas','TypesNovios'));
+        return view('ElMundoDeAldo',compact('TypesJoyas','TypesNovios','frames'));
     }
     public function PatekPhilippe(){
     	$TypesJoyas = Type::where('category_id',1)->get();
@@ -85,10 +88,12 @@ class HomeController extends Controller{
     public function ElMundoDeAldoSub($slug){
     	$TypesJoyas = Type::where('category_id',1)->get();
         $TypesNovios = Type::where('category_id',2)->get();
-        $subTit = collect([['slug'=>'Historia','description'=>'HISTORIA'],
-                          ['slug'=>'Nosotros','description'=>'NOSOTROS'],
-                          ['slug'=>'creando_magia','description'=>'CREANDO MAGIA'],
-                          ['slug'=>'responsabilidad_social','description'=>'RESPONSABILIDAD SOCIAL']]);
-        return view('ElMundoDeAldoSub',compact('TypesJoyas','TypesNovios','subTit','slug'));
+        // $subTit = collect([['slug'=>'Historia','description'=>'HISTORIA'],
+        //                   ['slug'=>'Nosotros','description'=>'NOSOTROS'],
+        //                   ['slug'=>'creando_magia','description'=>'CREANDO MAGIA'],
+        //                   ['slug'=>'responsabilidad_social','description'=>'RESPONSABILIDAD SOCIAL']]);
+        $frames = Frame::where('frame_type',1)->where('state',true)->get();
+
+        return view('ElMundoDeAldoSub',compact('TypesJoyas','TypesNovios','frames','slug'));
     }
 }

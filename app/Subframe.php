@@ -4,11 +4,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 Class Subframe extends Model{   
-	protected $table = 'subframe';
-	protected $fillable = ['id','description','state','created_by','updated_by'];
+	protected $table = 'subframes';
+	protected $fillable = ['title','content','frame_id','images_id','state','created_by','updated_by'];
 
 	public function Images(){
-		return $this->belongTo(Images::class);
+		return $this->belongsTo(Images::class);
 	}
 
 	public function Frame(){
