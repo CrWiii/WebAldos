@@ -12,7 +12,7 @@ Class Frame extends Model{
 	}
 
 	public function Subframes(){
-    	return $this->belongsTo(Subframe::class);
+    	return $this->hasMany(Subframe::class);
     }
 
 	
