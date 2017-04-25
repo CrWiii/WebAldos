@@ -34,7 +34,7 @@ class HomeController extends Controller{
         return view('event',compact('TypesJoyas','TypesNovios','Eventt'));
     }
     public function ElMundoDeAldo(){
-        $frames = Frame::where('frame_type',1)->orderBy('created_at','DESC')->get();
+        $frames = Frame::where('frame_type',1)->where('state',1)->orderBy('created_at','DESC')->get();
     	$TypesJoyas = Type::where('category_id',1)->get();
         $TypesNovios = Type::where('category_id',2)->get();
         return view('ElMundoDeAldo',compact('TypesJoyas','TypesNovios','frames'));

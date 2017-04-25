@@ -38,18 +38,31 @@
                                             <td>{{$subframe->title}}</td>
                                             <td>{{str_limit($subframe->content,20)}}</td>
                                             <td> <img src="{{ asset($subframe->Images->route) }}" alt="" height="50"></td>
-                                            <td>@if($subframe->state==1)<span class="label label-success label-rouded">ACTIVO</span> @else <span class="label label-danger label-rouded">INACTIVO</span> @endif </td>
+                                            <td>
+                                            @if($subframe->state==1)<span class="label label-success label-rouded">ACTIVO</span>
+                                            @else<span class="label label-danger label-rouded">INACTIVO</span>
+                                            @endif
+                                            </td>
                                             <td>{{  date('d/m/Y', strtotime($subframe->created_at)) }}</td>
                                             <td class="text-nowrap">
-                                                <a href="{{URL::to('EditarSubFrame',array('id'=>$subframe->id))}}" data-toggle="tooltip" data-original-title="Editar"> <i class="fa fa-pencil text-inverse m-r-10"></i></a>
-                                                @if($subframe->state==1) <a href="{{URL::to('DesactivarSubFrame',array('id'=>$subframe->id))}}" data-toggle="tooltip" data-original-title="Desactivar"> <i class="fa fa-circle-o text-inverse m-r-10"></i></a>
-                                                @else <a href="{{URL::to('ActivarSubFrame',array('id'=>$subframe->id))}}" data-toggle="tooltip" data-original-title="Activar"> <i class="fa fa-circle text-inverse m-r-10"></i></a>
+                                                <a href="{{URL::to('EditarSubFrame',array('id'=>$subframe->id))}}" data-toggle="tooltip" data-original-title="Editar"> 
+                                                    <i class="fa fa-pencil text-inverse m-r-10"></i>
+                                                </a>
+                                                @if($subframe->state==1)
+                                                <a href="{{URL::to('DesactivarSubFrame',array('id'=>$subframe->id))}}" data-toggle="tooltip" data-original-title="Desactivar">
+                                                    <i class="fa fa-circle-o text-inverse m-r-10"></i>
+                                                </a>
+                                                @else 
+                                                <a href="{{URL::to('ActivarSubFrame',array('id'=>$subframe->id))}}" data-toggle="tooltip" data-original-title="Activar">
+                                                    <i class="fa fa-circle text-inverse m-r-10"></i>
+                                                </a>
                                                 @endif
-                                                <a style="cursor: pointer;" data-toggle="tooltip" data-original-title="Eliminar" data-id="{{$subframe->id}}" id="EliminarSubFrame"> <i class="fa fa-close text-danger"></i> </a>
+                                                <a style="cursor: pointer;" data-toggle="tooltip" data-original-title="Eliminar" data-id="{{$subframe->id}}" id="EliminarSubFrame">
+                                                    <i class="fa fa-close text-danger"></i>
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach
-                                    
                                     </tbody>
                                 </table>
                             </div>
@@ -57,14 +70,14 @@
                     </div>
                 </div>
             </div>
-<div class="modal fade" id="modalEliminarFrame" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalEliminarSubFrame" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
         <div class="modal-body">
-            <h4>¿Está seguro que desea Eliminar El Frame?</h4>
+            <h4>¿Está seguro que desea Eliminar El SubFrame?</h4>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Close</button>
@@ -79,12 +92,12 @@
 @section('script')
 
 <script type="text/javascript">
-    $(document).on('click','#EliminarFrame',function(){
-        var Frame_id_selected = $(this).attr('data-id');
-        var link = '{{url('EliminarFrame')}}' + '/' + Frame_id_selected;
-        $('#ElimiarBtn').attr('data-id', Frame_id_selected);
+    $(document).on('click','#EliminarSubFrame',function(){
+        var Subframe_id_selected = $(this).attr('data-id');
+        var link = '{{url('EliminarSubFrame')}}' + '/' + Subframe_id_selected;
+        $('#ElimiarBtn').attr('data-id', Subframe_id_selected);
         $('#ElimiarBtn').attr('href', link);
-        $('#modalEliminarFrame').modal();
+        $('#modalEliminarSubFrame').modal();
     });
 
 DesactivarEvento

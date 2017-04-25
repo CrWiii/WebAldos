@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Product;
-// use App\Category;
-// use App\Type;
 use App\Frame;
 use App\Images;
 use Validator;

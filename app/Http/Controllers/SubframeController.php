@@ -62,53 +62,40 @@ class SubframeController extends Controller{
     }
 
     public function delete($id){
-        $frame_type = Frame::where('id',$id)->pluck('frame_type');
-        $frame_type = (int)$frame_type[0];
-        $frame = frame::destroy($id);
-            if($frame_type==1){
-                return redirect('MundoAldoAdm');
-            }
-            if($frame_type==2){
-                return redirect('Inicio');
-            }
+        $frame_id = Subframe::where('id',$id)->pluck('frame_id');
+        $frame_id = (int)$frame_id[0];
+        $frame = Subframe::destroy($id);
+        return redirect('SubframeList/'.$frame_id);
     }
     public function desactive($id){
-        $Frame = Frame::findOrFail($id);
+        $frame_id = Subframe::where('id',$id)->pluck('frame_id');
+        $frame_id = (int)$frame_id[0];
+        $Frame = Subframe::findOrFail($id);
         $Frame->state = 0;
         $Frame->update();
-        // $frame_type = Frame::where('id',$id)->pluck('frame_type');
-            if($Frame->frame_type==1){
-                return redirect('MundoAldoAdm');
-            }
-            if($Frame->frame_type==2){
-                return redirect('Inicio');
-            }
+        return redirect('SubframeList/'.$frame_id);
     }
     public function active($id){
-        $Frame = Frame::findOrFail($id);
+        $frame_id = Subframe::where('id',$id)->pluck('frame_id');
+        $frame_id = (int)$frame_id[0];
+        $Frame = Subframe::findOrFail($id);
         $Frame->state = 1;
         $Frame->update();
-            if($Frame->frame_type==1){
-                return redirect('MundoAldoAdm');
-            }
-            if($Frame->frame_type==2){
-                return redirect('Inicio');
-            }
+        return redirect('SubframeList/'.$frame_id);
     }
     public function edit($id){
-        $frame = Frame::findOrFail($id);
-        return view('admin.Frame.edit',compact('frame'));
+        $subframe = Subframe::findOrFail($id);
+        $frame = Frame::findOrFail($subframe->frame_id);
+        return view('admin.Subframe.edit',compact('frame','subframe'));
     }
     public function update($id,Request $request){
         $validator = Validator::make($request->all(), [
             'title'         => 'required',
-            'route'         => 'required',
-            'frame_type'    => 'required',
-            'image'         => 'required|max:2048|mimes:jpeg,jpg,png',
+            'image'         => 'max:2048|mimes:jpeg,jpg,png',
         ]);
 
         $imgfu = '';
-        $Frame = Frame::findOrFail($request->id);
+        $Subframe = Subframe::findOrFail($request->id);
         if ($validator->passes()) {
             $input = $request->all();
             if(!empty($request->image)){
@@ -124,25 +111,18 @@ class SubframeController extends Controller{
                 $Images->save();
                 $ImgId = $Images->id;
             }else{
-                $ImgId = $Frame->images_id;
+                $ImgId = $Subframe->images_id;
             }
 
-            $Frame->title = $request->title;
-            $Frame->subtitle = $request->subtitle;
-            $Frame->frame_type = $request->frame_type;
-            $Frame->route = $request->route;
-            $Frame->images_id = $Images->id;
-            $Frame->state = 1;
-            $Frame->content = $request->content;
-            $Frame->updated_by = Auth::user()->id;
-            $Frame->update();
+            $Subframe->title = $request->title;
+            $Subframe->images_id = $ImgId;
+            $Subframe->content = $request->content;
+            $Subframe->frame_id = $request->frame_id;
+            $Subframe->state = 1;
+            $Subframe->updated_by = Auth::user()->id;
+            $Subframe->update();
 
-            if($Frame->frame_type==1){
-                return redirect('MundoAldoAdm');
-            }
-            if($Frame->frame_type==2){
-                return redirect('Inicio');
-            }
+            return redirect('SubframeList/'.$request->frame_id);
         }
         // return response()->json(['error'=>$validator->errors()->all()]);
     }
