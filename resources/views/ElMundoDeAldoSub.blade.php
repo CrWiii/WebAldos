@@ -52,19 +52,21 @@
             <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
                 <div id="mainCarousel" class="carousel slide" data-ride="carousel" data-interval="8000">  
                        <div class="carousel-inner">
-                       <?php $i=0;?>
+                        <?php $i=0;?>
                         @foreach($frames as $frame)
                           @if($slug==$frame->slug)
                             @foreach($frame->Subframes as $Subframe)
-                              
-                              @if($i==0)<div class="item active">@else<div class="item">@endif
-                                <figure class="responsive img-responsive" data-media240="{{url($Subframe->Images->route)}}" data-media769="{{url($Subframe->Images->route)}}" data-media1201="{{url($Subframe->Images->route)}}" data-title="Bridal Planner Phuket">
-                                  <img src="{{url($Subframe->Images->route)}}">
-                                </figure>
-                                <p style="padding: 2% 2%;">{{$Subframe->title}}</p>
-                                    <p style="padding: 2% 2%;">{{$Subframe->content}}</p>
-                              </div>
-                              <?php $i++;?>
+                              @if($Subframe->state==true)
+                                @if($i==0)<div class="item active">@else<div class="item">@endif
+                                  <figure class="responsive img-responsive" data-media240="{{url($Subframe->Images->route)}}" data-media769="{{url($Subframe->Images->route)}}" data-media1201="{{url($Subframe->Images->route)}}" data-title="Bridal Planner Phuket">
+                                    <img src="{{url($Subframe->Images->route)}}">
+                                  </figure>
+                                  <p style="padding: 2% 2%;">{{$Subframe->title}}</p>
+                                      <p style="padding: 2% 2%;">{{$Subframe->content}}</p>
+                                </div>
+                                <?php $i++;?>
+                              @else
+                              @endif
                             @endforeach
                           @endif
                         @endforeach

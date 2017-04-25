@@ -1,4 +1,7 @@
 <style type="text/css">
+p{
+  margin: 0 0 3px !important;
+}
   #form-main-sub{
   width:100%;
   float:left;
@@ -6,6 +9,7 @@
 }
 
 #form-div {
+  line-height: 1.5;
   background-color:rgb(214, 198, 187);
   padding-left:35px;
   padding-right:35px;
@@ -19,7 +23,7 @@
   margin-left: -260px;
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
-  bottom: 0px;
+  top: 500px;
   border: 2px solid #342825;
 }
 
@@ -31,7 +35,7 @@
   border-radius: 0;
   line-height: 22px;
   background-color: #fbfbfb;
-  padding: 13px 13px 13px 54px;
+  padding: 3px 3px 3px 40px;
   margin-bottom: 10px;
   width:100%;
   -webkit-box-sizing: border-box;
@@ -47,7 +51,7 @@
   border: 3px solid #342825;
   color: #3498db;
   outline: none;
-  padding: 13px 13px 13px 54px;
+  padding: 3px 3px 3px 40px;
 }
 
 .focused{
@@ -58,14 +62,14 @@
 /* Icons ---------------------------------- */
 #name{
   background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
-  background-size: 30px 30px;
+  background-size: 15px 15px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
 
 #name:focus{
   background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
-  background-size: 30px 30px;
+  background-size: 15px 15px;
   background-position: 8px 5px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
@@ -73,13 +77,13 @@
 
 #email{
   background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
-  background-size: 30px 30px;
+  background-size: 15px 15px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
 #celphone{
   background-image: url(http://inspiredaustin.com/upload/1024x0-cell-phone-number-svg-icon-ee-710619.png);
-  background-size: 30px 30px;
+  background-size: 15px 15px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
@@ -87,14 +91,14 @@
 
 #email:focus{
   background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
-  background-size: 30px 30px;
+  background-size: 15px 15px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
 
 #comment{
   background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
-  background-size: 30px 30px;
+  background-size: 15px 15px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
@@ -218,7 +222,7 @@ input:focus, textarea:focus {
 <div id="form-main-sub" style="display: none">
   <div id="form-div">
     <i class="" style="float:right;position: relative; top:-25px; right: -15px color: #342825 !important"><a id="closeModal-sub" style="cursor: pointer;">X</a></i>
-    <form class="form" id="form1">
+    <form class="form" id="form1" method="POST" action="/storePer">
       
       <p class="name">
         <input name="first_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Nombre" id="name" />
@@ -242,7 +246,7 @@ input:focus, textarea:focus {
       
       
       <div class="submit">
-        <input type="submit" value="SEND" id="button-blue"/>
+        <button type="submit" value="SEND" id="button-blue" disabled="disabled">Suscribirme</button>
         <div class="ease"></div>
       </div>
     </form>
