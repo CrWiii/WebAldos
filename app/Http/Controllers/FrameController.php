@@ -10,10 +10,9 @@ use Auth;
 
 class FrameController extends Controller{
 
-// public function __construct(){
-//        $this->middleware('auth');
-//    }
-
+    public function __construct(){
+        $this->middleware('auth');
+    }
 
     public function create($category_id){
     // $Category = Category::all()->where('id',$category_id)->where('state',true);

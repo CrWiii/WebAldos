@@ -12,7 +12,7 @@ class CreatePersonTable extends Migration{
             $table->string('last_name')->nullable();
             $table->string('email')->unique();
             $table->boolean('celphone')->nullable();
-            $table->integer('images_id')->nullable();
+            $table->integer('came_from')->nullable();
             $table->boolean('state')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();

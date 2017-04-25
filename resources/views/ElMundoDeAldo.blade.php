@@ -31,6 +31,7 @@
    <div class="container-fluid" style="padding: 0px !important; margin: 0px !important;">
     <?php $i=2;?>
       @foreach($frames as $frame)
+      @if($frame->state==1)
         @if($i%2==0)
           <div class="row" style="background: #ded5cc !important">
              <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
@@ -66,6 +67,7 @@
             </div>
           </div>
         @endif
+      @endif
       <?php $i++; ?>
       @endforeach
     </div>

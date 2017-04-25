@@ -12,12 +12,10 @@ use Redirect;
 
 class SubframeController extends Controller{
 
-// public function __construct(){
-//        $this->middleware('auth');
-//    }
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function create($frame_id){
-        // $frame_type = Frame::where('id',$frame_id)->pluck('frame_type');
-        // $frame_type = (int)$frame_type[0];
         $frame = Frame::find($frame_id);
         return view('admin.Subframe.create', compact('frame'));
     }
