@@ -36,7 +36,9 @@
              <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
                 <div class="hovercontainer hovcont" style="height: 550px;"> 
                   <div class="subhover">
-                    <a href="{{url($frame->route)}}" style="color: #f9f9f9 !important">{{$frame->title}}</a>
+                    @if(substr( $frame->route, 0, 4 ) === "http")<a href="{{url($frame->route)}}" target="_blank" style="color: #f9f9f9 !important">{{$frame->title}}</a>
+                    @else<a href="{{url($frame->route)}}" style="color: #f9f9f9 !important">{{$frame->title}}</a>
+                    @endif
                     <p style="font-family: 'AppleGaramondLight';font-size: 0.6em;"> {{$frame->subtitle}}</p>
                   </div>
                </div>
