@@ -43,7 +43,9 @@
                                             <td>{{  date('d/m/Y', strtotime($frame->created_at)) }}</td>
                                             <td class="text-nowrap">
                                                 <a href="{{URL::to('EditarFrame',array('id'=>$frame->id))}}" data-toggle="tooltip" data-original-title="Editar"> <i class="fa fa-pencil text-inverse m-r-10"></i></a>
+                                                @if(substr( $frame->route, 0, 4 ) != "http")
                                                 <a href="{{URL::to('SubframeList',array('id'=>$frame->id))}}" data-toggle="tooltip" data-original-title="SubFrame"><i class="fa fa-plus-square-o text-inverse m-r-10"></i></a>
+                                                @endif
                                                 @if($frame->state==1) <a href="{{URL::to('DesactivarFrame',array('id'=>$frame->id))}}" data-toggle="tooltip" data-original-title="Desactivar"> <i class="fa fa-circle-o text-inverse m-r-10"></i></a>
                                                 @else <a href="{{URL::to('ActivarFrame',array('id'=>$frame->id))}}" data-toggle="tooltip" data-original-title="Activar"> <i class="fa fa-circle text-inverse m-r-10"></i></a>
                                                 @endif

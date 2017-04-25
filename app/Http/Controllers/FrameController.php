@@ -49,6 +49,7 @@ class FrameController extends Controller{
             $Frame->frame_type = $request->frame_type;
             $Frame->route = $request->route;
             $Frame->images_id = $Images->id;
+            $Frame->slug =  str_replace(' ', '_', strtolower($request->title));
             $Frame->state = 1;
             $Frame->content = $request->content;
             $Frame->created_by = Auth::user()->id;

@@ -35,7 +35,9 @@
         <div class="row">
             <ul class="nav asf">
                 @foreach($frames as $tit)
+                  @if(substr( $tit->route, 0, 4 ) != "http")
                   <li><a href="{{url('ElMundoDeAldo',array('tit'=>$tit->slug))}}" @if($slug==$tit->slug)class="active" @endif>{{$tit->title}}</a></li>
+                  @endif
                 @endforeach
             </ul>
 
