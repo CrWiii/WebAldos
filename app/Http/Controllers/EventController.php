@@ -43,7 +43,7 @@ class EventController extends Controller{
         $uploadcount = 0;
         $on = 1;
         foreach($files as $file) {
-            $rules = array('file' => 'required|max:4092|mimes:png,gif,jpeg'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
+            $rules = array('file' => 'required|max:4092|mimes:png,gif,jpeg,jpg'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
             $validator = Validator::make(array('file'=> $file), $rules);
             if($validator->passes()){
                 $destinationPath = 'images';
