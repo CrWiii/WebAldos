@@ -26,7 +26,8 @@ class AdminController extends Controller{
     }
     public function Joyas(){
     	$ProductJoyas = Product::where('category_id',1)->orderBy('created_at','DESC')->paginate(15);
-    	return view('admin.Joyas', compact('ProductJoyas'));
+        $frames = Type::where('category_id',1)->get();
+    	return view('admin.Joyas', compact('ProductJoyas','frames'));
     }
     public function Novios(){
         $Questions = Question::paginate(15);

@@ -32,10 +32,10 @@
                                             <div class="white-box" style="padding: 0px !important">
                                                 <h3 class="box-title">Lista de Frames</h3>
                                                 <div class="row sales-report">
-                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <!-- <div class="col-md-6 col-sm-6 col-xs-6">
                                                         <a href="{{url('NuevoFrame')}}" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
 
-                                                    </div>
+                                                    </div> -->
                                                     <div class="col-md-6 col-sm-6 col-xs-6 ">
                                                     </div>
                                                 </div>

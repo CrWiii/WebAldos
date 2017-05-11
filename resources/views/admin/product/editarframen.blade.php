@@ -63,7 +63,8 @@
                                             <label class="col-sm-2 control-label input-sm"></label>
                                             <div class="col-sm-10">
                                                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Guardar</button>
-                                                <a href="{{url('NoviosAdm')}}" class="btn btn-inverse waves-effect waves-light">Cancelar</a>                                  
+                                                @if($frame->category_id==1)<a href="{{url('JoyasAdm')}}" class="btn btn-inverse waves-effect waves-light">Cancelar</a>@endif
+                                                @if($frame->category_id==2)<a href="{{url('NoviosAdm')}}" class="btn btn-inverse waves-effect waves-light">Cancelar</a>@endif                                      
                                             </div>
                                         </div>
                                     </form>
