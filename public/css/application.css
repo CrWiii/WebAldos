@@ -3170,7 +3170,8 @@ tbody.collapse.in {
       background-color: #999; }
   .navbar-default .navbar-collapse,
   .navbar-default .navbar-form {
-    border-color: #ffffff; }
+  /*  border-color: #ffffff; */
+  }
   .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
     background-color: transparent;
     color: #666; }
