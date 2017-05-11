@@ -19,7 +19,8 @@ class HomeController extends Controller{
     public function home(){
     	$TypesJoyas = Type::where('category_id',1)->get();
         $TypesNovios = Type::where('category_id',2)->get();
-        return view('welcome',compact('TypesJoyas','TypesNovios'));
+        $frames = Frame::where('frame_type',2)->get();
+        return view('welcome',compact('TypesJoyas','TypesNovios','frames'));
     }
     public function events(){
         $Eventts = Eventt::where('state',true)->orderBy('updated_at','DESC')->take(3)->get();

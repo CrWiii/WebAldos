@@ -63,61 +63,65 @@
 
 <section id="gridContent" class="grid whitebg">
    <div class="container-fluid" style="padding: 0px !important; margin: 0px !important;">
-      <div class="row" style="background: #ded5cc !important">
-         <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-            <div class="hovercontainer hovcont"> 
-              <p class="hovcontp">NOVIOS</p>
-              <p class="hovcontps">Cuenta el mito que del dedo anular sale una vena que va hasta el corazón, vena amoris o vena del amor es la conexión entre aquellos que se prometen amor y respeto </p>
-              <h1 class="hovconth">Prometo amarte</h1>
-              <p class="hovcontpl"><a href="{{url('Novios')}} ">Ver la colección completa</a></p>
-           </div>
-          </div>
-         <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-            <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-              <p class="p1"></p>
-              <!--<img src="file/">-->
-           </div>
-          </div>
-        </div>
 
-        <div class="row" style="background: #ded5cc !important">
-          <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-            <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-              <p style="padding: 44.5% 35%;">IMAGEN</p>
-              <!--<img src="file/">-->
-           </div>
-          </div>
-         <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-            <div class="hovercontainer" style="background: #ded5cc;text-align: center;margin: 0px !important;">
-              <p style="color: white;font-family: 'Trajan Pro';padding-top: 10%;font-size: 300%">PATEK PHILIPPE</p>
-              
-              <p style="font-family: 'AppleGaramondLight';font-size: 148%;padding-left: 20%;padding-right: 20%;margin-bottom: 0px;">Aldo & Co recibe la confianza para ser representante de las mejores marcas de alta relojería a nivel mundial. Las mismas que ponen la precisión y elegancia al alcanze de nuestros clientes.</p>
-              <h1 style="font-family: 'GreatVibes';padding-bottom: 5%;color: #ccbba2">Más allá del tiempo</h1>
-              <p style="padding-bottom: 5.8%;font-family: 'AppleGaramondLight';"><a href="{{url('PatekPhilippe')}}">Ver la colección completa</a></p>
-           </div>
-          </div>
-        </div>
-        <div class="row" style="background: #ded5cc !important">
-         <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-            <div class="hovercontainer" style="background: #ded5cc;text-align: center;margin: 0px !important;">
-              <p style="color: white;font-family: 'Trajan Pro';padding-top: 10%;font-size: 300%">JOYERÍA</p>
-              
-              <p style="font-family: 'AppleGaramondLight';font-size: 140%;padding-left: 15%;padding-right: 15%;margin-bottom: 0px;">Fieles a nuestra historia, Aldo&Co le da un lugar central a  la colección Amarilis. Inspirada en la poetiza peruana del siglo de Oro que le da nombre a la colección, y los misterios alrededor de su vida, los diseños Amarilis transmiten una visión romántica y respetuosa de las formas en el trabajo del oro.</p>
-              <h1 style="font-family: 'GreatVibes';padding-bottom: 5%;color: #ccbba2">Oro soy</h1>
+       <style type="text/css">
+  .subhover{
+    color: white;
+    font-family: 'Trajan Pro';
+    font-size: 3em;margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+</style>
 
-              <p style="padding-bottom: 5.6%;font-family: 'AppleGaramondLight';"><a href="{{url('Joyeria')}} ">Ver la colección completa</a></p>
-           </div>
+<section id="gridContent" class="grid whitebg">
+   <div class="container-fluid" style="padding: 0px !important; margin: 0px !important;">
+    <?php $i=1;?>
+      @foreach(@$frames as $frame)
+        @if($i & 1)
+          <div class="row" style="background: #ded5cc !important">
+             <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
+                <div class="hovercontainer hovcont" style="height: 550px;"> 
+                  <p class="hovcontp">{{$frame->title}}</p>
+                    <p class="hovcontps">{{$frame->content}} </p>
+                    <h1 class="hovconth">{{$frame->subtitle}}</h1>
+                    <p class="hovcontpl"><a href="{{url($frame->route)}} ">Ver la colección completa</a></p>
+               </div>
+              </div>
+             <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
+                <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
+                  <a href=""><img class="responsive img-responsive" src="{{$frame->Images->route}}"></a>
+               </div>
+              </div>
           </div>
-         <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-            <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-              <p style="padding: 46.7% 35%;">IMAGEN</p>
-              <!--<img src="file/">-->
-           </div>
+        @else
+          <div class="row" style="background: #ded5cc !important">
+            <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
+              <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
+                <a href=""><img class="responsive img-responsive" src="{{$frame->Images->route}}"></a>
+              </div>
+            </div>
+            <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
+                <div class="hovercontainer hovcont" style="height: 550px;"> 
+                    <p class="hovcontp">{{$frame->title}}</p>
+                    <p class="hovcontps">{{$frame->content}} </p>
+                    <h1 class="hovconth">{{$frame->subtitle}}</h1>
+                    <p class="hovcontpl"><a href="{{url($frame->route)}} ">Ver la colección completa</a></p>
+                </div>
+              </div>
           </div>
-       
-        </div>
-
+          
+        @endif
+      <?php $i++; ?>
+      @endforeach
+      
     </div>
+</section>
+        
+
 </section>
 <section id="raveContent" class="padded-content-sm os-animation animated fadeInUpBig" data-os-animation="fadeInUpBig" data-os-animation-delay="100ms" style="animation-delay: 100ms; background: #d6c6bb !important;padding: 0px !important;">
     <div class="container text-center">
