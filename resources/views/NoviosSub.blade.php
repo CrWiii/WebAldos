@@ -3,7 +3,8 @@
 @section('content')
 
 <style type="text/css">
-  .asf > li > a {color: #676767 !important;font-size: 0.8em;line-height: 50px;}
+  .asf > li > a {color: #676767 !important;line-height: 50px;}
+  .titlists{font-size: 0.8em !important}
   
   .nav > li > a.active {margin-bottom:-3px;border-bottom: 2px solid #ded5cc !important;}
   .asf{border-bottom: 1px solid #a89797 !important;}
@@ -11,6 +12,7 @@
   .grid .row .hovercontainer figure img {
     width: 100% !important;
   }
+
 
 </style>
 <div id="loaderHolder" style="display: none;">
@@ -34,7 +36,7 @@
         <div class="row">
             <ul class="nav asf">
                 @foreach($TypesNovios as $Type)               
-                <li><a id="{{$Type->id}}" href="{{url('Novios',array('Type'=>$Type->slug))}}" @if($Type_selected==$Type->id)class="active" @endif>{{$Type->description}}</a></li>
+                <li class="titlists"><a id="{{$Type->id}}" href="{{url('Novios',array('Type'=>$Type->slug))}}" @if($Type_selected==$Type->id)class="titlists active" @else class="titlists" @endif>{{$Type->description}}</a></li>
                 
                 @endforeach
             </ul>

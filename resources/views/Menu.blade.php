@@ -1,7 +1,7 @@
 <link href="{{asset('css/dura/dura-main.css')}}" rel="stylesheet">
 <link href="{{asset('css/dura/dura-responsive.css')}}" rel="stylesheet">
 <style>
-  @media(max-width: 767px){
+  @media(max-width: 1000px){
   .img-hi{
     display: none;
   }
