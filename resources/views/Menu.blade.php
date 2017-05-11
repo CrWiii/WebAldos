@@ -52,8 +52,7 @@
                               @if($TypeN->slug!='colectivo_de_novios')
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                   <ul>
-                                    <span><img src="{{url($TypeN->Images->route)}}" class="img-responsive img-hi"></span>
-                                      <li style="text-align: center;"><a href="{{url('Novios',array('Type'=>$TypeN->slug))}}">{{$TypeN->description}}</a></li>
+                                      <li style="text-align: center;"><a href="{{url('Novios',array('Type'=>$TypeN->slug))}}"><span><img src="{{url($TypeN->Images->route)}}" class="img-responsive img-hi"></span>{{$TypeN->description}}</a></li>
                                   </ul>
                                 </div>
                               @endif
@@ -73,7 +72,7 @@
                               @if($f<6)
                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                 <ul>
-                                  <li style="text-align: center;"><a href="{{url('Joyeria',array('Type'=>$TypeJ->slug))}}"><span><img src="{{url('img/anillo.png')}}" class="img-responsive img-hi" alt="product 1" style="margin: auto;">{{$TypeJ->description}}</a></li>
+                                  <li style="text-align: center;"><a href="{{url('Joyeria',array('Type'=>$TypeJ->slug))}}"><span><img src="{{url('img/anillo.png')}}" class="img-responsive img-hi" style="margin: auto;">{{$TypeJ->description}}</a></li>
                                 </ul>
                               </div>
                               @endif

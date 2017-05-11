@@ -103,11 +103,11 @@
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
   top: 250px;
-  border: 2px solid #342825;
+  border: 2px solid #525050;
 }
 
 .feedback-input {
-  color:#3c3c3c;
+  color:#525050;
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
   font-weight:500;
   font-size: 18px;
@@ -127,8 +127,8 @@
 .feedback-input:focus{
   background: #fff;
   box-shadow: 0;
-  border: 3px solid #342825;
-  color: #3498db;
+  border: 3px solid #525050;
+  color: #525050;
   outline: none;
   padding: 13px 13px 13px 54px;
 }
@@ -198,9 +198,9 @@ input:focus, textarea:focus {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   float:left;
   width: 100%;
-  border: #fbfbfb solid 4px;
+  border: #525050 solid 4px;
   cursor:pointer;
-  background-color: #342825;
+  background-color: #525050;
   color:white;
   font-size:24px;
 /*  padding-top:22px;s

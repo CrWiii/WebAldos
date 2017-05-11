@@ -1,12 +1,9 @@
 @extends('layout')
 
 @section('content')
-
-
 <div id="loaderHolder" style="display: none;">
     <div class="loader"></div>
 </div>
-
 <section id="gridContent" class="grid whitebg">
      <div class="container-fluid" style="padding: 0px !important; margin: 0px !important;">
         <div class="row">
@@ -18,8 +15,6 @@
           </div>
         </div>
   </section>
-
-
   <style type="text/css">
   .subhover{
     color: white;
@@ -30,7 +25,6 @@
     top: 50%;
     transform: translateY(-50%);
   }
-  
 </style>
 <section id="gridContent" class="grid whitebg">
    <div class="container-fluid" style="padding: 0px !important; margin: 0px !important;">
@@ -41,13 +35,13 @@
              <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
                 <div class="hovercontainer hovcont" style="height: 550px;"> 
                   <div class="subhover">
-                    <a href="{{url('Novios',array('Type'=>$frame->slug))}}" style="color: #f9f9f9 !important">{{$frame->description}}</a>
+                    <a href="{{url('Joyeria',array('Type'=>$frame->slug))}}" style="color: #f9f9f9 !important">{{$frame->description}}</a>
                   </div>
                </div>
               </div>
              <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
                 <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-                  <a href="{{url('Novios',array('Type'=>$frame->slug))}}"><img class="responsive img-responsive" src="{{$frame->Images_frame->route}}"></a>
+                  <a href="{{url('Joyeria',array('Type'=>$frame->slug))}}"><img class="responsive img-responsive" src="{{$frame->Images_frame->route}}"></a>
                </div>
               </div>
           </div>
@@ -55,25 +49,20 @@
           <div class="row" style="background: #ded5cc !important">
             <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
               <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-                  <a href="{{url('Novios',array('Type'=>$frame->slug))}}"><img class="responsive img-responsive" src="{{$frame->Images_frame->route}}"></a>
+                  <a href="{{url('Joyeria',array('Type'=>$frame->slug))}}"><img class="responsive img-responsive" src="{{$frame->Images_frame->route}}"></a>
                </div>
               </div>
              <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
                 <div class="hovercontainer hovcont" style="height: 550px;"> 
                   <div class="subhover">
-                    <a href="{{url('Novios',array('Type'=>$frame->slug))}}" style="color: #f9f9f9 !important">{{$frame->description}}</a>
+                    <a href="{{url('Joyeria',array('Type'=>$frame->slug))}}" style="color: #f9f9f9 !important">{{$frame->description}}</a>
                   </div>
                </div>
               </div>
             </div>
-          
         @endif
       <?php $i++; ?>
       @endforeach
-      
     </div>
 </section>
-
-
-
 @endsection

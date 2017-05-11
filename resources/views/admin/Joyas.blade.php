@@ -5,34 +5,20 @@
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">Joyas</h4> </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                        <!-- <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Upgrade to Pro</a>
-                        <ol class="breadcrumb">
-                            <li><a href="#">Dashboard</a></li>
-                        </ol> -->
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 col-sm-12 col-xs-12">
                         <div class="white-box">
-                            <!-- <h3 class="box-title m-b-0"></h3>
-                            <p class="text-muted m-b-40"></p> -->
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class="active"><a href="#FRAMES" aria-controls="FRAMES" role="tab" data-toggle="tab" aria-expanded="true"><span>LISTA DE FRAMES</span></a></li>
                                 <li role="presentation" class=""><a href="#PRODUCTOS" aria-controls="PRODUCTOS" role="tab" data-toggle="tab" aria-expanded="true"><span>LISTA DE PRODUCTOS</span></a></li>
                             </ul>
-                            <!-- Tab panes -->
                             <div class="tab-content">
-
                                 <div role="tabpanel" class="tab-pane active" id="FRAMES">
                                         <div class="col-md-12 col-lg-12 col-sm-12">
                                             <div class="white-box" style="padding: 0px !important">
                                                 <h3 class="box-title">Lista de Frames</h3>
                                                 <div class="row sales-report">
-                                                    <!-- <div class="col-md-6 col-sm-6 col-xs-6">
-                                                        <a href="{{url('NuevoFrame')}}" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
-
-                                                    </div> -->
                                                     <div class="col-md-6 col-sm-6 col-xs-6 ">
                                                     </div>
                                                 </div>
@@ -62,9 +48,7 @@
                                                                     <a href="{{URL::to('EditarFrameN',array('id'=>$frame->id))}}" data-toggle="tooltip" data-original-title="Editar" data-id="{{$frame->id}}"> <i class="fa fa-pencil text-inverse m-r-10"></i></a>
                                                                 </td>
                                                                 </tr>
-
                                                             @endforeach
-                                                        
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -72,20 +56,15 @@
                                         </div>
                                     <div class="clearfix"></div>
                                 </div>
-                                
                                 <div role="tabpanel" class="tab-pane" id="PRODUCTOS">
-                                        <div class="col-md-12 col-lg-12 col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title">Lista de Productos > Joyas</h3>
-                            <div class="row sales-report">
-                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <a href="{{url('NuevoProducto/1')}}" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
-                                    <!-- <h2>March 2017</h2>
-                                    <p>SALES REPORT</p> -->
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-6 ">
-                                    <!-- <h1 class="text-right text-info m-t-20">$3,690</h1> --> </div>
-                            </div>
+                                    <div class="col-md-12 col-lg-12 col-sm-12">
+                                        <div class="white-box">
+                                            <h3 class="box-title">Lista de Productos > Joyas</h3>
+                                                <div class="row sales-report">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                        <a href="{{url('NuevoProducto/1')}}" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
+                                                    </div>
+                                                </div>
                             <div class="table-responsive">
                                 <table class="table table-bordered">
                                     <thead>
@@ -128,13 +107,11 @@
                     </div>
                                     <div class="clearfix"></div>
                                 </div>
-                              
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
 <div class="modal fade" id="modalEliminarProducto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -151,12 +128,8 @@
         </div>
     </div>
 </div>
-
-            <!-- EliminarProducto -->
 @endsection
-
 @section('script')
-
 <script type="text/javascript">
     $(document).on('click','#EliminarProducto',function(){
         var producto_id_selected = $(this).attr('data-id');
@@ -165,8 +138,6 @@
         $('#ElimiarBtn').attr('href', link);
         $('#modalEliminarProducto').modal();
     });
-
 DesactivarProducto
 </script>
-
 @endsection

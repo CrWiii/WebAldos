@@ -119,9 +119,9 @@ input:focus, textarea:focus {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   float:left;
   width: 100%;
-  border: #fbfbfb solid 4px;
+  border: #525050 solid 4px;
   cursor:pointer;
-  background-color: #342825;
+  background-color: #525050;
   color:white;
   font-size:24px;
 /*  padding-top:22px;s
@@ -144,8 +144,8 @@ input:focus, textarea:focus {
   }
 }
 .btn-primary{
-    background-color: #342825;
-    border-color: #342825;
+    background-color: #525050;
+    border-color: #525050;
     color: #ffffff !important;
   }
 </style>
@@ -192,7 +192,7 @@ input:focus, textarea:focus {
                       <a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">Mega Plaza</a> - 
                       <a href="http://waze.to/?ll=32.1854841,34.8522185&navigate=yes" target="_blank">Mall del Sur</a>
                     </p>
-                    <p style="margin-top: 50px;">
+                    <p style="padding-top: 50px !important;">
                     <a target="_blank" href="https://www.facebook.com/joyeriaaldo/?fref=ts&__mref=message_bubble"><i class="icon-facebook">  </i> ALDO & Co. </a> | 
                     <a target="_blank" href="https://www.instagram.com/joyeriaaldoyco/"> <i class="icon-instagram"></i> JOYERIAALDOYCO  </a></p>
 
