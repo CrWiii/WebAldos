@@ -18,13 +18,63 @@
                             <!-- <h3 class="box-title m-b-0"></h3>
                             <p class="text-muted m-b-40"></p> -->
                             <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class=""><a href="#PRODUCTOS" aria-controls="PRODUCTOS" role="tab" data-toggle="tab" aria-expanded="true"><span>LISTA DE PRODUCTOS > NOVIOS</span></a></li>
-                                <li role="presentation" class="active"><a href="#PREGUNTAS_FRECUENTES" aria-controls="PREGUNTAS_FRECUENTES" role="tab" data-toggle="tab" aria-expanded="false"><span>PREGUNTAS FRECUENTES</span> </a></li>
+                                <li role="presentation" class="active"><a href="#FRAMES" aria-controls="FRAMES" role="tab" data-toggle="tab" aria-expanded="true"><span>LISTA DE FRAMES</span></a></li>
+                                <li role="presentation" class=""><a href="#PRODUCTOS" aria-controls="PRODUCTOS" role="tab" data-toggle="tab" aria-expanded="true"><span>LISTA DE PRODUCTOS</span></a></li>
+                                <li role="presentation"><a href="#PREGUNTAS_FRECUENTES" aria-controls="PREGUNTAS_FRECUENTES" role="tab" data-toggle="tab" aria-expanded="false"><span>PREGUNTAS FRECUENTES</span> </a></li>
                                 <li role="presentation" class=""><a href="#COLECTIVO_NOVIOS" aria-controls="COLECTIVO_NOVIOS" role="tab" data-toggle="tab" aria-expanded="false"><span>COLECTIVO DE NOVIOS</span> </a></li>
                                 <li role="presentation" class=""><a href="#MAS_ALLA" aria-controls="MAS_ALLA" role="tab" data-toggle="tab" aria-expanded="false"><span>MÁS ALLÁ DE LAS 4CS</span> </a></li>
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content">
+
+                                <div role="tabpanel" class="tab-pane active" id="FRAMES">
+                                        <div class="col-md-12 col-lg-12 col-sm-12">
+                                            <div class="white-box" style="padding: 0px !important">
+                                                <h3 class="box-title">Lista de Frames</h3>
+                                                <div class="row sales-report">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                        <a href="{{url('NuevoFrame')}}" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
+
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-6 ">
+                                                    </div>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>#</th>
+                                                                <th>NOMBRE</th>
+                                                                <th>IMAGEN MENU </th>
+                                                                <th>IMAGEN FRAME</th>
+                                                                <th>ESTADO</th>
+                                                                <th>FECHA CREACIÓN</th>
+                                                                <th>ACCIÓN</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach($frames as $frame)
+                                                                <tr>
+                                                                    <td>{{$frame->id}}</td>
+                                                                    <td>{{$frame->description}}</td>
+                                                                    <td><img src="{{ asset($frame->Images_frame->route) }}" alt="" height="50"></td>
+                                                                    <td><img src="{{ asset($frame->Images->route) }}" alt="" height="50"></td>
+                                                                    <td>@if($frame->state==1)<span class="label label-success label-rouded">ACTIVO</span> @else <span class="label label-danger label-rouded">INACTIVO</span> @endif </td>
+                                                                    <td>{{  date('d/m/Y', strtotime($frame->created_at)) }}</td>
+                                                                    <td class="text-nowrap">
+                                                                    <a href="{{URL::to('EditarFrameN',array('id'=>$frame->id))}}" data-toggle="tooltip" data-original-title="Editar" data-id="{{$frame->id}}"> <i class="fa fa-pencil text-inverse m-r-10"></i></a>
+                                                                </td>
+                                                                </tr>
+
+                                                            @endforeach
+                                                        
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div class="clearfix"></div>
+                                </div>
                                 
                                 <div role="tabpanel" class="tab-pane" id="PRODUCTOS">
                                         <div class="col-md-12 col-lg-12 col-sm-12">
@@ -81,7 +131,7 @@
                                     <div class="clearfix"></div>
                                 </div>
 
-                                <div role="tabpanel" class="tab-pane active" id="PREGUNTAS_FRECUENTES">
+                                <div role="tabpanel" class="tab-pane" id="PREGUNTAS_FRECUENTES">
                                         <div class="col-md-12 col-lg-12 col-sm-12">
                                             <div class="white-box" style="padding: 0px !important">
                                                 <h3 class="box-title">Lista de Preguntas</h3>

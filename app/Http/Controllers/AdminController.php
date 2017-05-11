@@ -9,6 +9,7 @@ use App\Marcket;
 use App\Question;
 use App\Frame;
 use App\Subframe;
+use App\Type; 
 
 class AdminController extends Controller{
 
@@ -30,7 +31,9 @@ class AdminController extends Controller{
     public function Novios(){
         $Questions = Question::paginate(15);
         $ProductNovios = Product::where('category_id',2)->orderBy('created_at','DESC')->paginate(15);
-    	return view('admin.Novios',compact('ProductNovios','Questions'));
+        $frames = Type::where('category_id',2)->get();
+
+    	return view('admin.Novios',compact('ProductNovios','Questions','frames'));
     }
     public function MundoAldoAdm(){
         $frames = Frame::where('frame_type',1)->with('Images')->orderBy('created_at','DESC')->paginate(15);

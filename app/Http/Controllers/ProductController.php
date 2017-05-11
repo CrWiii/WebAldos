@@ -142,4 +142,67 @@ class ProductController extends Controller{
         }
         // return response()->json(['error'=>$validator->errors()->all()]);
     }
+    public function EditarFrameN($id){
+        $frame = Type::findOrFail($id);
+        return view('admin.product.editarframen',compact('frame'));
+    }
+    public function ActualizarFrameN($id,Request $request){
+        $validator = Validator::make($request->all(), [
+            'description'   => 'required',
+            'slug'       => 'required',
+            'image'         => 'max:2048|mimes:jpeg,jpg,png',
+            'image_n'         => 'max:2048|mimes:jpeg,jpg,png',
+        ]);
+
+        $imgfu = '';
+        $imgfu_n = '';
+        $frame = Type::findOrFail($request->id);
+
+        if ($validator->passes()) {
+            $input = $request->all();
+            if(!empty($request->image)){
+                $input['image'] = $request->image->getClientOriginalName();
+                $request->image->move(public_path('images'), $input['image']);
+                $imgfu = '/images/'.$request->image->getClientOriginalName();
+
+                $Images = new Images;
+                $Images->description = $input['image'];
+                $Images->route = $imgfu;
+                $Images->state = 1;
+                $Images->created_by = Auth::user()->id;
+                $Images->save();
+                $ImgId = $Images->id;
+            }else{
+                $ImgId = $frame->images_id;
+            }
+
+            if(!empty($request->image_n)){
+                $input['image_n'] = $request->image_n->getClientOriginalName();
+                $request->image_n->move(public_path('images'), $input['image']);
+                $imgfu_n = '/images/'.$request->image_n->getClientOriginalName();
+
+                $Images_n = new Images;
+                $Images_n->description = $input['image'];
+                $Images_n->route = $imgfu_n;
+                $Images_n->state = 1;
+                $Images_n->created_by = Auth::user()->id;
+                $Images_n->save();
+                $ImgId_n = $Images->id;
+            }else{
+                $ImgId_n = $frame->images_id_frame;
+            }
+
+            $frame->description = $request->description;
+            $frame->slug = $request->slug;
+            $frame->content = $request->content;
+            $frame->images_id = $ImgId;
+            $frame->images_id_frame = $ImgId_n;
+            $frame->state = 1;
+            $frame->updated_by = Auth::user()->id;
+            $frame->update();
+
+            return redirect('NoviosAdm');
+        }
+
+    }
 }

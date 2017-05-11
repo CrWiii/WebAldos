@@ -9,6 +9,7 @@ class CreateTypeTable extends Migration{
         Schema::create('type', function (Blueprint $table) {
             $table->increments('id');
             $table->string('description');
+            $table->string('content')->nullable();
             $table->integer('images_id')->unsigned()->index();
             $table->integer('category_id')->unsigned()->index();
             $table->boolean('state')->nullable();

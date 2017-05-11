@@ -23,4 +23,7 @@ class Images extends Model{
     public function Frame(){
     	return $this->belongsTo(Frame::class,'frame_id','id');
     }
+    public function Type(){
+        return $this->belongsTo(Type::class);
+    }
 }

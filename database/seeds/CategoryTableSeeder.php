@@ -166,6 +166,7 @@ class CategoryTableSeeder extends Seeder{
 		DB::table('type')->insert([
 			'images_id_frame'=>1,
 			'description'=>'Anillos de compromiso',
+			'content' => 'Como para toda la vida, Aldo&Co. diseña cada uno de sus anillos como una pieza única, con la delicadeza y el detalle que merece aquello que va a durar por siempre. Nuestra promesa es hacer que su compromiso vaya más allá del tiempo.',
 			'images_id'=>1,
 			'category_id'=>2,
 			'state'=>true,
@@ -180,6 +181,7 @@ class CategoryTableSeeder extends Seeder{
 		DB::table('type')->insert([
 			'images_id_frame'=>1,
 			'description'=>'Aros de matrimonio',
+			'content' => 'En Aldo&Co. forjamos las alianzas que durarán por siempre para aquellos que se prometen amor y respeto.',
 			'images_id'=>1,
 			'category_id'=>2,
 			'state'=>true,
@@ -594,8 +596,6 @@ DB::Table('frames')->insert([
 	'created_at'	=>Carbon::now(),
 	'updated_at'	=>Carbon::now(),
 ]);
-
-
 
 
 // 33

@@ -90,7 +90,9 @@ Route::group(['middleware' => 'web'], function () {
 	Route::post('ActualizarSubFrame/{id}', 'SubframeController@update');
 	Route::get('EliminarSubFrame/{id}','SubframeController@delete');
 	Route::get('DesactivarSubFrame/{id}','SubframeController@desactive');
-	Route::get('ActivarSubFrame/{id}','SubframeController@active'); 
+	Route::get('ActivarSubFrame/{id}','SubframeController@active');
+	Route::get('EditarFrameN/{id}','ProductController@EditarFrameN');
+	Route::post('ActualizarFrameN/{id}','ProductController@ActualizarFrameN');
 });
 
 Auth::routes();
