@@ -22,7 +22,8 @@ class AdminController extends Controller{
     }
     public function Inicio(){
         $frames = Frame::where('frame_type',2)->orderBy('created_at','DESC')->paginate(15);
-    	return view('admin.Inicio',compact('frames'));
+        $slides = Frame::where('frame_type',3)->orderBy('created_at','DESC')->paginate(15);
+    	return view('admin.Inicio',compact('frames','slides'));
     }
     public function Joyas(){
     	$ProductJoyas = Product::where('category_id',1)->orderBy('created_at','DESC')->paginate(15);
