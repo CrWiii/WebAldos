@@ -36,10 +36,10 @@
                   <!-- Collect the nav links, forms, and other content for toggling -->
                   <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
                     <ul class="nav navbar-nav">
-                      <li><a href="{{url('ElMundoDeAldo')}}">EL MUNDO DE ALDO</a></li>
+                      <li><a href="{{url('ElMundoDeAldo')}}">{{trans('messages.t1')}}</a></li>
 
                       
-                      <li class="dropdown dropdown-mega"><a href="{{url('Novios')}}">NOVIOS  <span class="caret"></span></a>
+                      <li class="dropdown dropdown-mega"><a href="{{url('Novios')}}">{{trans('messages.t2')}}<span class="caret"></span></a>
                         <div class="dropdown-menu dropdown-mega-content">
                           <div class="row" style="padding: 20px; padding-bottom: 0;text-align: center; margin:auto;width: 100%">
                             <style type="text/css">
@@ -62,7 +62,7 @@
                         </div>
                       </li>
 
-                      <li class="dropdown dropdown-mega"><a href="{{url('Joyeria')}}">JOYERIA <span class="caret"></span></a>
+                      <li class="dropdown dropdown-mega"><a href="{{url('Joyeria')}}">{{trans('messages.t3')}}<span class="caret"></span></a>
                         <div class="dropdown-menu dropdown-mega-content">
                           <div class="row" style="padding: 20px; padding-bottom: 0">
                           <div class="col-lg-12"> 
@@ -93,9 +93,9 @@
                       </li>
 
                       <ul class="nav navbar-nav navbar-right" >
-                        <li><a href="{{url('PatekPhilippe')}}">PATEK PHILIPPE</a></li>
-                        <li><a href="{{url('eventos')}}">EVENTOS</a></li>
-                        <li><a href="{{url('Contactenos')}}">CONTÁCTENOS</a></li>
+                        <li><a href="{{url('PatekPhilippe')}}">{{trans('messages.t4')}}</a></li>
+                        <li><a href="{{url('eventos')}}">{{trans('messages.t5')}}</a></li>
+                        <li><a href="{{url('Contactenos')}}">{{trans('messages.t6')}}</a></li>
                       </ul>
 
                     </ul>

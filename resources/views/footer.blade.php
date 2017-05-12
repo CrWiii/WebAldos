@@ -197,8 +197,22 @@ input:focus, textarea:focus {
                     <a target="_blank" href="https://www.instagram.com/joyeriaaldoyco/"> <i class="icon-instagram"></i> JOYERIAALDOYCO  </a></p>
 
                     <p style="margin-top: 10px;">
-                    <a target="_blank" href="#">Ingles</a> | 
-                    <a target="_blank" href="#">Español</a></p>
+<!--                     <a target="_blank" href="#">Ingles</a> | 
+                    <a target="_blank" href="#">Español</a>
+ -->
+                    @foreach (Config::get('languages') as $lang => $language)
+                        @if ($lang != App::getLocale())
+                            <li style="list-style-type: none;">
+                                <a style="padding-right: 0px;" href="{{ route('lang.switch', $lang) }}" class="tyti">
+                                    <span class="menu-title">
+                                        @if($lang == 'es') Español<!-- <img src="images/Alianzas/spanish.png" width="30px"> -->
+                                        @elseif($lang == 'en') Ingles <!-- <img src="images/Alianzas/english.png" width="20px"> -->
+                                        @endif
+                                    </span>
+                                </a>
+                            </li>
+                        @endif
+                    @endforeach</p>
                     <p style="margin-top: 20px;">
                         <button type="button" class="btn btn-primary btn-lg" id="SubcribirmeModal"> Subscribirse<br/> al Newsletter</button>
                     </p>

@@ -180,6 +180,7 @@ class FrameController extends Controller{
             $Slide = new Frame; 
             $Slide->title = $request->title;
             $Slide->subtitle = $request->subtitle;
+            $Slide->route = $request->route;
             $Slide->frame_type = 3;
             $Slide->images_id = $Images->id;
             $Slide->state = 1;

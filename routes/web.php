@@ -17,6 +17,7 @@
 // });
 
 Route::get('/','HomeController@home');
+Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
 Route::get('eventos','HomeController@events');
 Route::get('evento/{id}','HomeController@event');
 Route::get('ElMundoDeAldo','HomeController@ElMundoDeAldo');
