@@ -11,7 +11,7 @@ class CreateFramesTable extends Migration{
             $table->string('title');
             $table->string('subtitle')->nullable();
             $table->string('frame_type')->nullable();
-            $table->string('route');
+            $table->string('route')->nullable();
             $table->string('slug')->nullable();
             $table->integer('images_id')->unsigned()->index();
             $table->boolean('isVideo')->nullable();

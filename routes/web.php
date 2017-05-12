@@ -93,6 +93,8 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('ActivarSubFrame/{id}','SubframeController@active');
 	Route::get('EditarFrameN/{id}','ProductController@EditarFrameN');
 	Route::post('ActualizarFrameN/{id}','ProductController@ActualizarFrameN');
+	Route::get('Slide','FrameController@createSlide');
+	Route::post('storeSlide','FrameController@storeSlide');
 });
 
 Auth::routes();

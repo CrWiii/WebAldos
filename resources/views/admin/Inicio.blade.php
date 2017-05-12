@@ -73,20 +73,17 @@
                                             <h3 class="box-title">Slide</h3>
                                                 <div class="row sales-report">
                                                     <div class="col-md-6 col-sm-6 col-xs-6">
-                                                        <a href="" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
+                                                        <a href="{{url('Slide')}}" class="btn btn-inverse waves-effect waves-light">Nuevo</a>
                                                     </div>
                                                 </div>
                                     <div class="table-responsive">
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>NOMBRE</th>
-                                            <th>DESCRIPCIÓN</th>
-                                            <th>NOMBRE IMAGEN</th>
+                                            <th>TITULO</th>
+                                            <th>SUBTITULO</th>
                                             <th>IMAGEN</th>
                                             <th>ESTADO</th>
-                                            <th>TIPO</th>
                                             <th>FECHA CREACIÓN</th>
                                             <th>ACCIÓN</th>
                                         </tr>
@@ -94,19 +91,18 @@
                                     <tbody>
                                     @foreach($slides as $fr)
                                                         <tr>
-                                                            <td>{{$fr->id}}</td>
                                                             <td>{{$fr->title}}</td>
-                                                            <td>{{$fr->content}}</td>
+                                                            <td>{{$fr->subtitle}}</td>
                                                             <td> <img src="{{ asset($fr->Images->route) }}" alt="" height="50"></td>
                                                             <td>@if($fr->state==1)<span class="label label-success label-rouded">ACTIVO</span> @else <span class="label label-danger label-rouded">INACTIVO</span> @endif </td>
                                                             <td>{{  date('d/m/Y', strtotime($fr->created_at)) }}</td>
                                                             <td class="text-nowrap">
-                                                                <a href="{{URL::to('EditarFrame',array('id'=>$fr->id))}}" data-toggle="tooltip" data-original-title="Editar"> <i class="fa fa-pencil text-inverse m-r-10"></i></a>
-                                                                <a href="{{URL::to('SubframeList',array('id'=>$fr->id))}}" data-toggle="tooltip" data-original-title="SubFrame"><i class="fa fa-plus-square-o text-inverse m-r-10"></i></a>
-                                                                @if($fr->state==1) <a href="{{URL::to('DesactivarFrame',array('id'=>$fr->id))}}" data-toggle="tooltip" data-original-title="Desactivar"> <i class="fa fa-circle-o text-inverse m-r-10"></i></a>
-                                                                @else <a href="{{URL::to('ActivarFrame',array('id'=>$fr->id))}}" data-toggle="tooltip" data-original-title="Activar"> <i class="fa fa-circle text-inverse m-r-10"></i></a>
+                                                                <a href="{{URL::to('EditarSlide',array('id'=>$fr->id))}}" data-toggle="tooltip" data-original-title="Editar"> <i class="fa fa-pencil text-inverse m-r-10"></i></a>
+                                                                
+                                                                @if($fr->state==1) <a href="{{URL::to('DesactivarSlide',array('id'=>$fr->id))}}" data-toggle="tooltip" data-original-title="Desactivar"> <i class="fa fa-circle-o text-inverse m-r-10"></i></a>
+                                                                @else <a href="{{URL::to('ActivarSlide',array('id'=>$fr->id))}}" data-toggle="tooltip" data-original-title="Activar"> <i class="fa fa-circle text-inverse m-r-10"></i></a>
                                                                 @endif
-                                                                <a style="cursor: pointer;" data-toggle="tooltip" data-original-title="Eliminar" data-id="{{$fr->id}}" id="EliminarFrame"> <i class="fa fa-close text-danger"></i> </a>
+                                                                <a style="cursor: pointer;" data-toggle="tooltip" data-original-title="Eliminar" data-id="{{$fr->id}}" id="EliminarSlide"> <i class="fa fa-close text-danger"></i> </a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

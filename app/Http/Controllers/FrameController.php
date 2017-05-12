@@ -151,4 +151,45 @@ class FrameController extends Controller{
         }
         // return response()->json(['error'=>$validator->errors()->all()]);
     }
+    public function createSlide(){
+        return view('admin.slide.create');
+
+    }
+    public function storeSlide(Request $request){
+        $validator = Validator::make($request->all(), [
+            'title'         => 'required',
+            'image'         => 'required|max:2048|mimes:jpeg,jpg,png',
+            ]);
+
+        if ($validator->passes()) {
+            $input = $request->all();
+            
+            if(!empty($request->image)){
+                $input['image'] = $request->image->getClientOriginalName();
+                $request->image->move(public_path('images'), $input['image']);
+                $imgfu = '/images/'.$request->image->getClientOriginalName();
+
+                $Images = new Images;
+                $Images->description = $input['image'];
+                $Images->route = $imgfu;
+                $Images->state = 1;
+                $Images->created_by = Auth::user()->id;
+                $Images->save();
+            }
+
+            $Slide = new Frame; 
+            $Slide->title = $request->title;
+            $Slide->subtitle = $request->subtitle;
+            $Slide->frame_type = 3;
+            $Slide->images_id = $Images->id;
+            $Slide->state = 1;
+            $Slide->created_by = Auth::user()->id;
+            $Slide->updated_by = Auth::user()->id;
+            $Slide->save();
+
+            return redirect('Inicio');
+            }
+
+    return response()->json(['error'=>$validator->errors()->all()]);
+    }
 }

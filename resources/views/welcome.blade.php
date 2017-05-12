@@ -6,55 +6,39 @@
        <div id="mainCarousel" class="carousel slide" data-ride="carousel" data-interval="8000">  
              <div class="carousel-inner">
              
-                             <div class="item">
-                    <figure class="responsive img-responsive" data-media240="{{url('img/Inicio.png')}}" data-media769="{{url('img/Inicio.png')}}" data-media1201="{{url('img/Inicio.png')}}" data-title="Bridal Planner Phuket">
+              <div class="item active">
+                <figure class="responsive img-responsive" data-media240="{{url('img/Inicio.png')}}" data-media769="{{url('img/Inicio.png')}}" data-media1201="{{url('img/Inicio.png')}}" data-title="Bridal Planner Phuket">
                         
+              <img src="{{url('img/Inicio.png')}}"></figure>
+                        <div class="carousel-caption">
+                            <div class="caption-content">
+                                <h1 class="os-animation animated fadeInDown tit1" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">CELEBRA EL MOMENTO</h1>
+                              <h2 class="os-animation animated fadeInDown tit2" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">LIMA . CUSCO . PUNO</h2>
+                            </div>
+                        </div>
+              </div>
+              @foreach($slides as $slide)
+              <div class="item"> 
+                    <figure class="responsive img-responsive" data-media240="{{url($slide->Images->route)}}" data-media769="{{url($slide->Images->route)}}" data-media1201="{{url($slide->Images->route)}}" data-title="Bridal Planner">
                         <img src="{{url('img/Inicio.png')}}"></figure>
                         <div class="carousel-caption">
                             <div class="caption-content">
-                                <h1 class="os-animation animated fadeInDown tit1" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">CELEBRA EL MOMENTO</h1>
-                              <h2 class="os-animation animated fadeInDown tit2" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">LIMA . CUSCO . PUNO</h2>
+                                <h1 class="os-animation animated fadeInDown tit1" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">{{$slide->title}}</h1>
+                              <h2 class="os-animation animated fadeInDown tit2" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">{{$slide->subtitle}}</h2>
                             </div>
                         </div>
                 </div>
-                                <div class="item">
-                    <figure class="responsive img-responsive" data-media240="{{url('img/Inicio.png')}}" data-media769="{{url('img/Inicio.png')}}" data-media1201="{{url('img/Inicio.png')}}" data-title="Bridal Planner Services in Phuket">
-                        
-                        <img src="{{url('img/Inicio.png')}}"></figure>
-                        <div class="carousel-caption">
-                            <div class="caption-content">
-                                <h1 class="os-animation animated fadeInDown tit1" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">CELEBRA EL MOMENTO</h1>
-                              <h2 class="os-animation animated fadeInDown tit2" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">LIMA . CUSCO . PUNO</h2>
-                            </div>
-                        </div>
-                </div>
-                                <div class="item">
-                    <figure class="responsive img-responsive" data-media240="{{url('img/Inicio.png')}}" data-media769="{{url('img/Inicio.png')}}" data-media1201="{{url('img/Inicio.png')}}" data-title="Bridal Planner Services Thailand Phuket">
-                        
-                        <img src="file/Inicio.png"></figure>
-                        <div class="carousel-caption">
-                            <div class="caption-content">
-                                <h1 class="os-animation animated fadeInDown tit1" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">CELEBRA EL MOMENTO</h1>
-                              <h2 class="os-animation animated fadeInDown tit2" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">LIMA . CUSCO . PUNO</h2>
-                            </div>
-                        </div>
-                </div>
-                                <div class="item active">
-                    <figure class="responsive img-responsive" data-media240="{{url('img/Inicio.png')}}" data-media769="{{url('img/Inicio.png')}}" data-media1201="{{url('img/Inicio.png')}}" data-title="Bridal Planner">
-                        <img src="{{url('img/Inicio.png')}}"></figure>
-                        <div class="carousel-caption">
-                            <div class="caption-content">
-                                <h1 class="os-animation animated fadeInDown tit1" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">CELEBRA EL MOMENTO</h1>
-                              <h2 class="os-animation animated fadeInDown tit2" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">LIMA . CUSCO . PUNO</h2>
-                            </div>
-                        </div>
-                </div>
+                @endforeach
             </div>
-            <ol class="carousel-indicators">   
-                <li data-target="#mainCarousel" data-slide-to="0" class=""></li>
-                <li data-target="#mainCarousel" data-slide-to="1" class=""></li>
-                <li data-target="#mainCarousel" data-slide-to="2" class=""></li>
-                <li data-target="#mainCarousel" data-slide-to="3" class="active"></li>
+            <ol class="carousel-indicators">
+                <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+                @if(!empty($slides))
+                <?php $i=1 ?>
+                  @foreach($slides as $slide)
+                    <li data-target="#mainCarousel" data-slide-to="{{$i}}" class=""></li>
+                    <?php $i++ ?>
+                  @endforeach
+                @endif
             </ol>
             <a class="left carousel-control" style="display: block !important" href="#mainCarousel" role="button" data-slide="prev"><span class="icon-chevron-thin-left"></span></a>
             <a class="right carousel-control" href="#mainCarousel" role="button" data-slide="next"><span class="icon-chevron-thin-right"></span></a>
@@ -77,7 +61,7 @@
 
   .img-responsivec{
     max-width: 100%;
-    height: 550px;
+    height: 600px;
   }
   
 </style>
@@ -89,7 +73,7 @@
         @if($i & 1)
           <div class="row" style="background: #ded5cc !important">
              <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-                <div class="hovercontainer hovcont" style="height: 550px;"> 
+                <div class="hovercontainer hovcont" style="height: 600px;"> 
                   <p class="hovcontp">{{$frame->title}}</p>
                     <p class="hovcontps">{{$frame->content}} </p>
                     <h1 class="hovconth">{{$frame->subtitle}}</h1>
@@ -110,7 +94,7 @@
               </div>
             </div>
             <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-                <div class="hovercontainer hovcont" style="height: 550px;"> 
+                <div class="hovercontainer hovcont" style="height: 600px;"> 
                     <p class="hovcontp">{{$frame->title}}</p>
                     <p class="hovcontps">{{$frame->content}} </p>
                     <h1 class="hovconth">{{$frame->subtitle}}</h1>
