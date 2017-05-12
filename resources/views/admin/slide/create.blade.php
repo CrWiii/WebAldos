@@ -20,6 +20,15 @@
                             <p class="text-muted m-b-30 font-13"></p> -->
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12">
+                                @if (count($errors) > 0)
+								    <div class="alert alert-danger">
+								        <ul>
+								            @foreach ($errors->all() as $error)
+								                <li>{{ $error }}</li>
+								            @endforeach
+								        </ul>
+								    </div>
+								@endif
                                     <form class="form-horizontal" role="form" method="POST" action="/storeSlide" enctype="multipart/form-data">
                                         {{csrf_field()}}
 
@@ -32,6 +41,11 @@
                                             <label class="col-md-2 control-label input-sm">Subtitulo:</label>
                                             <div class="col-md-10">
                                                 <input type="text" id="subtitle" name="subtitle" class="form-control input-sm" placeholder=""></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label input-sm">Link:</label>
+                                            <div class="col-md-10">
+                                                <input type="text" id="route" name="route" class="form-control input-sm" placeholder=""></div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label input-sm">Subir Foto:</label>

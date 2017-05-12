@@ -158,7 +158,7 @@ class FrameController extends Controller{
     public function storeSlide(Request $request){
         $validator = Validator::make($request->all(), [
             'title'         => 'required',
-            'image'         => 'required|max:2048|mimes:jpeg,jpg,png',
+            // 'image'         => 'max:4092|mimes:jpeg,jpg,png',
             ]);
 
         if ($validator->passes()) {
@@ -188,8 +188,11 @@ class FrameController extends Controller{
             $Slide->save();
 
             return redirect('Inicio');
+            }else{
+                return $validator->errors()->all();
             }
 
-    return response()->json(['error'=>$validator->errors()->all()]);
+         
+
     }
 }
