@@ -74,6 +74,11 @@
     top: 50%;
     transform: translateY(-50%);
   }
+
+  .img-responsivec{
+    max-width: 100%;
+    height: 550px;
+  }
   
 </style>
 
@@ -88,12 +93,12 @@
                   <p class="hovcontp">{{$frame->title}}</p>
                     <p class="hovcontps">{{$frame->content}} </p>
                     <h1 class="hovconth">{{$frame->subtitle}}</h1>
-                    <p class="hovcontpl"><a href="{{url($frame->route)}} ">Ver la colección completa</a></p>
+                    <p class="hovcontpl"><a href="{{url($frame->route)}}">Ver la colección completa</a></p>
                </div>
               </div>
              <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
                 <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-                  <a href=""><img class="responsive img-responsive" src="{{$frame->Images->route}}"></a>
+                  <a href="{{url($frame->route)}}"><img class="responsive img-responsivec" src="{{$frame->Images->route}}"></a>
                </div>
               </div>
           </div>
@@ -101,7 +106,7 @@
           <div class="row" style="background: #ded5cc !important">
             <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
               <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-                <a href=""><img class="responsive img-responsive" src="{{$frame->Images->route}}"></a>
+                <a href="{{url($frame->route)}}"><img class="responsive img-responsivec" src="{{$frame->Images->route}}"></a>
               </div>
             </div>
             <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
