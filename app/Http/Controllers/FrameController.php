@@ -152,8 +152,8 @@ class FrameController extends Controller{
         // return response()->json(['error'=>$validator->errors()->all()]);
     }
     public function createSlide(){
-        return view('admin.slide.create');
 
+        return view('admin.slide.create');
     }
     public function storeSlide(Request $request){
         $validator = Validator::make($request->all(), [
@@ -192,8 +192,9 @@ class FrameController extends Controller{
             }else{
                 return $validator->errors()->all();
             }
-
-         
-
+    }
+    public function deleteSlide($id){
+        $frame = Frame::destroy($id);
+        return redirect('Inicio');
     }
 }

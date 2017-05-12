@@ -139,38 +139,61 @@
                 </div>
             </div>
 
-<div class="modal fade" id="modalEliminarEvento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalEliminarFrame" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
         <div class="modal-body">
-            <h4>¿Está seguro que desea Eliminar El Evento?</h4>
+            <h4>¿Está seguro que desea Eliminar El Frame?</h4>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Close</button>
-            <a class="btn btn-danger" id="ElimiarBtn" data-id="" href="">Elimiar</a>
+            <a class="btn btn-danger" id="ElimiarFrameBtn" data-id="" href="">Elimiar</a>
         </div>
         </div>
     </div>
 </div>
 
-            <!-- EliminarEvento -->
+<div class="modal fade" id="modalEliminarSlide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+        <div class="modal-body">
+            <h4>¿Está seguro que desea Eliminar La imagen?</h4>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Close</button>
+            <a class="btn btn-danger" id="ElimiarSlideBtn" data-id="" href="">Elimiar</a>
+        </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('script')
 
 <script type="text/javascript">
-    $(document).on('click','#EliminarEvento',function(){
-        var Evento_id_selected = $(this).attr('data-id');
-        var link = '{{url('EliminarEvento')}}' + '/' + Evento_id_selected;
-        $('#ElimiarBtn').attr('data-id', Evento_id_selected);
-        $('#ElimiarBtn').attr('href', link);
-        $('#modalEliminarEvento').modal();
+    $(document).on('click','#EliminarFrame',function(){
+        var Frame_id_selected = $(this).attr('data-id');
+        var link = '{{url('EliminarFrame')}}' + '/' + Frame_id_selected;
+        $('#ElimiarFrameBtn').attr('data-id', Frame_id_selected);
+        $('#ElimiarFrameBtn').attr('href', link);
+        $('#modalEliminarFrame').modal();
     });
 
-DesactivarEvento
+    $(document).on('click','#EliminarSlide',function(){
+        var Slide_id_selected = $(this).attr('data-id');
+        var link = '{{url('EliminarSlide')}}' + '/' + Slide_id_selected;
+        $('#ElimiarSlideBtn').attr('data-id', Slide_id_selected);
+        $('#ElimiarSlideBtn').attr('href', link);
+        $('#modalEliminarSlide').modal();
+    });
+
+
 </script>
 
 @endsection
