@@ -214,7 +214,7 @@ input:focus, textarea:focus {
                         @endif
                     @endforeach</p>
                     <p style="margin-top: 20px;">
-                        <button type="button" class="btn btn-primary btn-lg" id="SubcribirmeModal"> Subscribirse<br/> al Newsletter</button>
+                        <button type="button" class="btn btn-primary btn-lg" id="SubcribirmeModal"> {{trans('messages.t10')}}<br/>{{trans('messages.t11')}} </button>
                     </p>
 
                 </div>

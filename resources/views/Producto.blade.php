@@ -66,7 +66,7 @@
             <h1 style="color: white;font-family: 'Trajan Pro';font-size: 3em;">{{$product->name}}</h1>
             <p>{{$product->description}}</p>
          <!-- <button class="btn btn-primary" id="CotizarBtn" style="color: #676767;">Solicitar Cotización</button> -->
-         <button type="button" class="btn btn-primary btn-lg" id="CotizarModal">Solicitar Cotización</button>
+         <button type="button" class="btn btn-primary btn-lg" id="CotizarModal">{{trans('messages.t12')}}</button>
          </div>
       </div>
     </div>

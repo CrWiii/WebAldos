@@ -7,5 +7,8 @@ return [
 	't4' => 'Patek Philippe',
 	't5' => 'Events',
 	't6' => 'Contact us',
+	't10' => 'Subscribe',
+	't11' => 'to Newsletter',
+	't12' => 'Request quote',
 
 ];

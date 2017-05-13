@@ -7,5 +7,8 @@ return [
 	't4' => 'PATEK PHILIPPE',
 	't5' => 'EVENTOS',
 	't6' => 'CONTÁCTENOS',
+	't10' => 'Subscribirse',
+	't11' => 'al Newsletter',
+	't12' => 'Solicitar Cotización',
 
 ];
