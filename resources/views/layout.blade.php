@@ -37,18 +37,7 @@
 @include('footer')
 </body>
 
-<div class="video-wrap">
-   <div class="video-inner">
-       <video class="video-player" controls="controls" preload="auto" poster="" title="The Bridal Planner">
-       <source src="{{url('video/bridal-planner.m4v')}}" type="video/mp4">
-       <source src="{{url('video/bridal-planner.webm')}}" type="video/webm">
-       <source src="{{url('video/bridal-planner.ogv')}}" type="video/ogg">
-       </video>
-       <button class="action action--close">
-           <span class="action__label icon-cross"></span>
-       </button>
-   </div>
-</div>
+
 
 
 <script src="{{url('js/jquery.min.js')}}"></script>

@@ -21,6 +21,7 @@ class HomeController extends Controller{
         $TypesNovios = Type::where('category_id',2)->get();
         $frames = Frame::where('frame_type',2)->get();
         $slides = Frame::where('frame_type',3)->get();
+        // dd($slides);
         return view('welcome',compact('TypesJoyas','TypesNovios','frames','slides'));
     }
     public function events(){

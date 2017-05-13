@@ -6,7 +6,7 @@
        <div id="mainCarousel" class="carousel slide" data-ride="carousel" data-interval="8000">  
              <div class="carousel-inner">
              
-              <div class="item active">
+              <!-- <div class="item active">
                 <figure class="responsive img-responsive" data-media240="{{url('img/Inicio.png')}}" data-media769="{{url('img/Inicio.png')}}" data-media1201="{{url('img/Inicio.png')}}" data-title="Bridal Planner Phuket">
                         
               <img src="{{url('img/Inicio.png')}}"></figure>
@@ -16,9 +16,10 @@
                               <h2 class="os-animation animated fadeInDown tit2" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">LIMA . CUSCO . PUNO</h2>
                             </div>
                         </div>
-              </div>
+              </div> -->
+              <?php $i=0 ?> 
               @foreach($slides as $slide)
-              <div class="item"> 
+                @if($i==0) <div class="item active"> @else <div class="item"> @endif
                     <figure class="responsive img-responsive" data-media240="{{url($slide->Images->route)}}" data-media769="{{url($slide->Images->route)}}" data-media1201="{{url($slide->Images->route)}}" data-title="Bridal Planner">
                         <img src="{{url('img/Inicio.png')}}"></figure>
                         <div class="carousel-caption">
@@ -28,12 +29,12 @@
                             </div>
                         </div>
                 </div>
+                <?php $i++ ?>
                 @endforeach
             </div>
             <ol class="carousel-indicators">
-                <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
                 @if(!empty($slides))
-                <?php $i=1 ?>
+                <?php $i=0 ?>
                   @foreach($slides as $slide)
                     <li data-target="#mainCarousel" data-slide-to="{{$i}}" class=""></li>
                     <?php $i++ ?>
@@ -128,5 +129,18 @@
     <!--<p style="margin: 200px;">VIDEO</p>-->
     </div>
 </section>
+
+<div class="video-wrap">
+   <div class="video-inner">
+       <video class="video-player" controls="controls" preload="auto">
+       <source src="{{url('video/video.m4v')}}" type="video/mp4">
+       <source src="{{url('video/video.webm')}}" type="video/webm">
+       <source src="{{url('video/video.ogv')}}" type="video/ogg">
+       </video>
+       <button class="action action--close">
+           <span class="action__label icon-cross"></span>
+       </button>
+   </div>
+</div>
 
 @endsection

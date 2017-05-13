@@ -97,6 +97,7 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('Slide','FrameController@createSlide');
 	Route::post('storeSlide','FrameController@storeSlide');
 	Route::get('EliminarSlide/{id}','FrameController@deleteSlide');
+	Route::post('uploadvideo','FrameController@uploadvideo');
 });
 
 Auth::routes();

@@ -7,6 +7,7 @@ use App\Frame;
 use App\Images;
 use Validator;
 use Auth;
+use File;
 
 class FrameController extends Controller{
 
@@ -196,5 +197,21 @@ class FrameController extends Controller{
     public function deleteSlide($id){
         $frame = Frame::destroy($id);
         return redirect('Inicio');
+    }
+
+    public function uploadvideo(Request $request){
+        if(!empty($request->file)){
+            File::delete('video.m4v');
+            $input['file'] = $request->file->getClientOriginalName();
+            $request->file->move(public_path('video'), 'video.m4v'/*$input['file']*/);
+
+            return redirect('Inicio');
+
+
+            // $file = Request::file('file');
+            // $filename = $file->getClientOriginalName();
+            // $path = public_path().'/uploads/';
+            // return $file->move($path, $filename);
+        }
     }
 }

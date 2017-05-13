@@ -71,6 +71,16 @@ class CategoryTableSeeder extends Seeder{
 			'updated_at'=>Carbon::now()
 		]);
 
+		DB::table('images')->insert([
+			'description'=>'Inicio.png',
+			'route'=>'/images/Inicio.png',
+			'state'=>true,
+			'created_by'=>1,
+			'created_at'=>Carbon::now(),
+			'updated_at'=>Carbon::now()
+		]);
+		
+
 
 		DB::table('type')->insert([
 			'slug'=>'anillos',
@@ -590,6 +600,18 @@ DB::Table('frames')->insert([
 	// 'slug'			=> '',
 	'images_id'		=> 24,
 	'content'		=> 'Fieles a nuestra historia, Aldo&Co le da un lugar central a la colección Amarilis. Inspirada en la poetiza peruana del siglo de Oro que le da nombre a la colección, y los misterios alrededor de su vida, los diseños Amarilis transmiten una visión romántica y respetuosa de las formas en el trabajo del oro.',
+	'state'			=> 1,
+	'created_by'	=> 1,
+	'updated_by'	=> 1,
+	'created_at'	=>Carbon::now(),
+	'updated_at'	=>Carbon::now(),
+]);
+
+DB::Table('frames')->insert([
+	'title' 		=> 'CELEBRA EL MOMENTO',
+	'subtitle' 		=> 'LIMA . CUSCO . PUNO',	
+	'frame_type'	=> 3,
+	'images_id'		=> 25,
 	'state'			=> 1,
 	'created_by'	=> 1,
 	'updated_by'	=> 1,
