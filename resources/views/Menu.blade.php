@@ -1,13 +1,13 @@
 <link href="{{asset('css/dura/dura-main.css')}}" rel="stylesheet">
 <link href="{{asset('css/dura/dura-responsive.css')}}" rel="stylesheet">
-<!-- 
+
 <style>
   @media(max-width: 1000px){
   .img-hi{
     display: none;
   }
 }
-</style> -->
+</style>
 <nav class="navbar navbar-fixed-top" style="padding-bottom: 0px;">
       <div class="container">
          <div class="navbar-header">
@@ -33,9 +33,10 @@
                         }
                       </style>
                       <div class="col-lg-12"> 
+                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div> -->
                       @foreach($TypesNovios as $TypeN)
                         @if($TypeN->slug!='colectivo_de_novios')
-                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" style="padding-left: 5% !important; padding-right: 5% !important">
                             <ul>
                                 <li style="text-align: center;"><a href="{{url('Novios',array('Type'=>$TypeN->slug))}}"><span><img src="{{url($TypeN->Images->route)}}" class="img-responsive img-hi"></span>{{$TypeN->description}}</a></li>
                             </ul>
@@ -73,7 +74,7 @@
               </ul>
             </div>
      </div>
-</nav>
+</nav> 
 <!-- <div class="wrapper">
       <div class="container container-shadow no-padding absolute" style="top: 0px;">
         <div class="overlay"></div>

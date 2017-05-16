@@ -54,15 +54,27 @@
 <script src="{{url('js/video.js')}}"></script>
 @yield('script')
 <script>
-$(document).on('click','#closeModal-sub',function(){
-  $('#form-main-sub').hide('slow');
-});
-$(document).on('click','#SubcribirmeModal',function(){
-  $('#form-main-sub').show('slow');
-  $('html, body').animate({
-    scrollTop: "350px"
-}, 800);
-});
+// $(document).on('click','#closeModal-sub',function(){
+//   $('#form-main-sub').hide('slow');
+// });
+// $(document).on('click','#SubcribirmeModal',function(){
+//   $('#form-main-sub').show('slow');
+//   $('html, body').animate({
+//     scrollTop: "350px"
+// }, 800);
+// });
+
+$("#button").click(function(e) {
+        e.preventDefault();
+        $("#information, #content").addClass("active");
+    });
+    $(window).scroll(function(){
+        if($(window).scrollTop()>50) && $("#information").hasClass("active") )
+        {
+            $("#content").removeClass("active");
+            $("#information").removeClass("active");
+        }
+    });
 
 $(document).ready(function(){
     $(".dropdown").hover(            
@@ -102,6 +114,18 @@ $(window).resize(function() {fixNav();portfolioHeight();});
   ga('create', 'UA-40443546-1', 'auto');
   ga('send', 'pageview');
 
+</script>
+
+<script>
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 500) {
+        $(".navbar-fixed-top").addClass("navbar-default");
+    } else {
+        $(".navbar-fixed-top").removeClass("navbar-default");
+    }
+  });
 </script>
 
 </body>
