@@ -113,11 +113,12 @@
         
 
 </section>
+
 <section id="raveContent" class="padded-content-sm os-animation animated fadeInUpBig" data-os-animation="fadeInUpBig" data-os-animation-delay="100ms" style="animation-delay: 100ms; background: #d6c6bb !important;padding: 0px !important;">
     <div class="container text-center">
       <div class="os-animation col-xs-12 col-sm-12 col-md-12 col-lg-12 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;">
             <div class="hovercontainer">
-              <figure class="responsive img-responsive" data-media240="{{url('img/video-home.jpg')}}" data-media961="{{url('img/video-home.jpg')}}" alt=""><img src="{{url('img/video-home.jpg')}}"></figure>
+              <figure class="responsive img-responsive" data-media240="{{url('video/imagen.jpg')}}" data-media961="{{url('video/imagen.jpg')}}" alt=""><img src="{{url('video/imagen.jpg')}}" style="width: 100%;"></figure>
                 <div class="action-container">
                   <img class="vidloader" src="{{url('video/ring.svg')}}" alt="Video Loading">
                     <button class="action action--hidden action--play">

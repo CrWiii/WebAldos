@@ -77,7 +77,7 @@
                                                     </div>
                                                 </div>
                                     <div class="table-responsive">
-                                <table class="table table-bordered">
+                                    <table class="table table-bordered">
                                     <thead>
                                         <tr>
                                             <th>TITULO</th>
@@ -121,6 +121,30 @@
                                             <form action="{{ URL::to('uploadvideo') }}" method="post" enctype="multipart/form-data">
                                                 <div class="form-group">
                                                         <label class="col-sm-2 control-label input-sm">Subir Video:</label>
+                                                        <div class="col-sm-10">
+                                                            <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                                                <div class="form-control input-sm" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div> <span class="input-group-addon btn btn-default btn-file"> <span class="fileinput-new">Seleccionar Archivo</span> <span class="fileinput-exists">Cambiar</span>
+                                                                <input type="file" name="file" id="file"> </span> <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Quitar</a> </div>
+                                                        </div>
+                                                        <!-- <input type="submit" value="Upload" name="submit" class="btn btn-success waves-effect waves-light m-r-10"> -->
+                                                        <input type="hidden" value="{{ csrf_token() }}" name="_token">
+                                                    
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label input-sm"></label>
+                                                        <div class="col-sm-10">
+                                                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Guardar</button>
+                                                        </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-sm-12">
+                                        <div class="white-box">
+                                            <form action="{{ URL::to('uploadImagen') }}" method="post" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                        <label class="col-sm-2 control-label input-sm">Subir Imagen:</label>
                                                         <div class="col-sm-10">
                                                             <div class="fileinput fileinput-new input-group" data-provides="fileinput">
                                                                 <div class="form-control input-sm" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div> <span class="input-group-addon btn btn-default btn-file"> <span class="fileinput-new">Seleccionar Archivo</span> <span class="fileinput-exists">Cambiar</span>

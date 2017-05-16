@@ -214,4 +214,14 @@ class FrameController extends Controller{
             // return $file->move($path, $filename);
         }
     }
+
+    public function uploadImagen(Request $request){
+        if(!empty($request->file)){
+            File::delete('imagen.jpg');
+            $input['file'] = $request->file->getClientOriginalName();
+            $request->file->move(public_path('video'), 'imagen.jpg'/*$input['file']*/);
+
+            return redirect('Inicio');
+        }
+    }
 }
