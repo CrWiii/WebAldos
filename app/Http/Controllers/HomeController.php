@@ -19,7 +19,7 @@ class HomeController extends Controller{
     public function home(){
     	$TypesJoyas = Type::where('category_id',1)->get();
         $TypesNovios = Type::where('category_id',2)->get();
-        $frames = Frame::where('frame_type',2)->get();
+        $frames = Frame::where('frame_type',2)->orderBy('id','ASC')->get();
         $slides = Frame::where('frame_type',3)->get();
         // dd($slides);
         return view('welcome',compact('TypesJoyas','TypesNovios','frames','slides'));

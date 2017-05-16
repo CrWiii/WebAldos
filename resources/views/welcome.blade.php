@@ -45,12 +45,8 @@
             <a class="right carousel-control" href="#mainCarousel" role="button" data-slide="next"><span class="icon-chevron-thin-right"></span></a>
       </div>
 </section>
-
-<section id="gridContent" class="grid whitebg">
-   <div class="container-fluid" style="padding: 0px !important; margin: 0px !important;">
-
-       <style type="text/css">
-  .subhover{
+<style>
+    .subhover{
     color: white;
     font-family: 'Trajan Pro';
     font-size: 3em;margin-left: auto;
@@ -157,58 +153,13 @@ img {
 img {
     border: 0;
 }
-
   .main-section{
         background: #ded5cc;
   }
-
-
 </style>
 
-<!-- <section id="gridContent" class="grid whitebg">
+<section id="gridContent" class="grid whitebg">
    <div class="container-fluid" style="padding: 0px !important; margin: 0px !important;">
-    <?php $i=1;?>
-      @foreach(@$frames as $frame)
-        @if($i & 1)
-          <div class="row" style="background: #ded5cc !important">
-             <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-                <div class="hovercontainer hovcont" style="height: 600px;"> 
-                  <p class="hovcontp">{{$frame->title}}</p>
-                    <p class="hovcontps">{{$frame->content}} </p>
-                    <h1 class="hovconth">{{$frame->subtitle}}</h1>
-                    <p class="hovcontpl"><a href="{{url($frame->route)}}">Ver la colección completa</a></p>
-               </div>
-              </div>
-             <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-                <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-                  <a href="{{url($frame->route)}}"><img class="responsive img-responsivec" src="{{$frame->Images->route}}"></a>
-               </div>
-              </div>
-          </div>
-        @else
-          <div class="row" style="background: #ded5cc !important">
-            <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-              <div class="hovercontainer" style="background: #d6c6bb;text-align: center;margin: 0px !important;">
-                <a href="{{url($frame->route)}}"><img class="responsive img-responsivec" src="{{$frame->Images->route}}"></a>
-              </div>
-            </div>
-            <div class="os-animation col-xs-12 col-sm-6 col-md-6 col-lg-6 animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay="100ms" style="animation-delay: 100ms;padding: 0px !important; margin: 0px !important;">
-                <div class="hovercontainer hovcont" style="height: 600px;"> 
-                    <p class="hovcontp">{{$frame->title}}</p>
-                    <p class="hovcontps">{{$frame->content}} </p>
-                    <h1 class="hovconth">{{$frame->subtitle}}</h1>
-                    <p class="hovcontpl"><a href="{{url($frame->route)}} ">Ver la colección completa</a></p>
-                </div>
-              </div>
-          </div>
-          
-        @endif
-      <?php $i++; ?>
-      @endforeach
-      
-    </div>
-</section>
- -->
 <section id="gridContent" class="grid whitebg">
 <?php $i=1;?>
 @foreach(@$frames as $frame)
@@ -226,7 +177,6 @@ img {
     </div>
     <div class="column col-xs-12 col-sm-6 col-lg-6 no-pad-left no-pad-right">
         <div class="img-wrapper">
-          <!-- <img alt="High Jewellery Collection" src="http://www.mikimotoamerica.com/media/wysiwyg/Home/home_high-jewellery.jpg" alt="" /> -->
           <a href="{{url($frame->route)}}"><img src="{{$frame->Images->route}}"></a>
         </div>
      </div>
@@ -253,38 +203,6 @@ img {
   <?php $i++; ?>
 @endforeach
 </section>
-<!-- 
-<div class="main-section home-mod m-img-right">
-    <div class="column col-xs-12 col-sm-6 col-lg-6">
-        <div class="copy-wrapper">
-            <h3 class="is-gold">High <br/>Jewellery</h3>
-            <p>Our most esteemed collection of cultured pearl masterpieces.</p>
-            <a class="pearl-link" href="/collections/high-jewellery" title="Browse Collection">Browse Collection <span class="pearl"></span></a>
-        </div>
-    </div>
-    <div class="column col-xs-12 col-sm-6 col-lg-6 no-pad-right">
-        <div class="img-wrapper">
-          <img alt="High Jewellery Collection" src="http://www.mikimotoamerica.com/media/wysiwyg/Home/home_high-jewellery.jpg" alt="" />
-        </div>
-     </div>
-</div>
-
-<div class="main-section home-mod m-img-left">
-    <div class="column col-xs-12 col-sm-6 col-lg-6">
-        <div class="copy-wrapper">
-            <h3 class="is-gold">Nature's <br/>Purest Gem</h3>
-            <p>From the mysterious birth of a pearl to the painstaking care in harvesting, sorting and matching, the creation of Mikimoto jewelry requires the utmost technical skill and artistry at every phase.</p>
-            <a class="pearl-link" href="/pearl-guide" title="Art &amp; Science of Pearls">Art &amp; Science of Pearls <span class="pearl"></span></a>
-        </div>
-    </div>
-    <div class="column col-xs-12 col-sm-6 col-lg-6 no-pad-left no-pad-right">
-        <div class="img-wrapper">
-          <img alt="Nature's Purest Gem" src="http://www.mikimotoamerica.com/media/wysiwyg/Home/home_natures_pearl.jpg" />
-        </div>
-    </div>
-</div> 
-</section> -->
-
 
 </section>
 
@@ -301,7 +219,6 @@ img {
                </div>
            </div>
          </div>
-    <!--<p style="margin: 200px;">VIDEO</p>-->
     </div>
 </section>
 

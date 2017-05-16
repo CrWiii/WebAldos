@@ -578,6 +578,21 @@ DB::Table('frames')->insert([
 ]);
 
 DB::Table('frames')->insert([
+	'title' 		=> 'JOYERÍA',
+	'subtitle' 		=> 'Oro soy',
+	'frame_type'	=> 2,
+	'route'			=> 'Joyeria',
+	// 'slug'			=> '',
+	'images_id'		=> 24,
+	'content'		=> 'Fieles a nuestra historia, Aldo&Co le da un lugar central a la colección Amarilis. Inspirada en la poetiza peruana del siglo de Oro que le da nombre a la colección, y los misterios alrededor de su vida, los diseños Amarilis transmiten una visión romántica y respetuosa de las formas en el trabajo del oro.',
+	'state'			=> 1,
+	'created_by'	=> 1,
+	'updated_by'	=> 1,
+	'created_at'	=>Carbon::now(),
+	'updated_at'	=>Carbon::now(),
+]);
+
+DB::Table('frames')->insert([
 	'title' 		=> 'PATEK PHILIPPE',
 	'subtitle' 		=> 'Más allá del tiempo',
 	'frame_type'	=> 2,
@@ -592,20 +607,7 @@ DB::Table('frames')->insert([
 	'updated_at'	=>Carbon::now(),
 ]);
 
-DB::Table('frames')->insert([
-	'title' 		=> 'JOYERÍA',
-	'subtitle' 		=> 'Oro soy',
-	'frame_type'	=> 2,
-	'route'			=> 'Joyeria',
-	// 'slug'			=> '',
-	'images_id'		=> 24,
-	'content'		=> 'Fieles a nuestra historia, Aldo&Co le da un lugar central a la colección Amarilis. Inspirada en la poetiza peruana del siglo de Oro que le da nombre a la colección, y los misterios alrededor de su vida, los diseños Amarilis transmiten una visión romántica y respetuosa de las formas en el trabajo del oro.',
-	'state'			=> 1,
-	'created_by'	=> 1,
-	'updated_by'	=> 1,
-	'created_at'	=>Carbon::now(),
-	'updated_at'	=>Carbon::now(),
-]);
+
 
 DB::Table('frames')->insert([
 	'title' 		=> 'CELEBRA EL MOMENTO',

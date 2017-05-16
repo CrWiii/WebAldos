@@ -49,7 +49,7 @@
             </div>
           </div>
         </div>
-  </section>
+</section>
 
 <section id="gridContent" class="grid whitebg" style="background: #ded5cc;">
    <div class="container-fluid">
@@ -71,9 +71,6 @@
       </div>
     </div>
 
-         
-
-          
     </div>
     </div>
 </section>
@@ -264,24 +261,27 @@ input:focus, textarea:focus {
 <!-- <script src="{{url('js/video.js')}}"></script> -->
 
 <script type="text/javascript">
+ $(document).on('click','#closeModal',function(){
+      $('#form-main').hide('slow');
+    });
+
+$(document).on('click','#CotizarModal',function(){
+  $('#form-main').show('slow');
+  $('html, body').animate({
+    scrollTop: "50px"
+}, 800);
+});
 
 // $(document).ready(function() {
 //   $(".modal").on("hidden.bs.modal", function() {
 //     $(".modal-body1").html("Where did he go?!?!?!");
 //   });
 // });
-    $(document).on('click','#closeModal',function(){
-      $('#form-main').hide('slow');
-    });
+   
 
-    $(document).on('click','#CotizarModal',function(){
-        // var producto_id_selected = $(this).attr('data-id');
-        // var link = '{{url('EliminarProducto')}}' + '/' + producto_id_selected;
-        // $('#ElimiarBtn').attr('data-id', producto_id_selected);
-        // $('#ElimiarBtn').attr('href', link);
-        // $('#CotizarModa2l').modal();
-        $('#form-main').show('slow');
-    });
+    // $(document).on('click','#CotizarModal',function(){
+    //     $('#form-main').show('slow');
+    // });
 
 </script>
 
