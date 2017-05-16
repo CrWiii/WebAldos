@@ -55,6 +55,20 @@
 @yield('script')
 <script>
 
+$(document).ready(function(){
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 500) {
+        $(".navbar-fixed-top").addClass("navbar-default");
+    } else {
+        $(".navbar-fixed-top").removeClass("navbar-default");
+    }
+  });
+
+});
+
+
 $(document).on('click','#closeModal-sub',function(){
   $('#form-main-sub').hide('slow');
 });
@@ -78,6 +92,16 @@ $(document).ready(function(){
         }
     );
 });
+
+$("#button").click(function(e) {
+        e.preventDefault();
+        $("#information, #content").addClass("active");
+    });
+    $(window).scroll(function(){
+        if($(window).scrollTop()>50) {
+            $("#navt").removeClass("navbar-default");
+        }
+    });
 
 
 $(function(){
@@ -105,28 +129,29 @@ $(window).resize(function() {fixNav();portfolioHeight();});
   ga('send', 'pageview');
 
 
-  $(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
+  
+  // $("#button").click(function(e) {
+  //       e.preventDefault();
+  //       $("#information, #content").addClass("active");
+  //   });
+  //   $(window).scroll(function(){
+  //       if($(window).scrollTop()>50) && $("#information").hasClass("active") ){
+  //           $("#content").removeClass("active");
+  //           $("#information").removeClass("active");
+  //       }
+  //    });
+  // $("#button").click(function(e) {
+  //         e.preventDefault();
+  //         $("#information, #content").addClass("active");
+  //     });
+  //     $(window).scroll(function(){
+  //         if($(window).scrollTop()>50) && $("#navt").hasClass("navbar-default") )
+  //         {
+  //             $("#navt").removeClass("navbar-default");
 
-    if (scroll >= 500) {
-        $(".navbar-fixed-top").addClass("navbar-default");
-    } else {
-        $(".navbar-fixed-top").removeClass("navbar-default");
-    }
-  });
+  //         }
+  //     });
 
-
-$("#button").click(function(e) {
-        e.preventDefault();
-        $("#information, #content").addClass("active");
-    });
-    $(window).scroll(function(){
-        if($(window).scrollTop()>50) && $("#information").hasClass("active") )
-        {
-            $("#content").removeClass("active");
-            $("#information").removeClass("active");
-        }
-//     });
 </script>
 
 </body>

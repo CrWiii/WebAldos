@@ -257,10 +257,18 @@ input:focus, textarea:focus {
 <script src="{{url('js/jquery.waypoints.min.js')}}"></script>
 <script src="{{url('js/jquery-mobile-min.js')}}"></script>
 <script src="{{url('js/plugins-min.js')}}"></script>
-<!-- <script src="{{url('js/classie.js')}}"></script> -->
-<!-- <script src="{{url('js/video.js')}}"></script> -->
 
 <script type="text/javascript">
+$(document).on('click','#closeModal-sub',function(){
+  $('#form-main-sub').hide('slow');
+});
+$(document).on('click','#SubcribirmeModal',function(){
+  $('#form-main-sub').show('slow');
+  $('html, body').animate({
+    scrollTop: "50px"
+}, 800);
+});
+
  $(document).on('click','#closeModal',function(){
       $('#form-main').hide('slow');
     });
@@ -271,35 +279,9 @@ $(document).on('click','#CotizarModal',function(){
     scrollTop: "50px"
 }, 800);
 });
-
-// $(document).ready(function() {
-//   $(".modal").on("hidden.bs.modal", function() {
-//     $(".modal-body1").html("Where did he go?!?!?!");
-//   });
-// });
-   
-
-    // $(document).on('click','#CotizarModal',function(){
-    //     $('#form-main').show('slow');
-    // });
-
 </script>
 
 <script>
-
-// $(document).ready(function(){
-//     $(".dropdown").hover(            
-//         function() {
-//             $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
-//             $(this).toggleClass('open');        
-//         },
-//         function() {
-//             $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
-//             $(this).toggleClass('open');       
-//         }
-//     );
-// });
-
 
 $(function(){
     $('figure.responsive').picture();
@@ -324,6 +306,17 @@ $(window).resize(function() {fixNav();portfolioHeight();});
 
   ga('create', 'UA-40443546-1', 'auto');
   ga('send', 'pageview');
+
+  $("#button").click(function(e) {
+        e.preventDefault();
+        $("#information, #content").addClass("active");
+    });
+    $(window).scroll(function(){
+        if($(window).scrollTop()>50) && $("#information").hasClass("active") ){
+            $("#content").removeClass("active");
+            $("#information").removeClass("active");
+        }
+     });
 
 </script>
 
