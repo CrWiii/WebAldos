@@ -21,10 +21,27 @@
 </head>
 <!--https://codyhouse.co/gem/mega-dropdown/-->
 <style type="text/css">
-                      img{
-                        max-width: 100% !important;
-                      }
-                    </style>
+  img{
+    max-width: 100% !important;
+  }
+/*  .flipit {
+        position: relative;
+    }*/
+  @media(max-width: 767px){
+    .flipit {
+        padding-top: 20px;
+        position: absolute;
+        top: -10%;
+        text-align: center;
+    }
+    .imgimg{
+        padding-top: 40px; 
+        padding-bottom: 20px; 
+    }
+    
+  }
+
+</style>
 <body class="video-loaded">
 
 
@@ -58,16 +75,16 @@
                 @foreach($Marckets as $Tienda)
                   @if($i==0)
                     <div class="col-sm-12" style="margin-bottom: 6%">
-                      <div class="col-sm-2"><img src="{{$Tienda->Images->route}}"></div>
-                      <div class="col-sm-10" style="padding-left: 5%">
+                      <div class="col-sm-2"><img src="{{$Tienda->Images->route}}" class="imgimg"></div>
+                      <div class="col-sm-10 col-xs-12 flipit" style="padding-left: 5%">
                         <p class="titu1" style="font-family: 'TrajanProBold';">{{$Tienda->description}}</p>
                         <a href=""><p style="font-family: 'TrajanProBold';">{{$Tienda->address}}</p></a>
                       </div>
                     </div>
                   @else
                     <div class="col-sm-6" style="margin-bottom: 6%">
-                      <div class="col-sm-4"><img src="{{$Tienda->Images->route}}"></div>
-                      <div class="col-sm-8" style="padding-left: 5%">
+                      <div class="col-sm-4"><img src="{{$Tienda->Images->route}}" class="imgimg"></div>
+                      <div class="col-sm-8 col-xs-12 flipit" style="padding-left: 5%">
                         <p class="titu1" style="font-family: 'TrajanProBold';">{{$Tienda->description}}</p>
                         <a href=""><p style="font-family: 'TrajanProBold';">{{$Tienda->address}}</p></a>
                       </div>

@@ -22,7 +22,16 @@
 <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 </head>
 <!--https://codyhouse.co/gem/mega-dropdown/-->
-
+<style>
+  @media(max-width: 767px){
+    .hovcontps{
+      display: none;    
+    }
+    .hovconth{
+      display: none;
+    }
+  }
+</style>
 
 
 <body class="video-loaded">
@@ -55,18 +64,18 @@
 @yield('script')
 <script>
 
-$(document).ready(function(){
-  $(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
+// $(document).ready(function(){
+//   $(window).scroll(function() {    
+//     var scroll = $(window).scrollTop();
 
-    if (scroll >= 500) {
-        $(".navbar-fixed-top").addClass("navbar-default");
-    } else {
-        $(".navbar-fixed-top").removeClass("navbar-default");
-    }
-  });
+//     if (scroll >= 500) {
+//         $(".navbar-fixed-top").addClass("navbar-default");
+//     } else {
+//         $(".navbar-fixed-top").removeClass("navbar-default");
+//     }
+//   });
 
-});
+// });
 
 
 $(document).on('click','#closeModal-sub',function(){
@@ -103,6 +112,15 @@ $("#button").click(function(e) {
         }
     });
 
+$(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 500) {
+        $(".navbar-fixed-top").addClass("navbar-default");
+    } else {
+        $(".navbar-fixed-top").removeClass("navbar-default");
+    }
+  });
 
 $(function(){
     $('figure.responsive').picture();
