@@ -3202,7 +3202,9 @@ tbody.collapse.in {
 
 @media (max-width: 1023px) {
   .navbar-collapse {
-    overflow-x: hidden; }
+    overflow-x: hidden;
+    width: 250px;
+    float: right; }
   .navbar-right {
     margin-top: -16px; } }
 
