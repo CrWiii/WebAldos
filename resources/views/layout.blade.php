@@ -30,6 +30,18 @@
     .hovconth{
       display: none;
     }
+  } 
+  @media(max-width: 1024px){
+    .hovcontp {
+      font-size: 1.5em;
+    }
+    .hovcontps {
+      font-size: 0.9em;
+    }
+    .hovconth {
+      font-size: 1.8em;
+    }
+
   }
 </style>
 

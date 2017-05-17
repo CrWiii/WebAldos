@@ -36,7 +36,7 @@
         <div class="row">
             <ul class="nav asf">
                 @foreach($TypesNovios as $Type)               
-                <li class="titlists"><a id="{{$Type->id}}" href="{{url('Novios',array('Type'=>$Type->slug))}}" @if($Type_selected==$Type->id)class="titlists active" @else class="titlists" @endif>{{$Type->description}}</a></li>
+                <li class="titlists"><a id="{{$Type->id}}" href="{{url('Novios',array('Type'=>$Type->slug))}}" style="margin: 0 5px !important;" @if($Type_selected==$Type->id)class="titlists active" @else class="titlists" @endif>{{$Type->description}}</a></li>
                 
                 @endforeach
             </ul>

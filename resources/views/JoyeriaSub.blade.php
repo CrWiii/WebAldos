@@ -3,7 +3,12 @@
 @section('content')
 
 <style type="text/css">
-  .asf > li > a {color: #676767 !important;font-size: 1em;line-height: 50px;}
+  .asf > li > a {color: #676767 !important;font-size: 0.95em;line-height: 50px;}
+  @media(max-width: 1024px){
+    .asf > li > a {
+      font-size: 0.8em !important;
+    }
+  }
   
   .nav > li > a.active {margin-bottom:-3px;border-bottom: 2px solid #ded5cc !important;}
   .asf{border-bottom: 1px solid #a89797 !important;}
