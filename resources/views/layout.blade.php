@@ -85,6 +85,18 @@ $(window).scroll(function() {
     }
   });
 
+  $(document).on('click','#btnbur',function(){
+    if($(window).scrollTop() == 0 || $(window).scrollTop() == $(document).height()- $(window).height()) {
+      if($("#navt").hasClass("navbar-default")){
+        $("#navt").removeClass("navbar-default");
+      }
+      else{
+        $("#navt").addClass("navbar-default");
+      }
+    }
+    
+  });
+
 $(document).on('click','#closeModal-sub',function(){
   $('#form-main-sub').hide('slow');
 });

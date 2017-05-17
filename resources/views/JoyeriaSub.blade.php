@@ -16,6 +16,17 @@
   .grid .row .hovercontainer figure img {
     width: 100% !important;
   }
+  @media(max-width: 767px){
+    .hidenli{
+      display: none !important;
+    }
+    .activeflip{
+      font-size: 3em !important;
+    }
+    .asf > li > a {
+      color: white !important;
+    }
+  }
 
 </style>
 <div id="loaderHolder" style="display: none;">
@@ -39,7 +50,7 @@
         <div class="row">
             <ul class="nav asf"> <!--class="active"-->
               @foreach($TypesJoyas as $Type)
-                <li><a id="{{$Type->id}}" href="{{url('Joyeria',array('Type'=>$Type->description))}}" @if($Type_selected==$Type->id)class="active" @endif>{{$Type->description}}</a></li>
+                <li @if($Type_selected==$Type->id) class="activeflip" @else class="hidenli" @endif><a id="{{$Type->id}}" href="{{url('Joyeria',array('Type'=>$Type->description))}}" @if($Type_selected==$Type->id)class="active" @endif>{{$Type->description}}</a></li>
               @endforeach
             </ul>
         </div>

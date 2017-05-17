@@ -13,6 +13,19 @@
     width: 100% !important;
   }
 
+  @media(max-width: 767px){
+    .hidenli{
+      display: none !important;
+    }
+    .activeflip{
+      font-size: 3em !important;
+    }
+    .asf > li > a {
+      color: white !important;
+    }
+  }
+
+
 
 </style>
 <div id="loaderHolder" style="display: none;">
@@ -36,7 +49,7 @@
         <div class="row">
             <ul class="nav asf">
                 @foreach($TypesNovios as $Type)               
-                <li class="titlists"><a id="{{$Type->id}}" href="{{url('Novios',array('Type'=>$Type->slug))}}" style="margin: 0 5px !important;" @if($Type_selected==$Type->id)class="titlists active" @else class="titlists" @endif>{{$Type->description}}</a></li>
+                <li @if($Type_selected==$Type->id) class="activeflip titlists" @else class="hidenli titlists" @endif><a id="{{$Type->id}}" href="{{url('Novios',array('Type'=>$Type->slug))}}" style="margin: 0 5px !important;" @if($Type_selected==$Type->id)class="titlists active" @else class="titlists" @endif>{{$Type->description}}</a></li>
                 
                 @endforeach
             </ul>

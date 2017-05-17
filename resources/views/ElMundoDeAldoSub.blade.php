@@ -13,6 +13,18 @@
     width: 100% !important;
   }
 
+   @media(max-width: 767px){
+    .hidenli{
+      display: none !important;
+    }
+    .activeflip{
+      font-size: 3em !important;
+    }
+    .asf > li > a {
+      color: white !important;
+    }
+  }
+
 </style>
 <div id="loaderHolder" style="display: none;">
     <div class="loader"></div>
@@ -36,7 +48,7 @@
             <ul class="nav asf">
                 @foreach($frames as $tit)
                   @if(substr( $tit->route, 0, 4 ) != "http")
-                  <li><a href="{{url('ElMundoDeAldo',array('tit'=>$tit->slug))}}" @if($slug==$tit->slug)class="active" @endif>{{$tit->title}}</a></li>
+                  <li @if($Type_selected==$tit->id) class="activeflip" @else class="hidenli" @endif><a href="{{url('ElMundoDeAldo',array('tit'=>$tit->slug))}}" @if($slug==$tit->slug)class="active" @endif>{{$tit->title}}</a></li>
                   @endif
                 @endforeach
             </ul>

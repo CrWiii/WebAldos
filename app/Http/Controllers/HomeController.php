@@ -95,8 +95,10 @@ class HomeController extends Controller{
         //                   ['slug'=>'Nosotros','description'=>'NOSOTROS'],
         //                   ['slug'=>'creando_magia','description'=>'CREANDO MAGIA'],
         //                   ['slug'=>'responsabilidad_social','description'=>'RESPONSABILIDAD SOCIAL']]);
+        $Type_selected = Frame::where('slug',$slug)->pluck('id');
+        $Type_selected = (int)$Type_selected[0];
         $frames = Frame::where('frame_type',1)->where('state',true)->get();
 
-        return view('ElMundoDeAldoSub',compact('TypesJoyas','TypesNovios','frames','slug'));
+        return view('ElMundoDeAldoSub',compact('TypesJoyas','TypesNovios','frames','slug','Type_selected'));
     }
 }

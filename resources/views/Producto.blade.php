@@ -226,19 +226,19 @@ input:focus, textarea:focus {
     <form class="form" id="form1">
       
       <p class="name">
-        <input name="first_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Nombre" id="name" />
+        <input name="first_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t30')}}" id="name" />
       </p>
 
       <p class="name">
-        <input name="last_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Apellido" id="name" />
+        <input name="last_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t31')}}" id="name" />
       </p>
       
       <p class="email">
-        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Correo" />
+        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="{{trans('messages.t32')}}" />
       </p>
 
       <p class="celphone">
-        <input name="celphone" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Telefono" id="celphone" />
+        <input name="celphone" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t33')}}" id="celphone" />
       </p>
       
       

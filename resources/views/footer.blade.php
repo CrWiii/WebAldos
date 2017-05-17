@@ -239,28 +239,27 @@ input:focus, textarea:focus {
     <form class="form" id="form1" method="POST" action="/storePer">
       
       <p class="name">
-        <input name="first_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Nombre" id="name" />
+        <input name="first_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t30')}}" id="name" />
       </p>
 
       <p class="name">
-        <input name="last_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Apellido" id="name" />
+        <input name="last_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t31')}}" id="name" />
       </p>
       
       <p class="email">
-        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Correo" />
+        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="{{trans('messages.t32')}}" />
       </p>
 
       <p class="celphone">
-        <input name="celphone" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Telefono" id="celphone" />
+        <input name="celphone" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t33')}}" id="celphone" />
       </p>
       <p class="confirm">
-        <input type="checkbox" name=""> Acepto suscribirme al Boletín informativo para recibir novedades y promociones de la Joyaría Aldo&Co
-        
+        <input type="checkbox" name="">{{trans('messages.t20')}}
       </p>
       
       
       <div class="submit">
-        <button type="submit" value="SEND" id="button-blue" disabled="disabled">Suscribirme</button>
+        <button type="submit" value="SEND" id="button-blue" disabled="disabled">{{trans('messages.t21')}}</button>
         <div class="ease"></div>
       </div>
     </form>
