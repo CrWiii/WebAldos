@@ -145,7 +145,7 @@ img {
               @else
                 <a href="{{url($frame->route)}}" style="color: #f9f9f9 !important">{{$frame->title}}</a>
               @endif
-              <p style="font-family: 'AppleGaramondLight';font-size: 0.6em;"> {{$frame->subtitle}}</p>
+              <p class="hovcontps"> {{$frame->subtitle}}</p>
             </div>
         </div>
     </div>
@@ -167,7 +167,7 @@ img {
             @else
               <a href="{{url($frame->route)}}" style="color: #f9f9f9 !important">{{$frame->title}}</a>
             @endif
-            <p style="font-family: 'AppleGaramondLight';font-size: 0.6em;"> {{$frame->subtitle}}</p>
+            <p class="hovcontps"> {{$frame->subtitle}}</p>
           </div>
         </div>
     </div>
