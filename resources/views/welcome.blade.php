@@ -5,18 +5,6 @@
 <section id="weddingPlanner" class="main-content jumbotron">
        <div id="mainCarousel" class="carousel slide" data-ride="carousel" data-interval="8000">  
              <div class="carousel-inner">
-             
-              <!-- <div class="item active">
-                <figure class="responsive img-responsive" data-media240="{{url('img/Inicio.png')}}" data-media769="{{url('img/Inicio.png')}}" data-media1201="{{url('img/Inicio.png')}}" data-title="Bridal Planner Phuket">
-                        
-              <img src="{{url('img/Inicio.png')}}"></figure>
-                        <div class="carousel-caption">
-                            <div class="caption-content">
-                                <h1 class="os-animation animated fadeInDown tit1" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">CELEBRA EL MOMENTO</h1>
-                              <h2 class="os-animation animated fadeInDown tit2" data-os-animation="fadeInDown" data-os-animation-delay="100ms" style="animation-delay: 100ms;">LIMA . CUSCO . PUNO</h2>
-                            </div>
-                        </div>
-              </div> -->
               <?php $i=0 ?> 
               @foreach($slides as $slide)
                 @if($i==0) <div class="item active"> @else <div class="item"> @endif

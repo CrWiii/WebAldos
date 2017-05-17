@@ -19,7 +19,7 @@
 
 <link rel="apple-touch-startup-image" href="http://thebridalplanner.co/fav/startup/startup.png">
 <!-- Prevents links from opening in mobile Safari -->
-<script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+<!-- <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script> -->
 </head>
 <!--https://codyhouse.co/gem/mega-dropdown/-->
 <style>
@@ -88,7 +88,15 @@
 //   });
 
 // });
+$(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
 
+    if (scroll >= 50) {      
+        $("#navt").addClass("navbar-default");
+    } else {
+        $("#navt").removeClass("navbar-default");
+    }
+  });
 
 $(document).on('click','#closeModal-sub',function(){
   $('#form-main-sub').hide('slow');
@@ -114,25 +122,17 @@ $(document).ready(function(){
     );
 });
 
-$("#button").click(function(e) {
-        e.preventDefault();
-        $("#information, #content").addClass("active");
-    });
-    $(window).scroll(function(){
-        if($(window).scrollTop()>50) {
-            $("#navt").removeClass("navbar-default");
-        }
-    });
+// $("#button").click(function(e) {
+//         e.preventDefault();
+//         $("#information, #content").addClass("active");
+//     });
+//     $(window).scroll(function(){
+//         if($(window).scrollTop()>50) {
+//             $("#navt").removeClass("navbar-default");
+//         }
+//     });
 
-$(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
 
-    if (scroll >= 500) {
-        $(".navbar-fixed-top").addClass("navbar-default");
-    } else {
-        $(".navbar-fixed-top").removeClass("navbar-default");
-    }
-  });
 
 $(function(){
     $('figure.responsive').picture();
@@ -144,19 +144,19 @@ $(function(){
     var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     if (iOS==true) { $('video').attr("autoplay"," ").load(); }
 });
-$(window).load(function() {
-  $('#loaderHolder').fadeOut(500);
-   portfolioHeight();fixNav();
-});
-$(window).resize(function() {fixNav();portfolioHeight();});
+// $(window).load(function() {
+//   $('#loaderHolder').fadeOut(500);
+//    portfolioHeight();fixNav();
+// });
+// $(window).resize(function() {fixNav();portfolioHeight();});
 </script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script',"{{url('js/analytics.js')}}",'ga');
+  // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  // })(window,document,'script',"{{url('js/analytics.js')}}",'ga');
 
-  ga('create', 'UA-40443546-1', 'auto');
-  ga('send', 'pageview');
+  // ga('create', 'UA-40443546-1', 'auto');
+  // ga('send', 'pageview');
 
 
   
@@ -175,7 +175,7 @@ $(window).resize(function() {fixNav();portfolioHeight();});
   //         $("#information, #content").addClass("active");
   //     });
   //     $(window).scroll(function(){
-  //         if($(window).scrollTop()>50) && $("#navt").hasClass("navbar-default") )
+  //         if($(window).scrollTop()>0) && $("#navt").hasClass("navbar-default") )
   //         {
   //             $("#navt").removeClass("navbar-default");
 
