@@ -75,19 +75,6 @@
 <script src="{{url('js/video.js')}}"></script>
 @yield('script')
 <script>
-
-// $(document).ready(function(){
-//   $(window).scroll(function() {    
-//     var scroll = $(window).scrollTop();
-
-//     if (scroll >= 500) {
-//         $(".navbar-fixed-top").addClass("navbar-default");
-//     } else {
-//         $(".navbar-fixed-top").removeClass("navbar-default");
-//     }
-//   });
-
-// });
 $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
 
@@ -122,18 +109,6 @@ $(document).ready(function(){
     );
 });
 
-// $("#button").click(function(e) {
-//         e.preventDefault();
-//         $("#information, #content").addClass("active");
-//     });
-//     $(window).scroll(function(){
-//         if($(window).scrollTop()>50) {
-//             $("#navt").removeClass("navbar-default");
-//         }
-//     });
-
-
-
 $(function(){
     $('figure.responsive').picture();
     onScrollInit( $('.os-animation') );
@@ -144,43 +119,6 @@ $(function(){
     var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     if (iOS==true) { $('video').attr("autoplay"," ").load(); }
 });
-// $(window).load(function() {
-//   $('#loaderHolder').fadeOut(500);
-//    portfolioHeight();fixNav();
-// });
-// $(window).resize(function() {fixNav();portfolioHeight();});
-</script>
-<script>
-  // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  // })(window,document,'script',"{{url('js/analytics.js')}}",'ga');
-
-  // ga('create', 'UA-40443546-1', 'auto');
-  // ga('send', 'pageview');
-
-
-  
-  // $("#button").click(function(e) {
-  //       e.preventDefault();
-  //       $("#information, #content").addClass("active");
-  //   });
-  //   $(window).scroll(function(){
-  //       if($(window).scrollTop()>50) && $("#information").hasClass("active") ){
-  //           $("#content").removeClass("active");
-  //           $("#information").removeClass("active");
-  //       }
-  //    });
-  // $("#button").click(function(e) {
-  //         e.preventDefault();
-  //         $("#information, #content").addClass("active");
-  //     });
-  //     $(window).scroll(function(){
-  //         if($(window).scrollTop()>0) && $("#navt").hasClass("navbar-default") )
-  //         {
-  //             $("#navt").removeClass("navbar-default");
-
-  //         }
-  //     });
 
 </script>
 
