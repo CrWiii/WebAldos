@@ -113,6 +113,42 @@ img {
   .main-section{
         background: #ded5cc;
   }
+
+
+  .copy-wrapper .img-wrapper{
+    height: auto;margin: auto;padding:0px !important;
+  }
+  .img-wrapper{
+    display:table-cell !important;
+    vertical-align:middle !important;
+  /*  max-height:500px !important;
+    width:500px !important;*/
+  }
+
+  .ffff{
+    max-height: 500px;line-height: 500px;text-align: center;
+  }
+  .subffff{
+    color: #f9f9f9 !important;display: inline-block;vertical-align: middle;line-height: normal;
+  }
+  @media(max-width: 1024px){
+    .ffff{
+    max-height: 400px;line-height: 400px;
+  }
+  }
+  @media(max-width: 860px){
+    .ffff{
+    max-height: 350px;line-height: 350px;
+  }
+
+  }
+
+  @media(max-width: 767px){
+    .subffff{
+      font-size: 0.8em !important;
+  }
+
+  }
 </style>
 
 
@@ -140,9 +176,9 @@ img {
   <div class="main-section home-mod m-img-right">
     <div class="column col-xs-12 col-sm-6 col-lg-6">
         <div class="copy-wrapper">
-            <div class="hovercontainer hovcont" style="height: 550px"> 
-                  <div class="subhover">
-                    <a href="{{url('Novios',array('Type'=>$frame->slug))}}" style="color: #f9f9f9 !important">{{$frame->description}}</a>
+            <div class="hovercontainer hovcont"> 
+                  <div class="subhover ffff">
+                    <a href="{{url('Novios',array('Type'=>$frame->slug))}}" class="subffff">{{$frame->description}}</a>
                   </div>
                </div>
         </div>
@@ -157,9 +193,9 @@ img {
   <div class="main-section home-mod m-img-left">
     <div class="column col-xs-12 col-sm-6 col-lg-6">
         <div class="copy-wrapper">
-          <div class="hovercontainer hovcont" style="height: 550px"> 
-                  <div class="subhover">
-                    <a href="{{url('Novios',array('Type'=>$frame->slug))}}" style="color: #f9f9f9 !important">{{$frame->description}}</a>
+          <div class="hovercontainer hovcont"> 
+                  <div class="subhover ffff">
+                    <a href="{{url('Novios',array('Type'=>$frame->slug))}}" class="subffff">{{$frame->description}}</a>
                   </div>
                </div>
                </div>

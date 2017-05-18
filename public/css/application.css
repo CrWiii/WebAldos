@@ -3135,7 +3135,7 @@ tbody.collapse.in {
     padding-top: 0px !important;
     padding-left: 0px !important;
     /*padding-right: 0px !important;*/
-    width: 150px !important;
+    /*width: 150px !important;*/
     margin: 0 auto; }
     .navbar-default .svg > path {
       fill: #999999; }
@@ -4860,7 +4860,7 @@ img.brand {
   .video-inner {
     width: 30vw;
     height: 30vw;
-    border: 20px solid #fff;
+    /*border: 20px solid #fff;*/
     -webkit-transform: scale3d(0.1, 0.1, 1) rotate3d(0, 0, 1, -5deg);
     transform: scale3d(0.1, 0.1, 1) rotate3d(0, 0, 1, -5deg); }
   .video-wrap--show .video-inner {
