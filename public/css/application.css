@@ -3125,7 +3125,7 @@ tbody.collapse.in {
     /*width: 110px;*/
     /*height: 40px;*/
     /*margin-left: -55px;*/
-   /* margin-top: 10px;*/
+    margin-top: -20px;
     color: #999;
     overflow: hidden; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
