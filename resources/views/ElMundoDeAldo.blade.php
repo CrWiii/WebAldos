@@ -18,6 +18,37 @@
   <div class="loader"></div>
 </div>
 <style>
+
+  @media(max-width: 860px){
+    .hovcontpl{
+      font-size: 0.3em !important;
+    }
+    .sdfg{
+      font-size: 0.7em !important;
+    }
+  }
+
+  @media(max-width: 1060px){
+    .hovcontpl{
+      font-size: 0.4em !important;
+    }
+    .sdfg{
+      font-size: 0.8em;
+    }
+  }
+  @media(max-width: 767px){
+    h1{
+      margin-top: 60px !important;
+      font-size: 4em !important;
+    }
+    .hovcontpl{
+      color: #676767;
+      font-size: 0.3em !important;
+    }
+    .sdfg{
+      font-size: 0.6em;
+    }
+  }
     .subhover{
     color: white;
     font-family: 'Trajan Pro';
@@ -128,11 +159,18 @@ img {
   .main-section{
         background: #ded5cc;
   }
+
+  .hovcontpl{
+    color: #676767 !important;
+    font-size: 0.5em;
+  }
+
+
 </style>
 
 <section id="gridContent" class="grid whitebg">
    <div class="container-fluid" style="padding: 0px !important; margin: 0px !important;">
-<section id="gridContent" class="grid whitebg">
+
 <?php $i=1;?>
 @foreach($frames as $frame)
   @if($i & 1)
@@ -141,11 +179,11 @@ img {
         <div class="copy-wrapper">
             <div class="subhover">
               @if(substr( $frame->route, 0, 4 ) === "http")
-                <a href="{{url($frame->route)}}" target="_blank" style="color: #f9f9f9 !important">{{$frame->title}}</a>
+                <a href="{{url($frame->route)}}" target="_blank" style="color: #f9f9f9 !important"><p class="sdfg">{{$frame->title}}</p></a>
               @else
-                <a href="{{url($frame->route)}}" style="color: #f9f9f9 !important">{{$frame->title}}</a>
+                <a href="{{url($frame->route)}}" style="color: #f9f9f9 !important"><p class="sdfg">{{$frame->title}}</p></a>
               @endif
-              <p class="hovcontps"> {{$frame->subtitle}}</p>
+              <p class="hovcontpl"> {{$frame->subtitle}}</p>
             </div>
         </div>
     </div>
@@ -163,11 +201,11 @@ img {
         <div class="copy-wrapper">
           <div class="subhover">
             @if(substr( $frame->route, 0, 4 ) === "http")
-              <a href="{{url($frame->route)}}" target="_blank" style="color: #f9f9f9 !important">{{$frame->title}}</a>
+              <a href="{{url($frame->route)}}" target="_blank" style="color: #f9f9f9 !important"><p class="sdfg">{{$frame->title}}</p></a>
             @else
-              <a href="{{url($frame->route)}}" style="color: #f9f9f9 !important">{{$frame->title}}</a>
+              <a href="{{url($frame->route)}}" style="color: #f9f9f9 !important"><p class="sdfg">{{$frame->title}}</p></a>
             @endif
-            <p class="hovcontps"> {{$frame->subtitle}}</p>
+            <p class="hovcontpl"> {{$frame->subtitle}}</p>
           </div>
         </div>
     </div>
