@@ -241,6 +241,7 @@ input:focus, textarea:focus {
         <input name="celphone" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t33')}}" id="celphone" required="required"/>
       </p>
       <input type="hidden" name="parm" value="coti">
+      <input type="hidden" name="product_name" value="{{$product->name}}">
 
       <div class="submit">
         <input type="submit" value="SEND" id="button-blue"/>

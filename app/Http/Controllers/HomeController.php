@@ -30,21 +30,20 @@ class HomeController extends Controller{
         return view('template');
     }
     public function storePer(Request $request){
-
         $userdata = array(
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
-            'celphone' => $request->celphone);
+            'celphone' => $request->celphone,
+            'product_name' => $request->product_name);
         if($request->parm == 'subs'){
-            Mail::send( 'template', $userdata, function( $message ) use ($userdata){$message->to([$userdata['email']])->subject('Subscrito al Newletter de Joyeria Aldo & CO');});
-            // Mail::send( 'template_subs_adm', $userdata, function( $message ) use ($userdata){$message->to('contacto@joyeria-aldo.com')->subject('Nuevo suscriptor newletter');});
+            Mail::send( 'template_subs', $userdata, function( $message ) use ($userdata){$message->to([$userdata['email']])->subject('Subscrito al Newletter de Joyeria Aldo & CO');});
+            Mail::send( 'template_subs_adm', $userdata, function( $message ) use ($userdata){$message->to('contacto@joyeria-aldo.com')->subject('Nuevo suscriptor newletter');});
         }
-        // if($request->parm == 'coti'){
-        //     Mail::send( 'template_coti', $userdata, function( $message ) use ($userdata){$message->to([$userdata['email']])->subject("Solicitud de Cotización Joyeria Aldo & CO");});
-        //     Mail::send( 'template_coti_adm', $userdata, function( $message ) use ($userdata){$message->to('contacto@joyeria-aldo.com')->subject('Nueva solicitud de cotización');});
-        // }
-        
+        if($request->parm == 'coti'){
+            Mail::send( 'template_coti', $userdata, function( $message ) use ($userdata){$message->to([$userdata['email']])->subject("Solicitud de Cotización Joyeria Aldo & CO");});
+            Mail::send( 'template_coti_adm', $userdata, function( $message ) use ($userdata){$message->to('contacto@joyeria-aldo.com')->subject('Nueva solicitud de cotización');});
+        }
         return redirect()->back();
     }
     public function events(){
