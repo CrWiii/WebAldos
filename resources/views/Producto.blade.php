@@ -223,25 +223,25 @@ input:focus, textarea:focus {
 <div id="form-main" style="display: none">
   <div id="form-div">
     <i class="" style="float:right;position: relative; top:-25px; right: -15px color: #342825 !important"><a id="closeModal" style="cursor: pointer;">X</a></i>
-    <form class="form" id="form1">
-      
+    <form class="form" id="form1" method="post" action="/storePer">
+      {{csrf_field()}}
       <p class="name">
-        <input name="first_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t30')}}" id="name" />
+        <input name="first_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t30')}}" id="first_name" required="required"/>
       </p>
 
       <p class="name">
-        <input name="last_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t31')}}" id="name" />
+        <input name="last_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t31')}}" id="last_name" required="required"/>
       </p>
       
       <p class="email">
-        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="{{trans('messages.t32')}}" />
+        <input name="email" type="email" class="validate[required,custom[email]] feedback-input" id="email" placeholder="{{trans('messages.t32')}}" required="required" />
       </p>
 
       <p class="celphone">
-        <input name="celphone" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t33')}}" id="celphone" />
+        <input name="celphone" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t33')}}" id="celphone" required="required"/>
       </p>
-      
-      
+      <input type="hidden" name="parm" value="coti">
+
       <div class="submit">
         <input type="submit" value="SEND" id="button-blue"/>
         <div class="ease"></div>
@@ -279,6 +279,15 @@ $(document).on('click','#CotizarModal',function(){
     scrollTop: "50px"
 }, 800);
 });
+
+
+  function testInput(event) {
+    var value = String.fromCharCode(event.which);
+    var pattern = new RegExp(/[a-zåäö ]/i);
+    return pattern.test(value);
+  }
+$('#first_name, #last_name').bind('keypress', testInput);
+
 </script>
 
 <script>

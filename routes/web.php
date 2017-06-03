@@ -99,6 +99,8 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('EliminarSlide/{id}','FrameController@deleteSlide');
 	Route::post('uploadvideo','FrameController@uploadvideo');
 	Route::post('uploadImagen','FrameController@uploadImagen');
+	Route::post('storePer','HomeController@storePer');
+	Route::get('test','HomeController@test');
 });
 
 Auth::routes();

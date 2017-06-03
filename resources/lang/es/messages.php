@@ -11,7 +11,7 @@ return [
 	't11' => 'al Newsletter',
 	't12' => 'Solicitar Cotización',
 
-	't20' => 'Acepto suscribirme al Boletín informativo para recibir novedades y promociones de la Joyaría Aldo&Co',
+	't20' => 'Acepto suscribirme al Boletín Informativo para recibir novedades y promociones de la Joyería Aldo&Co. ',
 	't21' => 'Subscribirme',
 	't22' => 'Enviar',
 

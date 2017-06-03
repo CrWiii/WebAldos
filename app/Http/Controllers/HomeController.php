@@ -10,6 +10,8 @@ use App\Marcket;
 use App\Question;
 use App\Frame;
 use App\Subframe;
+use Mail;
+
 class HomeController extends Controller{
 
     // public function __construct(){
@@ -23,6 +25,27 @@ class HomeController extends Controller{
         $slides = Frame::where('frame_type',3)->get();
         // dd($slides);
         return view('welcome',compact('TypesJoyas','TypesNovios','frames','slides'));
+    }
+    public function test(){
+        return view('template');
+    }
+    public function storePer(Request $request){
+
+        $userdata = array(
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'celphone' => $request->celphone);
+        if($request->parm == 'subs'){
+            Mail::send( 'template', $userdata, function( $message ) use ($userdata){$message->to([$userdata['email']])->subject('Subscrito al Newletter de Joyeria Aldo & CO');});
+            // Mail::send( 'template_subs_adm', $userdata, function( $message ) use ($userdata){$message->to('contacto@joyeria-aldo.com')->subject('Nuevo suscriptor newletter');});
+        }
+        // if($request->parm == 'coti'){
+        //     Mail::send( 'template_coti', $userdata, function( $message ) use ($userdata){$message->to([$userdata['email']])->subject("Solicitud de Cotización Joyeria Aldo & CO");});
+        //     Mail::send( 'template_coti_adm', $userdata, function( $message ) use ($userdata){$message->to('contacto@joyeria-aldo.com')->subject('Nueva solicitud de cotización');});
+        // }
+        
+        return redirect()->back();
     }
     public function events(){
         $Eventts = Eventt::where('state',true)->orderBy('updated_at','DESC')->take(3)->get();

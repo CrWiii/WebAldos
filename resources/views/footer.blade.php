@@ -60,7 +60,7 @@ p{
 }
 
 /* Icons ---------------------------------- */
-#name{
+#first_name,#last_name{
   background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
   background-size: 15px 15px;
   background-position: 11px 8px;
@@ -228,7 +228,7 @@ input:focus, textarea:focus {
 <footer id="siteFooter" class="whitebg text-center" style="padding-bottom: 0px;">
     <div style="background-color: #a38e7a;color: black">
         <ul id="footerCredits" class="list-unstyled" style="margin-bottom: 0px;">
-            <li><small style="font-family: 'AppleGaramondLight';font-size: 1.1em;">© 2016 Aldo & Co derechos reservados</small></li>
+            <li><small style="font-family: 'AppleGaramondLight';font-size: 1.1em;">© 2017 Aldo & Co derechos reservados</small></li>
         </ul>
     </div>
 </footer>
@@ -237,29 +237,29 @@ input:focus, textarea:focus {
   <div id="form-div">
     <i class="" style="float:right;position: relative; top:-25px; right: -15px color: #342825 !important"><a id="closeModal-sub" style="cursor: pointer;">X</a></i>
     <form class="form" id="form1" method="POST" action="/storePer">
-      
+      {{csrf_field()}}
       <p class="name">
-        <input name="first_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t30')}}" id="name" />
+        <input name="first_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t30')}}" id="name" required="required"/>
       </p>
 
       <p class="name">
-        <input name="last_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t31')}}" id="name" />
+        <input name="last_name"  type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t31')}}" id="name" required="required"/>
       </p>
       
       <p class="email">
-        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="{{trans('messages.t32')}}" />
+        <input name="email" type="email" class="validate[required,custom[email]] feedback-input" id="email" placeholder="{{trans('messages.t32')}}" required="required"/>
       </p>
 
       <p class="celphone">
-        <input name="celphone" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t33')}}" id="celphone" />
+        <input name="celphone" type="text"  onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t33')}}" id="celphone" required="required" />
       </p>
       <p class="confirm">
-        <input type="checkbox" name="">{{trans('messages.t20')}}
+        <input type="checkbox" name="" id="valida">{{trans('messages.t20')}}
       </p>
-      
+      <input type="hidden" name="parm" value="subs">      
       
       <div class="submit">
-        <button type="submit" value="SEND" id="button-blue" disabled="disabled">{{trans('messages.t21')}}</button>
+        <button type="submit" id="button-blue" disabled="disabled">{{trans('messages.t21')}}</button>
         <div class="ease"></div>
       </div>
     </form>

@@ -8,7 +8,7 @@
   }
 }
 </style>
-<nav id="navt" class="navbar navbar-fixed-top" style="padding-bottom: 0px;">
+<nav id="navt" class="navbar navbar-fixed-top" style="padding-bottom: 0px;" data-id="false">
       <div class="container">
          <div class="navbar-header">
               <button id="btnbur" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
