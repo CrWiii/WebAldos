@@ -38,7 +38,7 @@
     color: white;
     font-family: 'Trajan Pro';
     font-size: 3em;margin-left: auto;
-    margin-right: auto;
+    margin-right: auto;x
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -209,7 +209,6 @@ img {
          </div>
     </div>
 </section>
-
 <div class="video-wrap">
    <div class="video-inner">
        <video class="video-player" controls="controls" preload="auto">
@@ -222,5 +221,4 @@ img {
        </button>
    </div>
 </div>
-
 @endsection

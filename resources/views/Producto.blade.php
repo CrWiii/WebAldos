@@ -79,13 +79,17 @@
 
 @include('footer')
 <style type="text/css">
-  #form-main{
+p{
+  margin: 0 0 3px !important;
+}
+  #form-main-sub{
   width:100%;
   float:left;
   padding-top:0px;
 }
 
 #form-div {
+  line-height: 1.5;
   background-color:rgb(214, 198, 187);
   padding-left:35px;
   padding-right:35px;
@@ -99,19 +103,19 @@
   margin-left: -260px;
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
-  top: 250px;
-  border: 2px solid #525050;
+  top: 500px;
+  border: 2px solid #342825;
 }
 
 .feedback-input {
-  color:#525050;
+  color:#3c3c3c;
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
   font-weight:500;
   font-size: 18px;
   border-radius: 0;
   line-height: 22px;
   background-color: #fbfbfb;
-  padding: 13px 13px 13px 54px;
+  padding: 3px 3px 3px 40px;
   margin-bottom: 10px;
   width:100%;
   -webkit-box-sizing: border-box;
@@ -124,10 +128,10 @@
 .feedback-input:focus{
   background: #fff;
   box-shadow: 0;
-  border: 3px solid #525050;
-  color: #525050;
+  border: 3px solid #342825;
+  color: #3498db;
   outline: none;
-  padding: 13px 13px 13px 54px;
+  padding: 3px 3px 3px 40px;
 }
 
 .focused{
@@ -136,16 +140,16 @@
 }
 
 /* Icons ---------------------------------- */
-#name{
+#first_name,#last_name{
   background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
-  background-size: 30px 30px;
+  background-size: 15px 15px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
 
-#name:focus{
+#first_name,#last_name:focus{
   background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
-  background-size: 30px 30px;
+  background-size: 15px 15px;
   background-position: 8px 5px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
@@ -153,13 +157,13 @@
 
 #email{
   background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
-  background-size: 30px 30px;
+  background-size: 15px 15px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
 #celphone{
   background-image: url(http://inspiredaustin.com/upload/1024x0-cell-phone-number-svg-icon-ee-710619.png);
-  background-size: 30px 30px;
+  background-size: 15px 15px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
@@ -167,17 +171,63 @@
 
 #email:focus{
   background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
-  background-size: 30px 30px;
+  background-size: 15px 15px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
 
 #comment{
   background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
-  background-size: 30px 30px;
+  background-size: 15px 15px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
+
+textarea {
+    width: 100%;
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+  background-color:white;
+}
+
+#button-blue{
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  float:left;
+  width: 100%;
+  border: #525050 solid 4px;
+  cursor:pointer;
+  background-color: #525050;
+  color:white;
+  font-size:24px;
+/*  padding-top:22px;s
+  padding-bottom:22px;*/
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+
+@media only screen and (max-width: 580px) {
+  #form-div{
+    left: 3%;
+    margin-right: 3%;
+    width: 88%;
+    margin-left: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+.btn-primary{
+    background-color: #525050;
+    border-color: #525050;
+    color: #ffffff !important;
+  }
 
 textarea {
     width: 100%;
@@ -260,6 +310,46 @@ input:focus, textarea:focus {
 <script src="{{url('js/plugins-min.js')}}"></script>
 
 <script type="text/javascript">
+
+$(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    if(scroll >= 50){
+        $("#navt").addClass("navbar-default");
+        // $("#navt").attr('data-id','true');
+    }else{
+      var valid_param = $("#navt").attr('data-id');//$('#btnbur').attr('data-id');
+      altert(valid_param);        
+    }
+    
+  });
+
+function altert(valid_param){
+  if(valid_param == 'true'){
+    $("#navt").addClass("navbar-default");
+  }else{
+    $("#navt").removeClass("navbar-default");
+  }
+}
+  $(document).on('click','#btnbur',function(){
+    if($(window).scrollTop() == 0 || $(window).scrollTop() == $(document).height()- $(window).height()) {
+      if($("#navt").hasClass("navbar-default")){
+        $("#navt").removeClass("navbar-default");
+        $("#navt").attr('data-id','false');
+
+      }
+      else{
+        $("#navt").addClass("navbar-default");
+        $("#navt").attr('data-id','true');
+      }
+    }else{
+      if($("#navt").hasClass("navbar-default")){
+        $("#navt").attr('data-id','true');
+      }
+    }
+
+    
+  });
+
 $(document).on('click','#closeModal-sub',function(){
   $('#form-main-sub').hide('slow');
 });
@@ -267,7 +357,7 @@ $(document).on('click','#SubcribirmeModal',function(){
   $('#form-main-sub').show('slow');
   $('html, body').animate({
     scrollTop: "50px"
-}, 800);
+}, 1000);
 });
 
  $(document).on('click','#closeModal',function(){
@@ -278,7 +368,7 @@ $(document).on('click','#CotizarModal',function(){
   $('#form-main').show('slow');
   $('html, body').animate({
     scrollTop: "50px"
-}, 800);
+}, 1000);
 });
 
 

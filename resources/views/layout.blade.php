@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title> Aldo & Co.</title>
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -75,32 +75,39 @@
 <script src="{{url('js/video.js')}}"></script>
 @yield('script')
 <script>
-$(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
 
-    if (scroll >= 50) {      
+$(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    if(scroll >= 50){
         $("#navt").addClass("navbar-default");
-        $("#navt").attr('data-id','true');
-    } else {
-        $("#navt").removeClass("navbar-default");
-        $("#navt").attr('data-id','false');
+        // $("#navt").attr('data-id','true');
+    }else{
+      var valid_param = $("#navt").attr('data-id');//$('#btnbur').attr('data-id');
+      altert(valid_param);        
     }
-    var valid_param = $('#btnbur').attr('data-id');
-      if(valid_param == 'true'){
-        $("#navt").removeClass("navbar-default");
-      }else{
-        $("#navt").addClass("navbar-default");
-      }
+    
   });
 
+function altert(valid_param){
+  if(valid_param == 'true'){
+    $("#navt").addClass("navbar-default");
+  }else{
+    $("#navt").removeClass("navbar-default");
+  }
+}
   $(document).on('click','#btnbur',function(){
     if($(window).scrollTop() == 0 || $(window).scrollTop() == $(document).height()- $(window).height()) {
       if($("#navt").hasClass("navbar-default")){
         $("#navt").removeClass("navbar-default");
         $("#navt").attr('data-id','false');
+
       }
       else{
         $("#navt").addClass("navbar-default");
+        $("#navt").attr('data-id','true');
+      }
+    }else{
+      if($("#navt").hasClass("navbar-default")){
         $("#navt").attr('data-id','true');
       }
     }

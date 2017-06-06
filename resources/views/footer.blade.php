@@ -67,7 +67,7 @@ p{
   background-repeat: no-repeat;
 }
 
-#name:focus{
+#first_name,#last_name:focus{
   background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
   background-size: 15px 15px;
   background-position: 8px 5px;
@@ -239,11 +239,11 @@ input:focus, textarea:focus {
     <form class="form" id="form1" method="POST" action="/storePer">
       {{csrf_field()}}
       <p class="name">
-        <input name="first_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t30')}}" id="name" required="required"/>
+        <input name="first_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t30')}}" id="first_name" required="required"/>
       </p>
 
       <p class="name">
-        <input name="last_name"  type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t31')}}" id="name" required="required"/>
+        <input name="last_name"  type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="{{trans('messages.t31')}}" id="last_name" required="required"/>
       </p>
       
       <p class="email">
